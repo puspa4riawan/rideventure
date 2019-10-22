@@ -1,0 +1,118 @@
+.pane {
+  border-color: transparent;
+  border-width: 1px;
+  border-style: solid;
+  @include border-radius(.5rem);
+  overflow: hidden;
+  transition: $transition-base;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    padding: .25rem .5rem;
+    background-color: $gray-200;
+    @include border-bottom-radius(.5rem);
+
+    h6 {
+      padding-right: .25rem;
+      flex: 1 1 auto;
+      font-size: .9rem;
+      font-weight: bold;
+    }
+  }
+  .btn-pane {
+    flex: 0 0 auto;
+    @include button-size($input-btn-padding-y-sm, .5rem, .65rem, $input-btn-line-height, $btn-border-radius);
+    @include button-variant(rgba($black, .4), rgba($black, .4), $white, rgba($black, .6));
+    box-shadow: none;
+
+    &:focus,
+    &.focus { box-shadow: none;}
+
+    .fa { transition: $transition-base; }
+  }
+  &[data-state=open] {
+    .btn-pane .fa { transform: rotate(180deg); }
+  }
+
+  &-body {
+    padding: 1rem .5rem;
+
+    ol {
+      padding-left: .75rem;
+      >li + li {
+        margin-top: .5rem;
+      }
+      ul { list-style-type: disc; }
+      p {
+        margin-left: .5rem;
+      }
+    }
+  }
+
+  &-emas1 {
+    &[data-state=open]{
+      border-color: $emas-1;
+    }
+    .pane-header { 
+      background-color: $emas-1; 
+      color: $white;
+    }
+  }
+  &-akal {
+    &[data-state=open]{
+      border-color: $sm-akal;
+    }
+    .pane-header { 
+      background-color: $sm-akal; 
+      color: $white;
+    }
+  }
+  &-fisik {
+    &[data-state=open]{
+      border-color: $sm-fisik;
+    }
+    .pane-header { 
+      background-color: $sm-fisik; 
+      color: $white;
+    }
+  }
+  &-sosial {
+    &[data-state=open]{
+      border-color: $sm-sosial;
+    }
+    .pane-header { 
+      background-color: $sm-sosial; 
+      color: $white;
+    }
+  }
+}
+
+// > result 30
+#resultAcdr30 {
+  .pane + .pane {
+    margin-top: 1rem;
+  }
+  .pane-header {
+    h6 { 
+      padding: .25rem .5rem;
+      img {
+        display: block;
+        height: 2rem;
+        width: auto;
+      }
+    }
+  }
+}
+
+
+// > result 0
+#resultClps0 {
+  .smr-collapse {
+    max-height: 20rem;
+    padding-right: .25rem;
+  }
+  .pane-body {
+    padding: 0;
+  }
+}

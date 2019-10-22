@@ -1,0 +1,37 @@
+    <meta charset="utf-8">
+    <title>{{ settings:site_name }}</title>
+    <!-- Theme Colors Content -->
+    <!-- Theme Green = #8DC044 -->
+    <!-- Theme Orange = #F6A120 -->
+    <!-- Theme Purple = #9261A6 -->
+    <!-- End Theme Color Content -->
+    <meta name="theme-color" content="#8DC044" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="" />
+
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+    if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+        top.location = self.location;
+    }
+    </script>
+
+    <script type="text/javascript">
+        var BASE_URL = '{{ url:base }}';
+        var SITE_URL = '{{ url:site }}';
+        var tokens ={<?php echo '\''.$this->security->get_csrf_token_name().'\':\''.$this->security->get_csrf_hash().'\''; ?>};
+    </script>
+
+    <!-- favicon -->
+    <link href="{{ theme:image_url file='upload/favicon/favicon.jpg' }}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ theme:image_url file='upload/favicon/web-clip.jpg' }}" rel="apple-touch-icon">
+    <!-- endfavicon -->
+
+    <link href="{{ asset:css_url file='main.css' }}" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <noscript><link rel="stylesheet" href="{{ asset:css_url file='main.css' }}"></noscript>
+    <link rel="prefetch" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" as="font" crossorigin="anonymous">

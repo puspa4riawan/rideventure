@@ -1,0 +1,1502 @@
+//
+// Core variables and mixins
+//
+@import "../wy/wy-variables";
+@import "../bs/functions";
+@import "../bs/custom";
+@import "../bs/mixins";
+@import "../wy/wy-mixins";
+@import '../fa/mixins';
+@import '../fa/variables';
+
+
+// > vaksin fitur card
+.vaksin-fitur-card {
+  position: relative;
+  padding: 1rem 1rem 80% 1rem;
+  @include border-radius(.5rem);
+  overflow: hidden;
+
+  &-title {
+    color: $emas-3;
+    margin-bottom: .5rem;
+    @include pfs(font-size, 22px, 32px);
+  }
+
+  &-text {
+    @include buatColReady();
+  }
+
+  p { margin-bottom: 1rem; }
+
+  @include media-breakpoint-down(sm) {
+    a.btn { width: 100%; }
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 10% 2.5rem;
+
+    &-text {
+      @include make-col(6);
+
+      p { width: 85%; }
+
+      &-right {
+        margin-left: auto;
+        text-align: right;
+
+        p { margin-left: auto; }
+      }
+    }
+  }
+
+  & + & { @include pfs(margin-top, $grid-gutter-width-sm, $grid-gutter-width); }
+}
+
+// > landing kalender imunisasi / kuisioner
+.landing-imunisasi {
+  position: relative;
+  line-height: $line-height-lg;
+
+  .bg { background-color: #F4F1EC; }
+
+  &-text {
+    @include buatColReady;
+
+    p { margin-bottom: 1rem; }
+
+    .btn { width: 100%; }
+  }
+
+  &-title {
+    margin-bottom: .7rem;
+    font-size: 1.6rem;
+    color: $emas-3;
+  }
+
+  &-content {
+    .form-control { font-size: inherit; }
+
+    .custom-radio {width: 100%; }
+
+    .custom-control-description { font-size: inherit; }
+
+    .anak-jk .jk { 
+      @include size($input-height); 
+      border-width: $input-btn-border-width;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: percentage(343/375);
+
+    .bg { 
+      background-size: 100% auto; 
+      background-position: center bottom;
+    }
+
+    &-wrap {
+      padding-top: 2rem;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    @include embed-responsive(1280, 600);
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+
+    &-text { 
+      @include make-col(6); 
+
+      &#step02 {
+        .landing-imunisasi-content { 
+          width: 90%;
+        }
+      }
+    }
+
+    &-content { 
+      width: 90%;
+      font-size: .69rem;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    &-title { 
+      font-size: 1.1rem; 
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &-content {
+      width: 80%;
+      font-size: .8rem;
+    }
+  }
+}
+
+// > typography 
+.vaksin-section {
+  &-title {
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+  }
+
+  &-subtitle {
+    margin-bottom: 1rem;
+    @include media-breakpoint-down(sm) { font-size: 1.4rem; }
+    @include media-breakpoint-up(md) { font-size: 1.6rem; }
+  }
+
+  &-subtitle-bulan {
+    margin-bottom: 0;
+    padding: .5rem 0;
+    color: $white;
+
+    .text-inherit {
+      @include fw(bold);
+      text-transform: uppercase;
+      @include letterspace(10);
+    }
+  }
+}
+
+// > Swiper jadwal bulan vaksin
+.sw-vaksin {  
+  &-flag {
+    display: flex;
+    position: relative;
+
+    .mCustomScrollBox+.mCSB_scrollTools+.mCSB_scrollTools.mCSB_scrollTools_horizontal, .mCustomScrollBox+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+      bottom: -7px;
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      z-index: 0;
+    }
+
+    &::before {
+      left: 0;
+      background-color: $cream-1;
+    }
+
+    &::after {
+      right: 0;
+      background-color: $cream-2;
+    }
+  }
+
+  &-pane {
+    width: 90%;
+    height: auto;
+    padding: .7rem;
+  }
+
+  &-wrap {
+    background-color: $white;
+    @include border-radius;
+    padding: 1rem;
+  }
+
+    &-flag {
+    }
+
+  @include media-breakpoint-up(lg) {
+    &-flag {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    &-pane { width: 80%; }
+  }
+}
+
+// >> Flag bulan
+.bulans,
+.tahuns {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    font-size: .8rem;
+    top: 1.2rem;
+  }
+}
+
+.bulans {
+  padding: 3rem 0 2rem 3rem;
+  background-color: $cream-1;
+
+  &::before { content: 'Bulan ke-'; }
+
+  .flag:last-of-type { padding-right: .5rem; }
+}
+
+.tahuns {
+  padding: 3rem 3rem 2rem 0;
+  background-color: $cream-2;
+
+  &::before { 
+    content: 'Tahun ke-';
+    left: 1.5rem;
+  }
+
+  .flag:first-of-type { padding-left: 1.5rem; }
+
+  .flag:last-of-type { border-bottom: none; }
+
+  .flag > span::after {
+    // border-left-color: transparent !important;
+    border-left-width: .5rem;
+    border-right: 0;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+  }
+}
+
+.flag {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+  vertical-align: bottom;
+  width: auto;
+  height: auto;
+  background: none;
+  // border-left: 1px solid $gray-400;
+  border-bottom: 1px solid $gray-400;
+  line-height: 1;
+  z-index: 1;
+
+  > span {
+    width: 1.7rem;
+    height: 1rem;
+    display: block;
+    position: relative;
+    padding-left: .3rem;
+    margin-right: 1rem;
+    margin-bottom: .7rem;
+    color: $white;
+    font-size: 80%;
+    text-align: center;
+    line-height: 1rem;
+    @include transition;
+
+    // &::before,
+    &::after {
+      display: inline-block;
+      content: '';
+      @include size(0px);
+      border-style: solid;
+      border-width: .5rem .5rem .5rem 0;
+      position: absolute;
+      left: 100%;
+      @include transition;
+    }
+
+    &::after { border-right-color: transparent !important; }
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    @include size(0, 100%);
+    position: absolute;
+    float: left;
+    top: 0;
+    border-left: 1px solid $gray-400;    
+  }
+
+  &::after {
+    @include fa-icon;
+    content: '';
+    @include size(16px);
+    display: block;
+    position: relative;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    font-size: 70%;
+    line-height: 18px;
+    text-align: center;
+    color: $white;
+  }
+
+  &-wrap {
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    z-index: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+
+  // clickable button
+  &[role="button"] {
+    cursor: pointer;
+
+    &:hover {
+      > span { margin-bottom: 1.5rem;}
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // default color
+  & {
+    > span,
+    &::after {
+      background-color: $gray-400;
+    }
+
+    > span::after {
+      border-color: $gray-400;
+    }
+  }
+
+  // complete color
+  &-complete {
+    > span { 
+      &::after { border-color: $green; }
+    }
+
+    > span,
+    &::after { 
+      content: $fa-var-check;
+      background-color: $green; 
+    }
+  }
+
+  // incomplete color
+  &-incomplete {
+    > span { 
+      &::after { border-color: $red; }
+    }
+
+    > span,
+    &::after { 
+      content: $fa-var-exclamation;
+      background-color: $red; 
+    }
+  }
+
+  // active color
+  &-mark {
+    > span { 
+      margin-bottom: 1.5rem; 
+
+      &::after { border-color: $emas; }
+    }
+
+    > span,
+    &::after { background-color: $emas; }
+  }
+
+  &-active {
+    > span { margin-bottom: 1.5rem; }
+  }
+}
+
+// > Riwayat imunisasi
+.imunisasi {
+  position: relative;
+  padding: 0 0 0 2rem;
+
+  &-list {
+    @include list-unstyled;
+  }
+
+  &-wrap {
+    @include buatRow;
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+
+  }
+
+  &-name,
+  &-dose,
+  &-btns,
+  &-date {
+    @include buatColReady;
+    @include make-col(6);
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+  }
+
+  &-name {
+    display: flex;
+    align-items: center;
+    @include fw(bold);
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 6px;
+      left: -1.5rem;
+      @include size(11px);
+      margin-left: -5px;
+      border-radius: 50%;
+      background-color: $emas;
+    }
+
+    i { margin-left: .25rem; }
+  }
+
+  &-btns {
+    margin-left: auto;
+    text-align: right;
+
+    .btn {
+      @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $font-size-base, $input-btn-line-height, $border-radius);
+    }
+
+    .btn-outline-success,
+    .btn-outline-danger {
+      font-size: 80%;
+      text-transform: uppercase;
+      @include fw(medium);
+      @include letterspace(50);
+    }
+  }
+
+  & + & {
+    .imunisasi-wrap { border-top: 1px solid $gray-400;}
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+
+  &::before {
+    @include size(1px, 100%);
+    top: 2rem;
+    left: .5rem;
+    background-color: $gray-400;
+  }
+
+  &:last-of-type::before { background: none !important; }
+
+  // color
+  &-next {
+    color: $gray-400;
+
+    .imunisasi-name::before { background-color: $gray-400; }
+  }
+
+  &-complete {
+    .imunisasi-name::before { background-color: $green;}
+  }
+
+  &-incomplete {
+    .imunisasi-name::before { background-color: $red;}
+  }
+    &-dose + &-btns { @include colEqual;}
+
+  @include media-breakpoint-down(sm) {
+    &-dose { text-align: right; }
+
+  }
+
+  @include media-breakpoint-up(md) {
+    &-name,
+    &-dose,
+    &-btns,
+    &-date {
+      @include make-col(3);
+    }
+  }
+}
+
+.btn-maw20rem {
+  display: block;
+  margin: auto;
+
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: 50%;
+    max-width: 20rem;
+  }
+}
+
+.btn-maw10rem {
+  margin: 0 .5rem;
+
+  @include media-breakpoint-down(xs) {
+    width: 50%;
+  }
+
+  @include media-breakpoint-up(sm) {
+    max-width: 10rem;
+  }
+}
+
+.anak-wrap {
+  width: 100%;
+  max-width: 30rem;
+  display: inline-block;
+  text-align: left;
+  border: 1px solid $primary;
+  @include border-radius;
+  background-color: $white;
+      box-shadow: $input-box-shadow;
+
+  .anak-img {
+    @include size(3rem);
+    margin-right: .5rem;
+  }
+
+  hr {
+    margin: 0 1rem;
+  }
+
+  .anak-detail {
+    padding: 1rem;
+    margin-bottom: 0;
+  }
+  
+  dl {
+    line-height: $line-height-lg;
+  }
+
+  dt {
+    font-size: 75%;
+    @include fw(bold);
+  }
+
+  dd+dt { margin-top: 1rem;}
+
+  .anak-name {
+    color: $primary;
+  }
+}
+
+.anak-current {
+  @include buatRow();
+  min-width: 0;
+  padding: .5rem 1rem;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex: 1 1 auto;
+
+  .anak-img + div {
+    flex: 1 1 auto;
+    display: flex;
+
+    a { margin-left: auto; }
+  }
+
+  .anak-name {
+    width: auto;
+    margin-right: .5rem;
+  }
+}
+
+.dd-select-anak {
+  width: 100%;
+
+  .btn:hover { text-decoration: none; }
+
+  .dropdown-toggle {
+    border: none;
+    margin-right: 1px;
+  }
+  
+  .dropdown-toggle::after { margin-left: 0; }
+
+  .dropdown-menu {
+    width: calc(100% + 2px);
+    margin: 2px -2px 0 0;
+    padding-top: 0;
+    border-color: $primary;
+    border-top: none;
+    @include border-top-radius(0);
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    .dropdown-toggle { margin-right: 0; }
+  }
+}
+
+// > jadwal imunisasi
+
+.jadwal {
+  box-shadow: $btn-box-shadow;
+  background-color: $white;
+  @include border-radius(.5rem);
+  @include mask;
+
+  & + & {
+    margin-top: 1rem;
+  }
+
+  &-accordion +  &-accordion {
+    margin-top: 2.5rem;
+  }
+
+  &-header {
+    display: flex;
+    padding: 1rem;
+
+    > div {
+      flex: 1 0 auto;
+    }
+
+    > .btn { 
+      align-self: flex-start; 
+
+      .fa::before { content: $fa-var-minus; } 
+
+      &.collapsed .fa::before { content: $fa-var-plus; }
+    }
+  }
+
+  &-body {
+    padding: 2rem 1rem 0;
+  }
+
+  &-content {
+    h6 {
+      margin-top: 2rem;
+      margin-bottom: .5rem;
+    }
+
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $hr-border-color;
+
+    li { padding-bottom: .5rem; }
+  }
+
+  &-note {
+    display: flex;
+    border-bottom: 1px solid $hr-border-color;
+
+    &-content {
+      @include colEqual;
+    }
+
+    .btn { align-self: flex-start; }
+  }
+
+  &-footer {
+    padding: 2rem 1rem;
+
+    p { 
+      margin: 0 auto 1rem; 
+      max-width: 30rem;
+    }
+
+    .btn-white {
+      width: 50%;
+      box-shadow: 0 .2rem .5rem rgba($black, .15);
+    }
+  }
+
+  // >> color
+  &-incomplete {
+    .jadwal-header {
+      background-color: $primary;
+      color: $white;
+
+      > .btn {
+        color: rgba($white, .8);
+        &:hover, &:focus, &.focus {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+// > lokasi imunisasi
+.vaksin-lokasi {
+  &-form {
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 2rem;
+
+    .form-group {
+      margin-bottom: 2rem;
+    }   
+  }
+
+  &-result {
+    padding-top: 2rem;
+    border-top: 1px solid $hr-border-color;
+
+    &-title {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  }
+
+  &-card {
+    margin: 0;
+    padding: 1rem .5rem;
+    background-color: $white;
+    border: 1px solid $primary;
+    @include border-radius;
+
+    & + & {
+      margin-top: 1rem;
+    }
+  }
+
+  &-kota {
+    font-size: $font-size-sm;
+  }
+
+  &-alamat {
+    min-height: 4rem;
+  }
+}
+
+// > help
+.vaksin-help{
+  &-icon,
+  &-text {
+    @include make-col-ready;
+  }
+
+  &-title {
+    color: $emas-3;
+    @include fw(bold);
+    @include letterspace(50);
+  }
+
+  &-btn {
+    border-bottom: 1px solid $hr-border-color;
+  }
+
+  @include media-breakpoint-down(xs) {
+    &-icon {
+      @include colAuto;
+    }
+
+    &-text {
+      @include colEqual;
+      padding-left: 1rem;
+    }
+
+    .btn { width: 100%; }
+  }
+
+  @include media-breakpoint-up(sm) {
+    text-align: center;
+  }
+}
+
+
+// > badge 
+.badge {
+  &-imunisasi {
+    font-size: 100%;
+    padding: $badge-padding-y 2rem;
+    @include border-radius(2rem);
+  }
+}
+
+// > vaksin mitos/fakta
+.vaksin-mf {
+  &-card {
+    padding: 2rem 1.25rem;
+    background: $white;
+    @include border-radius;
+    box-shadow: 0 0 1rem rgba($black, .15);
+  }
+
+  &-statement {
+    margin-bottom: 3rem;
+  }
+
+  &-btns {
+    padding-bottom: 1rem;
+  }
+
+  &-correct {
+    max-width: 30rem;
+    margin: auto;
+
+    .text-uppercase { @include letterspace(50);}
+  }
+
+  &-score {
+    position: relative;
+    margin: auto;
+    @include size(10rem);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    background-image: url('../img/medal.png');
+
+    span {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include size(70%);
+      text-align: center;
+      font-size: 3.2rem;
+      @include fw(bold);
+    }
+  }
+}
+
+// >  Vaksin 5w1h
+.vaksin-about {
+  &-tab-navbar {
+    padding-top: 2rem;
+  }
+
+  &-tab-body {
+    padding-bottom: 4rem;
+  }
+
+  &-hero {
+    @include border-radius;
+    margin-bottom: 2rem;
+    @include embed-responsive(350,233);
+
+    .bg { 
+      z-index: 0; 
+    }
+  }
+
+  &-tab-pane {
+    &#apa {
+      .vaksin-about-hero .bg { background-position: 0 0; }
+    }
+
+    &#mengapa {
+      .vaksin-about-hero .bg { background-position: 0 10%; }
+    }
+  }
+
+  &-intro {
+    padding-bottom: 2rem;
+
+    p { margin-bottom: 1rem; }
+  }
+
+  &-card {
+    @include border-radius;
+    background-color: $white;
+    box-shadow: 0 .25rem .5rem rgba($black, .15);
+
+    .img-icon {
+      margin-bottom: 1rem; 
+      img { 
+        @include size(4rem);
+      }
+    }
+    
+    .h6 { margin-bottom: 2rem; }
+
+    p { margin-bottom: 1rem; }
+
+    & + & {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-tab-navbar {
+      margin-bottom: 2rem;
+
+      .dropdown-toggle { 
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 22rem;
+        margin: auto;
+        text-align: left;
+        @include fw(bold);
+
+        &::after { margin-left: auto; }
+      }
+
+      .dropdown-menu {
+        max-width: 22rem;
+        border-color: $primary;
+      }
+
+      .dropdown-item.active {
+        background-color: rgba($primary, .2);
+      }
+
+      &.show {
+        .dropdown-toggle {
+        }
+      }
+    }
+
+    &-tab-nav {
+      li { width: 100%; }
+
+      a {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+      }
+    }
+
+    &-card {
+      padding: 1.5rem 1.5rem 2rem;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    &-hero {
+      @include embed-responsive(953,413);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &-tab-navbar {
+      width: 98%;
+      margin: 0 auto 3rem;
+      border-bottom: 1px solid $hr-border-color;
+
+      .dropdown-toggle { display: none; }
+
+      > div {
+        position: relative !important;
+        transform: none !important;
+      }
+    }
+
+    &-tab-nav {
+
+      li {
+        position: relative;
+        @include colEqual;
+        padding: 0 .5rem;
+        font-size: 80%;
+        text-align: center;
+      }
+
+      li + li {
+        &::before {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          content: '';
+          @include size(1px, 50%);
+          background-color: $hr-border-color;
+        }
+      }
+
+      a {
+        padding: 1rem .5rem ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        position: relative;
+        @include fw(bold);
+        color: $body-color;
+
+        &:hover { 
+          text-decoration: none; 
+          color: $primary;
+        }
+
+        &.active {
+          color: $primary;
+          &::after {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            content: '';
+            width: 100%;
+            height: 4px;
+            @include border-radius;
+            background-color: $primary;
+          }
+        }
+      }
+    }
+
+    &-card {
+      padding: 2rem 2rem 3rem;
+    }
+  }
+}
+
+@mixin tutorial-text-m ($property-x, $psdm-x, $property-y, $psdm-y, $width: 'auto') {
+  #{$property-x}: percentage($psdm-x / 520);
+  #{$property-y}: percentage($psdm-y / 782);
+  @if $width == 'auto' {
+    width: auto;
+  } @else {
+    width: percentage( $width / 520) ;
+  }
+}
+
+@mixin tutorial-text-d ($property-x, $psdd-x, $property-y, $psdd-y, $width: 'auto') {
+  #{$property-x}: percentage($psdd-x / 1440);
+  #{$property-y}: percentage($psdd-y / 900);
+  @if $width == 'auto' {
+    width: auto;
+  } @else {
+    width: percentage( $width / 1440) ;
+  }
+}
+
+// > Tutorial
+.vaksin-tutorial {
+  &-card {
+    display: flex;
+    padding: 1rem;
+    background-color: $white;
+    @include border-radius;
+    box-shadow: 0 .25rem .5rem rgba($black, .15);
+
+    h4 { 
+      margin-bottom: 1rem; 
+      @include fw(bold);
+    }
+  }
+
+  &-step-wrap {
+    position: relative;
+    background-color: #8a1707;
+
+    .btn-close-round {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      z-index: 99;
+    }
+  }
+
+  &-step-btns {
+    position: fixed;
+    right: 0;
+    bottom: 3rem;
+    left: 0;
+    z-index: 99;
+  }
+
+  &-step {
+    z-index: 1;
+
+    .bg {
+      background-size: 100% auto;
+      background-position: 0 0;
+    }
+  }
+
+  &-text {
+    color: $white;
+    position: absolute;
+    max-width: 50rem;
+    z-index: 2;
+    font-size: 80%;
+
+    .h6 {
+      margin-bottom: 1rem;
+    }
+
+    p { margin-bottom: .5rem;  }
+
+    li { padding-top: .25rem; }
+
+    a { 
+      color: inherit; 
+      text-decoration: underline;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-card {
+      margin-bottom: 1rem;
+    }
+
+    &-card-text {
+      padding-left: 1rem;
+      flex: 1 0 auto;
+    }
+
+    &-step {
+      @include embed-responsive(520,782);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .wy { margin-bottom: 1rem; }
+    }
+
+    &-card-text {
+      min-width: 100%;
+    }
+
+    &-step {
+      @include embed-responsive(1440, 900);
+    }
+  }
+}
+
+#tutorial-kalender {
+  @include media-breakpoint-down(sm) {
+    &-01 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 36, top, 280, 450);
+      }
+    }
+
+    &-02 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(right, 90, top, 245, 350);
+      }
+    }
+
+    &-03 {
+      .vaksin-tutorial-text.text-01 {
+        @include tutorial-text-m(left, 265, top, 110, 200);
+        width: 10rem;
+      }
+
+      .vaksin-tutorial-text.text-02 {
+        @include tutorial-text-m(left, 45, top, 255, 420);
+      }
+    }
+
+    &-04 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 45, bottom, 470, 420);
+      }
+    }
+
+    &-05 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 0, top, 300, 420);
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    &-06 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 0, top, 400, 420);
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    &-07 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 0, top, 420, 420);
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &-01 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 418, top, 500, 600);
+      }
+    }
+
+    &-02 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(right, 478, top, 330, 600);
+      }
+    }
+
+    &-03 {
+      .vaksin-tutorial-text.text-01 {
+        @include tutorial-text-d(left, 760, top, 300, auto);
+        width: 10rem;
+      }
+
+      .vaksin-tutorial-text.text-02 {
+        @include tutorial-text-d(left, 220, top, 465, 600);
+      }
+    }
+
+    &-04 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 140, top, 480, auto);
+        max-width: none;
+      }
+    }
+
+    &-05 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 440, top, 450, 680);
+      }
+    }
+
+    &-06 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 440, top, 580, 560);
+      }
+    }
+
+    &-07 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 440, top, 440, 560);
+      }
+    }
+  }
+}
+
+#tutorial-reminder-kalender {
+  @include media-breakpoint-down(sm) {
+    &-01 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 0, top, 400, 440);
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    &-02 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 0, bottom, 530, 440);
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &-01 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 500, top, 440, 600);
+      }
+    }
+
+    &-02 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 0, bottom, 630, 660);
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+}
+
+#tutorial-reminder-email {
+  @include media-breakpoint-down(sm) {
+    &-01 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 0, top, 400, 440);
+        right: 0;
+        margin: auto;
+        text-align: right;
+      }
+    }
+
+    &-02 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-m(left, 0, bottom, 530, 440);
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &-01 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 700, top, 440, 600);
+      }
+    }
+
+    &-02 {
+      .vaksin-tutorial-text {
+        @include tutorial-text-d(left, 0, bottom, 630, 660);
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+}
+
+
+// button scroll to download
+.goto-download {
+  position: fixed;
+  right: 0;
+  bottom: 25%;
+  z-index: $zindex-sticky;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+// > Informasi imunisasi
+.bg-catchup{ background-color: #FAFFAE; }
+.bg-booster { background-color: #DAB562; }
+.bg-endemis { background-color: #D05C4C; }
+
+.imunisasi {
+  &-info {
+    @include buatRow(0);
+    align-items: center;
+    padding: 1rem;
+    background-color: $white;
+    @include border-radius;
+    box-shadow: 0 .2rem .5rem rgba($black, .15);
+
+    & + & {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &-info-usia,
+  &-info-interval {
+    @include buatColReady;
+    @include make-col(6);
+  }
+
+  &-info-nama {
+    @include buatColReady;
+    padding-right: .5rem;
+    @include fw(bold);
+    font-size: 1.125rem;
+  }
+
+  &-info-interval {
+    padding-right: .5rem;
+    color: $success;
+  }
+
+  &-info-btns { 
+    padding-right: .5rem;
+    @include buatColReady;
+    @include colAuto;
+    text-align: right;
+  }
+
+  &-info-tabel-card {
+    .img {
+      position: relative;
+    }
+
+    .btn-zoom {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      @include border-radius(0);
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &-info-keterangan {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 70%;
+
+    .col {
+      display: flex;
+      align-items: center;
+      @include make-col(6);
+      margin-bottom: .5rem;
+      padding-right: 1rem;
+
+      span {
+        display: block;
+        width: 3rem;
+        height: 1.5rem;
+        margin-right: .5rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &-info-nama {
+      flex: 1 0 auto;
+      min-width: 50%;
+      width: auto;
+      max-width: 100%;
+    }
+
+    &-info-usia { order: 2; }
+
+    &-info-interval { 
+      order: 3; 
+      text-align: right;
+    }
+
+    &-info-btns { 
+      order: 1; 
+
+      .btn { padding-right: 0; }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    &-info-nama,
+    &-info-usia,
+    &-info-interval {
+      @include colEqual();
+    }
+
+    &-info-keterangan {
+      .col {
+        @include colAuto;
+      }
+    }
+  }
+}

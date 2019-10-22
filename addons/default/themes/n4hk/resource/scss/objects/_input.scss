@@ -1,0 +1,71 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Setup Variabels
+//  *   CH02 - Base Input Component
+
+
+
+//================================================================================================================
+//  *   CH01 - Setup Variabels
+//================================================================================================================
+
+
+
+//================================================================================================================
+//  *   CH02 - Base Input Component
+//================================================================================================================
+.input-control-panel {
+    .bounds {
+        @include relative();
+        height: 48px;
+
+        @include breakpoint(md) {
+            height: 96px;
+        }
+
+        @include breakpoint(wd) {
+            height: 102px;
+        }
+
+        .figure-assets,
+        svg {
+            display: block;
+            height: 48px;
+            width: 100%;
+
+            @include breakpoint(md) {
+                height: 96px;
+            }
+
+            @include breakpoint(wd) {
+                height: 102px;
+            }
+        }
+
+        svg path {
+            fill: background-color(themes, white);
+        }
+
+        .c-input {
+            color: text-color(p-primary, default);
+            @include center(both);
+            padding: .5rem;
+            width: 95%;
+
+            @include breakpoint(md) {
+                @include font-size(24px);
+                padding: .5rem 1rem;
+                width: 80%;
+            }
+
+            @include breakpoint(lg) {
+                width: 95%;
+            }
+
+            @include breakpoint(wd) {
+                padding: .75rem 1rem;
+            }
+        }
+    }
+}

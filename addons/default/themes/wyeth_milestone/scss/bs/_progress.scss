@@ -1,0 +1,77 @@
+@keyframes progress-bar-stripes {
+  from { background-position: $progress-height 0; }
+  to { background-position: 0 0; }
+}
+
+progress[value] {
+  appearance: none;
+  width: 100%;
+  height: $progress-height;
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: $progress-bg;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: $progress-bg;
+}
+progress[value]::-webkit-progress-value {
+  background-color: $progress-bar-bg;
+}
+progress[value='100']::-webkit-progress-value {
+  background-color: $progress-bar-bg;
+  border-radius:0;
+}
+
+
+.progress {
+  display: flex;
+  height: $progress-height;
+  overflow: hidden; // force rounded corners by cropping it
+  font-size: $progress-font-size;
+  background-color: $progress-bg;
+}
+
+.progress-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: $progress-bar-color;
+  background-color: $progress-bar-bg;
+  @include border-right-radius($progress-border-radius);
+  transition: $transition-base;
+  
+  &[aria-valuenow="100"]{
+    border-radius: 0;
+  }
+}
+
+.progress-bar-striped {
+  @include gradient-striped();
+  background-size: $progress-height $progress-height;
+}
+
+.progress-bar-animated {
+  animation: progress-bar-stripes $progress-bar-animation-timing;
+}
+
+
+.progress-txt{
+  position: absolute;
+  left: 100%;
+  padding-left: .5rem;
+  padding-right: 1rem;
+  color: $merah;
+  font-size: $progress-font-size;
+  line-height: $progress-height;
+  display: inline-flex;
+  &.in{
+    left: auto;
+    right: 0;
+    color: $white;
+  }
+  span+span{
+    margin-left: 4px;
+  }
+}

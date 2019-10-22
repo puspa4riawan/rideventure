@@ -1,0 +1,427 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Setup Variabels
+//  *   CH02 - Base Section Content Layout
+//  *   CH03 - Section Content Heading
+//  *   CH04 - Base Section Newsletter
+//  *   CH05 - Section Newsletter Heading
+//  *   CH06 - Section Newsletter Form
+
+
+
+//================================================================================================================
+//  *   CH01 - Setup Variabels
+//================================================================================================================
+
+
+
+//================================================================================================================
+//  *   CH02 - Base Section Content Layout
+//================================================================================================================
+.section-content {
+    @include relative();
+    padding-bottom: 98px;
+    padding-top: 75px;
+
+    @include breakpoint(md) {
+        padding-bottom: 180px;
+        padding-top: 150px;
+    }
+
+    @include breakpoint(lg) {
+        padding-bottom: 80px;
+        padding-top: 65px;
+    }
+
+    &.bg-pattern {
+        background-image: url('../img/style/section-bg-pattern.svg');
+        background-repeat: repeat-y;
+        background-size: 100%;
+
+        @include breakpoint(lg) {
+            background-position: center center;
+        }
+    }
+
+    .safebox {
+        @include relative();
+        z-index: 2;
+
+        .c-panel {
+            padding-left: $l-section-gutter;
+            padding-right: $l-section-gutter;
+        }
+    }
+}
+
+.section-shadow-bg {
+    @include absolute(top 0 left 0);
+    overflow: hidden;
+    padding-top: 7.5%;
+    width: 100%;
+
+    @include breakpoint(wd) {
+        padding-top: 3.75%;
+    }
+
+    .figure-assets {
+        @include absolute(top 0 left 0);
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH03 - Section Content Heading
+//================================================================================================================
+.section-heading {
+    @include flex(column, center, center, wrap);
+    padding-bottom: 65px;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint(md) {
+        padding-bottom: 130px;
+    }
+
+    @include breakpoint(lg) {
+        padding-bottom: 80px;
+    }
+
+    .c-heading {
+        @include relative();
+
+        .figure-assets,
+        svg {
+            height: 40px;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            z-index: 1;
+
+            @include breakpoint(md) {
+                height: 80px;
+            }
+        }
+
+        text {
+            font-weight: bold;
+        }
+    }
+}
+
+// Themes Green
+.theme-green .section-theme .section-heading .c-heading path {
+    fill: background-color(themes, white);
+    stroke: background-color(themes, white);
+}
+
+.theme-green .section-theme .section-heading .c-heading svg text {
+    fill: background-color(themes, green);
+}
+
+.theme-green .section-theme.reverse .section-heading .c-heading path {
+    fill: background-color(themes, green);
+    stroke: background-color(themes, green);
+}
+
+.theme-green .section-theme.reverse .section-heading .c-heading svg text {
+    fill: background-color(themes, white);
+}
+// End Themes Green
+
+// Themes Orange
+.theme-orange .section-theme .section-heading .c-heading path {
+    fill: background-color(themes, white);
+    stroke: background-color(themes, white);
+}
+
+.theme-orange .section-theme .section-heading .c-heading svg text {
+    fill: background-color(themes, orange);
+}
+
+.theme-orange .section-theme.reverse .section-heading .c-heading path {
+    fill: background-color(themes, orange);
+    stroke: background-color(themes, orange);
+}
+
+.theme-orange .section-theme.reverse .section-heading .c-heading svg text {
+    fill: background-color(themes, white);
+}
+// End Themes Orange
+
+// Themes Purple
+.theme-purple .section-theme .section-heading .c-heading path {
+    fill: background-color(themes, white);
+    stroke: background-color(themes, white);
+}
+
+.theme-purple .section-theme .section-heading .c-heading svg text {
+    fill: background-color(themes, purple);
+}
+
+.theme-purple .section-theme.reverse .section-heading .c-heading path {
+    fill: background-color(themes, purple);
+    stroke: background-color(themes, purple);
+}
+
+.theme-purple .section-theme.reverse .section-heading .c-heading svg text {
+    fill: background-color(themes, white);
+}
+// End Themes Purple
+
+
+
+//================================================================================================================
+//  *   CH04 - Base Section Newsletter
+//================================================================================================================
+.section-newsletter {
+    @include relative();
+    padding-bottom: 50px;
+    padding-top: 40px;
+
+    @include breakpoint(md) {
+        padding-bottom: 100px;
+        padding-top: 80px;
+    }
+
+    .c-panel {
+        padding-left: $l-section-gutter;
+        padding-right: $l-section-gutter;
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH05 - Section Newsletter Heading
+//================================================================================================================
+.c-newsletter-heading {
+    text-align: center;
+
+    h2 {
+        margin-bottom: 25px;
+
+        @include breakpoint(md) {
+            margin-bottom: 50px;
+        }
+
+        br {
+            @include breakpoint(lg) {
+                display: none;
+            }
+        }
+    }
+
+    p {
+        @extend %font-primary-alt;
+        line-height: 1.2;
+
+        @include breakpoint(md) {
+            margin: 0 auto;
+            max-width: 80%;
+        }
+    }
+}
+
+// Theme Newsletter Heading Color
+.theme-green .c-newsletter-heading,
+.theme-purple .c-newsletter-heading {
+    color: text-color(themes, white);
+}
+
+.theme-orange .c-newsletter-heading {
+    color: #cb7e0a;
+}
+// End Theme Newsletter Heading Color
+
+
+
+
+//================================================================================================================
+//  *   CH05 - Section Newsletter Form
+//================================================================================================================
+.c-form-newsletter {
+    .input-control-panel {
+        @include flex(column, center, center, wrap);
+
+        @include breakpoint(lg) {
+            @include flex(row, center, center, wrap);
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 50px;
+            width: 80%;
+        }
+
+        .bounds {
+            max-width: 288px;
+            width: 100%;
+
+            @include breakpoint(md) {
+                max-width: 552px;
+                width: 60%;
+            }
+
+            @include breakpoint(lg) {
+                margin-left: 24px;
+                transform: translateY(10%);
+                width: calc(80% - 214px);
+            }
+
+            @include breakpoint(wd) {
+                max-width: 612px;
+                width: calc(70% - 214px);
+            }
+        }
+    }
+
+    .c-input-label {
+        display: block;
+        padding-bottom: 24px;
+        padding-top: 22px;
+
+        @include breakpoint(md) {
+            padding-bottom: 32px;
+            padding-top: 44px;
+        }
+
+        @include breakpoint(lg) {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        .figure-assets,
+        svg {
+            display: block;
+            height: auto;
+            margin: 0 auto;
+            width: 95px;
+
+            @include breakpoint(md) {
+                width: 150px;
+            }
+        }
+    }
+}
+
+.button-submit-newsletter {
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    margin: 44px auto 0;
+    padding: 0;
+    transition: .2s all ease-out;
+
+    @include breakpoint(md) {
+        margin-top: 88px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 30px;
+    }
+
+    .figure-assets,
+    svg {
+        display: block;
+        height: 58.5px;
+        width: auto;
+
+        @include breakpoint(md) {
+            height: 117px;
+        }
+    }
+
+    &:hover {
+        transform: scale(.9);
+    }
+}
+
+// Themes Color Button Submit Newsletter
+.theme-green .button-submit-newsletter svg {
+    path {
+        fill: background-color(themes, green);
+    }
+
+    text {
+        font-weight: bold;
+        fill: background-color(themes, white);
+    }
+}
+
+.theme-orange .button-submit-newsletter svg {
+    path {
+        fill: background-color(themes, orange);
+    }
+
+    text {
+        font-weight: bold;
+        fill: background-color(themes, white);
+    }
+}
+
+.theme-purple .button-submit-newsletter svg {
+    path {
+        fill: background-color(themes, purple);
+    }
+
+    text {
+        font-weight: bold;
+        fill: background-color(themes, white);
+    }
+}
+// END Themes Color Button Submit Newsletter
+
+// Themes Color Newsletter Input Label
+.theme-green .c-input-label {
+    svg {
+        path {
+            fill: background-color(themes, green);
+        }
+
+        #shadow-shape path {
+            fill: #d5e599;
+        }
+
+        #stroke-shape path {
+            fill: background-color(themes, white);
+        }
+    }
+}
+
+.theme-orange .c-input-label {
+    svg {
+        path {
+            fill: background-color(themes, orange);
+        }
+
+        #shadow-shape path {
+            fill: #ffdaa9;
+        }
+
+        #stroke-shape path {
+            fill: background-color(themes, white);
+        }
+    }
+}
+
+.theme-purple .c-input-label {
+    svg {
+        path {
+            fill: background-color(themes, purple);
+        }
+
+        #shadow-shape path {
+            fill: #c9a2cb;
+        }
+
+        #stroke-shape path {
+            fill: background-color(themes, white);
+        }
+    }
+}
+// Theme Newsletter Input Label

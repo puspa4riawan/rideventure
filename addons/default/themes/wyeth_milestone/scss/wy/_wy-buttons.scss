@@ -1,0 +1,242 @@
+.btn-capital{
+  text-transform: uppercase;
+  @include letterspace(50);
+  font-weight: 500;
+  font-size: 95%;
+}
+
+.btn-red{ @include button-variant($wy-merah, $wy-merah); }
+.btn-navy{ @include button-variant($navy, $navy); }
+.btn-merah{ @include button-variant($merah, $merah); }
+.btn-emas{ @include button-variant($emas, $emas, $white); }
+.btn-white{ @include button-variant($white, $white, $body-color); }
+.btn-p-emas{ 
+  @include button-variant($white, $white, $emas); 
+  // box-shadow: none;
+}
+
+.btn-border-primary { @include button-variant($white, $primary, $body-color, null, null, null, $white); }
+.btn-outline-white { @include button-outline-variant($white, $primary); }
+
+.btn-wider {
+  @include button-size($input-btn-padding-y, $input-btn-padding-x * 2, $font-size-base, $input-btn-line-height, $btn-border-radius);
+}
+
+.btn-input{ 
+  @include button-variant($white, $input-border-color, $input-color, null, null, $body-color, $white, $input-focus-border-color);
+	@include button-size($input-field-padding-y, $input-field-padding-x, $input-field-font-size, $input-btn-line-height, $border-radius);
+	@include hover {
+		background-color: $white;
+	}
+  &:focus,
+  &.focus {
+    border-color: $input-focus-border-color;
+    outline: none;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-btn-focus-box-shadow;
+    } @else {
+      box-shadow: $input-btn-focus-box-shadow;
+    }
+  }
+  &:not([disabled]):not(.disabled):active,
+  &:not([disabled]):not(.disabled).active,
+  .show > &.dropdown-toggle {
+   // box-shadow: $input-focus-box-shadow;
+    border-color: $input-focus-border-color;
+    outline: none;
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $input-box-shadow, $input-btn-focus-box-shadow;
+    } @else {
+      box-shadow: $input-btn-focus-box-shadow;
+    }
+  }
+}
+
+.btn-text-gray {
+  @include button-variant(transparent, transparent, $text-muted, transparent, transparent, $gray-800, transparent, transparent);
+  @include button-size($input-btn-padding-y-sm, $input-btn-padding-x-sm, $input-field-font-size, $input-btn-line-height, $border-radius);
+  box-shadow: none;
+
+  &:focus,
+  &.focus {
+      box-shadow: 0 0 2px rgba($text-muted, .5);
+  }
+}
+
+.btn-text-white {
+  @include button-variant(transparent, transparent, $white, $white, $white, $primary);
+  box-shadow: none;
+}
+
+.btn-close-round {
+  padding: .25rem;
+  @include border-radius(50%);
+}
+
+// social media button
+.nav-social{
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include button-size(.25rem, .25rem, 20px, 1, $border-radius-sm);
+    border: none;
+    @include size(36px);
+    vertical-align: middle;
+
+    i{
+      @extend .fa;
+    }
+  }
+}
+.btn-social{
+  .btn{
+    @include button-size($input-btn-padding-y, .25rem, 0.89rem, 1, $border-radius-sm);
+    @include pfs(padding-left, 5px, 25px);
+    @include pfs(padding-right, 5px, 25px);
+    i{
+      vertical-align: middle;
+      @extend .fa-2x;
+    }
+  }
+}
+.btn-instagram{
+  @include button-variant($instagrampurple, $white , $white);
+  background: -webkit-radial-gradient(32% 106%, circle cover, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -webkit-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+  background: -moz-radial-gradient(32% 106%, circle cover, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -moz-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+  background: -ms-radial-gradient(32% 106%, circle cover, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -ms-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+  background: -o-radial-gradient(32% 106%, circle cover, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), -o-linear-gradient(-45deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+  background: radial-gradient(circle farthest-corner at 32% 106%, rgb(255, 225, 125) 0%, rgb(255, 205, 105) 10%, rgb(250, 145, 55) 28%, rgb(235, 65, 65) 42%, transparent 82%), linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+}
+
+.btn-facebook{ 
+  @include button-variant($facebook, $facebook, $white);
+  font-size: 90%;
+}
+.btn-twitter{ 
+  @include button-variant($twitter, $twitter, $white);
+}
+.btn-whatsapp{ 
+  @include button-variant($whatsappgreen, $whatsappgreen, $white);
+}
+.btn-gplus{ 
+  @include button-variant($googleplus, $googleplus, $white);
+}
+.btn-youtube{ 
+  @include button-variant($youtube, $youtube, $white);
+}
+
+
+.btn-fitur{
+  @extend .bg-emas-gr;
+  display: flex;
+  align-items: center;
+  color: $white;
+  padding: .75rem 4px;
+  border-radius: $border-radius;
+  @include mask;
+  position: relative;
+  
+  > i{
+    flex: 0 0 auto;
+    background-color: $emas-4;
+    position: relative;
+  }
+  small{
+    display: block;
+    @include pfs(font-size, 11px, 14px);
+    margin-bottom: .25rem;
+  }
+
+  .txt{
+    padding-left: .5rem;
+    position: relative;
+  }
+
+  .a-title{
+    font-size: 17px;
+    @include fw(bold);
+    i{
+      margin-left: .25rem;
+    }
+  }
+
+  &::before{
+    content:'';
+    display: block;
+    position: absolute;
+    @include size(100%);
+    top: 0;
+    left: 0;
+    background-color: rgba(#000,0);
+    transition: $transition-base;
+  }
+  &:hover{
+    color: $white;
+    text-decoration: none;
+    &::before{
+      background-color: rgba(#000,.05);
+    }
+
+  }
+}
+
+.btn-more{
+  padding: $input-btn-padding-y $input-btn-padding-x $input-btn-padding-y 0;
+  display: inline-block;
+  @extend .btn-capital;
+  i{
+    margin-left: .5rem;
+  }
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.dsa-smart{
+  .btn{
+    text-align: left;
+    line-height: 25px;
+    font-size: 1.15rem;
+    @include fw(demi);
+    margin-bottom: 8px;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+    img{
+      @include size(25px); 
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+
+    @include media-breakpoint-down(sm){
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    @include media-breakpoint-up(md){
+      width: 100%;
+    }
+  }
+}
+
+.btn-icon-right i { margin-left: .25rem; }
+
+.btn-icon-left i { margin-right: .25rem; }
+
+.btn-overlay {
+  display: inline-block;
+  
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+  }
+}

@@ -1,0 +1,138 @@
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+.p-sitemap {
+  background-color: #F3F3F3;
+  line-height: 1.4;
+  position: relative; }
+  .p-sitemap::before {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat; }
+    @media (max-width: 767px) {
+      .p-sitemap::before {
+        background-image: url("../img/404-m.png");
+        background-position: 100% 0;
+        left: 0;
+        bottom: 0;
+        width: 225px;
+        height: 319px; } }
+    @media (min-width: 768px) {
+      .p-sitemap::before {
+        background-image: url("../img/404-d.png");
+        background-position: 100% 100%;
+        background-size: contain;
+        right: 10%;
+        bottom: 0;
+        width: 65%;
+        height: 90%; } }
+  .p-sitemap .intro {
+    margin-bottom: 2.5rem;
+    max-width: 550px; }
+    @media (max-width: 767px) {
+      .p-sitemap .intro {
+        text-align: center; } }
+  .p-sitemap p {
+    margin-bottom: .5rem; }
+  .p-sitemap a {
+    color: #4B4B4B;
+    display: block;
+    padding: .25rem 0; }
+    .p-sitemap a:hover {
+      text-decoration: none;
+      color: #a43a2b; }
+    .p-sitemap a i {
+      font-size: 1.5rem;
+      vertical-align: middle;
+      width: 1.5rem;
+      height: 1.5rem;
+      text-align: center;
+      margin-right: .25rem;
+      position: relative;
+      color: #4B4B4B; }
+    .p-sitemap a .wy-bbm::before {
+      width: 1.5rem; }
+    .p-sitemap a .fa-facebook, .p-sitemap a .fa-twitter, .p-sitemap a .fa-instagram {
+      font-size: .9rem;
+      line-height: 1.55rem; }
+      .p-sitemap a .fa-facebook::after, .p-sitemap a .fa-twitter::after, .p-sitemap a .fa-instagram::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: 0.1rem solid #4B4B4B; }
+  .p-sitemap .row-0 {
+    padding-bottom: 5rem; }
+  .p-sitemap .main-link a, .p-sitemap .page-title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500; }
+  .p-sitemap .main-link {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%; }
+    @media (min-width: 768px) {
+      .p-sitemap .main-link {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%; } }
+  .p-sitemap .sub-link {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 45.83333%;
+    flex: 0 0 45.83333%;
+    max-width: 45.83333%;
+    margin-left: 4.16667%;
+    font-size: .9rem; }
+    @media (min-width: 768px) {
+      .p-sitemap .sub-link {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-left: 0px;
+        margin-right: 0px;
+        min-width: 100%;
+        width: auto;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 54.16667%;
+        flex: 0 0 54.16667%;
+        max-width: 54.16667%; } }
+  .p-sitemap .support, .p-sitemap .git {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px; }
+  .p-sitemap .support {
+    margin-bottom: 2rem; }
+    @media (min-width: 768px) {
+      .p-sitemap .support {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 41.66667%;
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%; } }
+  @media (min-width: 768px) {
+    .p-sitemap .git {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%; } }

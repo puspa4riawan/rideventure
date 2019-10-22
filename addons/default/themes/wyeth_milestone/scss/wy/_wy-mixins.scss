@@ -1,0 +1,212 @@
+@import "svg-uri";
+@import "polyFluidSizing"; // pfs
+
+// get value from map breakpoint
+@function breakpoint($key) {
+  @if map-has-key($grid-breakpoints, $key) {
+    @return map-get($grid-breakpoints, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $grid-breakpoints.";
+  @return null;
+}
+
+// get value from font weight
+
+@function fw($key) {
+  @if map-has-key($koh-weights, $key) {
+    @return map-get($koh-weights, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $grid-breakpoints.";
+  @return null;
+}
+
+
+@mixin buatContainer($gutter:0){
+  width: 100%;
+	position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: $gutter*1px;
+  padding-left:  $gutter*1px;
+}
+
+@mixin buatRow($gutter:0){
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: $gutter*-1px;
+  margin-right: $gutter*-1px;
+  min-width: 100%;
+  width: auto;
+}
+
+@mixin buatColReady($gutter:0){
+  position: relative;
+  width: 100%;
+  min-height: 1px; // Prevent collapsing
+  padding-right: $gutter*1px;
+  padding-left:  $gutter*1px;
+}
+
+@mixin colEqual() {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+@mixin colAuto() {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+@mixin mask{
+  overflow: hidden;
+  // -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+}
+@mixin maskpng() {
+  overflow: hidden;
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+}
+
+
+//
+// Image 
+//
+
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+@mixin object-fit($fit: fill, $position: null){
+  -o-object-fit: $fit;
+     object-fit: $fit;
+  @if $position {
+    -o-object-position: $position;
+       object-position: $position;
+    font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+  } @else {
+    font-family: 'object-fit: #{$fit}';
+  }
+}
+
+@mixin img-full($fit: fill, $position: null) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  @include object-fit($fit, $position);
+}
+
+@mixin embed-responsive($width: 1, $height: 1) {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  &::before {
+    display: block;
+    content: "";
+    padding-top: percentage($height / $width);
+  }
+}
+
+@mixin embed-responsive-item() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@mixin bgEmasGr($opacity) {
+  background: $emas-gr2;
+  background: url('../img/emas-gr.png') repeat-y top center;
+  background-size: 100% auto;
+  background: -moz-linear-gradient(left, rgba($emas-gr1, $opacity) 0%, rgba($emas-gr2,$opacity) 6%, rgba($emas-gr3,$opacity) 22%, rgba($emas-gr2,$opacity) 39%, rgba($emas-gr3,$opacity) 71%, rgba($emas-gr2,$opacity) 86%, rgba($emas-gr1,$opacity) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba($emas-gr1, $opacity)), color-stop(6%, rgba($emas-gr2,$opacity)), color-stop(22%, rgba($emas-gr3,$opacity)), color-stop(39%, rgba($emas-gr2,$opacity)), color-stop(71%, rgba($emas-gr3,$opacity)), color-stop(86%, rgba($emas-gr2,$opacity)), color-stop(100%, rgba($emas-gr1, $opacity)));
+  background: -webkit-linear-gradient(left, rgba($emas-gr1, $opacity) 0%, rgba($emas-gr2,$opacity) 6%, rgba($emas-gr3,$opacity) 22%, rgba($emas-gr2,$opacity) 39%, rgba($emas-gr3,$opacity) 71%, rgba($emas-gr2,$opacity) 86%, rgba($emas-gr1, $opacity) 100%);
+  background: -o-linear-gradient(left, rgba($emas-gr1, $opacity) 0%, rgba($emas-gr2,$opacity) 6%, rgba($emas-gr3,$opacity) 22%, rgba($emas-gr2,$opacity) 39%, rgba($emas-gr3,$opacity) 71%, rgba($emas-gr2,$opacity) 86%, rgba($emas-gr1, $opacity) 100%);
+  background: -ms-linear-gradient(left, rgba($emas-gr1, $opacity) 0%, rgba($emas-gr2,$opacity) 6%, rgba($emas-gr3,$opacity) 22%, rgba($emas-gr2,$opacity) 39%, rgba($emas-gr3,$opacity) 71%, rgba($emas-gr2,$opacity) 86%, rgba($emas-gr1, $opacity) 100%);
+  background: linear-gradient(to right, rgba($emas-gr1, $opacity) 0%, rgba($emas-gr2,$opacity) 6%, rgba($emas-gr3,$opacity) 22%, rgba($emas-gr2,$opacity) 39%, rgba($emas-gr3,$opacity) 71%, rgba($emas-gr2,$opacity)86%, rgba($emas-gr1, $opacity) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$emas-gr1', endColorstr='$emas-gr1', GradientType=1 );  
+}
+
+// 
+// Typography
+// 
+@mixin fw($fw) {
+  font-weight: fw($fw);
+}
+
+@mixin letterspace($ls){
+  letter-spacing: $ls / 1000 * 1em;
+}
+
+@mixin textclamp($n) {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@mixin text-clamp($font-size, $line-height, $lines-to-show){
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 100%;
+  max-height: ($font-size*$line-height*$lines-to-show); /* Fallback for non-webkit */
+  // font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // padding-bottom: .2rem;
+}
+
+@mixin icon($img, $fit){
+  background-repeat: no-repeat;
+  background-image: url("#{$img}" );
+  background-size: $fit;
+  background-position: center center;
+}
+
+// link tanpa underline
+@mixin nounderline(){
+  text-decoration: none !important;
+  @include hover-focus{
+    text-decoration: none !important;
+  }
+}
+
+
+// pfs font-size based on psd
+// Example
+// @include pfs(font-size, 13px, 18px);
+
+@mixin pfs($property, $font-size-m, $font-size-d) {
+  $map: (320px: $font-size-m, 1440px: $font-size-d);
+  @include fluidSize-minmax($property, $map);
+}
+
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+/// @usage 
+///     width: percentage( 60 / stripunit(1440px);
+
+
+@function stripunit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}

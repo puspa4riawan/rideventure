@@ -1,0 +1,1761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PointMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PointMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PointMemberResult" type="tns:clsPoint" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsPoint">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sPoint" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemResult" type="tns:ArrayOfClsItemReward" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsItemReward">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsItemReward" nillable="true" type="tns:clsItemReward" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsItemReward">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ItemCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Point" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Qty" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLastShipment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastShipmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastShipmentResult" type="tns:ArrayOfClsLastShipment" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsLastShipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsLastShipment" nillable="true" type="tns:clsLastShipment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsLastShipment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ROW_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QUANTITY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUST_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZIP_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HOME_PHONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CELL_PHONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_SENT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_RECEIVED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECEIVER_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECEIVER_STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_RETUUR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RET_REASON" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KU1_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KU2_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KU2_ADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KU_RECEIVER_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KU_RECEIVER_STAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_RET_WH" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="COURIER_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOTE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DATE_CREATED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LAST_UPDATED" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEM_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEM_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POINT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLastRedeem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastRedeemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastRedeemResult" type="tns:ArrayOfClsLastRedeem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsLastRedeem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsLastRedeem" nillable="true" type="tns:clsLastRedeem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsLastRedeem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MEMBER_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUST_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZIP_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HOME_PHONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CELL_PHONE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TRANS_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STATUS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEM_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ITEM_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="POINT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QUANTITY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCity">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCityResult" type="tns:ArrayOfClsCity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsCity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsCity" nillable="true" type="tns:clsCity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsCity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RowId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemWyeth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cityid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zipcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listqty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listtotalpoint" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemWyethResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemWyethResult" type="tns:clsRedeem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsRedeem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMilkUsed">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMilkUsedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMilkUsedResult" type="tns:ArrayOfClsMilkUsed" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsMilkUsed">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsMilkUsed" nillable="true" type="tns:clsMilkUsed" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsMilkUsed">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MilkUsed" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadKK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadKKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadKKResult" type="tns:clsUploadKK" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUploadKK">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadStruk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadStrukResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadStrukResult" type="tns:clsUploadStruk" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUploadStruk">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginPGPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sPhoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginPGPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginPGPCResult" type="tns:clsLoginPGPC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsLoginPGPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone_Mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone_Main" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone_Alt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RoleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SentUniqueCodePGPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sMemberId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sUniqueCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SentUniqueCodePGPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SentUniqueCodePGPCResult" type="tns:clsSentUniqueCodePGPC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsSentUniqueCodePGPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UniqueCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SentMemberIdValidasiPGPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sMemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SentMemberIdValidasiPGPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SentMemberIdValidasiPGPCResult" type="tns:clsSentMemberIdValidasiPGPC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsSentMemberIdValidasiPGPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateMemberPGPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MEMBER_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACC_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE_MAIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE_ALT1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ADDRESS1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITY_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GENDER1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GENDER2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GENDER3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MOMPHOTO" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMemberPGPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMemberPGPCResult" type="tns:clsUpdateMemberPGPC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUpdateMemberPGPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MEMBER_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACC_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHONE_MOBILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHONE_MAIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHONE_ALT1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CITY_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZIP_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QUESTIONNAIRE1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QUESTIONNAIRE2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENDER1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENDER2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENDER3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOMPHOTO" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateMemberNoImagePGPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MEMBER_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACC_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE_MAIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PHONE_ALT1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ADDRESS1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CITY_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GENDER1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GENDER2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GENDER3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMemberNoImagePGPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateMemberNoImagePGPCResult" type="tns:clsUpdateMemberNoImagePGPC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsUpdateMemberNoImagePGPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MEMBER_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACC_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHONE_MOBILE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHONE_MAIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHONE_ALT1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ADDRESS3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CITY_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZIP_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QUESTIONNAIRE1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QUESTIONNAIRE2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENDER1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENDER2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FIRST_NAME3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DT_BIRTHDATE3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GENDER3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GrabMemberDetailPGPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sMemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GrabMemberDetailPGPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GrabMemberDetailPGPCResult" type="tns:clsGrabMemberDetailPGPC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsGrabMemberDetailPGPC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustDOB" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CellPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildName1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildDOB1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildName2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildDOB2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildName3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChildDOB3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLastSubmit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastSubmitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastSubmitResult" type="tns:ArrayOfClsLastSubmit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsLastSubmit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsLastSubmit" nillable="true" type="tns:clsLastSubmit" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsLastSubmit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MEMBER_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROD_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROD_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QTY" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TOTAL_POINTS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TRANS_DATE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STORE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="STORE_LOCATION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RECEIVED_DATE_BY_SYSTEM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SOURCE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IsSuccess" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="clsPoint" nillable="true" type="tns:clsPoint" />
+      <s:element name="ArrayOfClsItemReward" nillable="true" type="tns:ArrayOfClsItemReward" />
+      <s:element name="ArrayOfClsLastShipment" nillable="true" type="tns:ArrayOfClsLastShipment" />
+      <s:element name="ArrayOfClsLastRedeem" nillable="true" type="tns:ArrayOfClsLastRedeem" />
+      <s:element name="ArrayOfClsCity" nillable="true" type="tns:ArrayOfClsCity" />
+      <s:element name="clsRedeem" nillable="true" type="tns:clsRedeem" />
+      <s:element name="ArrayOfClsMilkUsed" nillable="true" type="tns:ArrayOfClsMilkUsed" />
+      <s:element name="clsUploadKK" nillable="true" type="tns:clsUploadKK" />
+      <s:element name="clsUploadStruk" nillable="true" type="tns:clsUploadStruk" />
+      <s:element name="clsLoginPGPC" nillable="true" type="tns:clsLoginPGPC" />
+      <s:element name="clsSentUniqueCodePGPC" nillable="true" type="tns:clsSentUniqueCodePGPC" />
+      <s:element name="clsSentMemberIdValidasiPGPC" nillable="true" type="tns:clsSentMemberIdValidasiPGPC" />
+      <s:element name="clsUpdateMemberPGPC" nillable="true" type="tns:clsUpdateMemberPGPC" />
+      <s:element name="clsUpdateMemberNoImagePGPC" nillable="true" type="tns:clsUpdateMemberNoImagePGPC" />
+      <s:element name="clsGrabMemberDetailPGPC" nillable="true" type="tns:clsGrabMemberDetailPGPC" />
+      <s:element name="ArrayOfClsLastSubmit" nillable="true" type="tns:ArrayOfClsLastSubmit" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PointMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:PointMember" />
+  </wsdl:message>
+  <wsdl:message name="PointMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:PointMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItem" />
+  </wsdl:message>
+  <wsdl:message name="GetItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastShipmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastShipment" />
+  </wsdl:message>
+  <wsdl:message name="GetLastShipmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastShipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRedeemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastRedeem" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRedeemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastRedeemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCity" />
+  </wsdl:message>
+  <wsdl:message name="GetCitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWyethSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemWyeth" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWyethSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemWyethResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMilkUsedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMilkUsed" />
+  </wsdl:message>
+  <wsdl:message name="GetMilkUsedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMilkUsedResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadKKSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadKK" />
+  </wsdl:message>
+  <wsdl:message name="UploadKKSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadKKResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrukSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadStruk" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrukSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadStrukResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginPGPCSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginPGPC" />
+  </wsdl:message>
+  <wsdl:message name="LoginPGPCSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginPGPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="SentUniqueCodePGPCSoapIn">
+    <wsdl:part name="parameters" element="tns:SentUniqueCodePGPC" />
+  </wsdl:message>
+  <wsdl:message name="SentUniqueCodePGPCSoapOut">
+    <wsdl:part name="parameters" element="tns:SentUniqueCodePGPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="SentMemberIdValidasiPGPCSoapIn">
+    <wsdl:part name="parameters" element="tns:SentMemberIdValidasiPGPC" />
+  </wsdl:message>
+  <wsdl:message name="SentMemberIdValidasiPGPCSoapOut">
+    <wsdl:part name="parameters" element="tns:SentMemberIdValidasiPGPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberPGPCSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMemberPGPC" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberPGPCSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMemberPGPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberNoImagePGPCSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMemberNoImagePGPC" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberNoImagePGPCSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMemberNoImagePGPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GrabMemberDetailPGPCSoapIn">
+    <wsdl:part name="parameters" element="tns:GrabMemberDetailPGPC" />
+  </wsdl:message>
+  <wsdl:message name="GrabMemberDetailPGPCSoapOut">
+    <wsdl:part name="parameters" element="tns:GrabMemberDetailPGPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSubmitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastSubmit" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSubmitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastSubmitResponse" />
+  </wsdl:message>
+  <wsdl:message name="PointMemberHttpGetIn">
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PointMemberHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsPoint" />
+  </wsdl:message>
+  <wsdl:message name="GetItemHttpGetIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetItemHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsItemReward" />
+  </wsdl:message>
+  <wsdl:message name="GetLastShipmentHttpGetIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastShipmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsLastShipment" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRedeemHttpGetIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRedeemHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsLastRedeem" />
+  </wsdl:message>
+  <wsdl:message name="GetCityHttpGetIn" />
+  <wsdl:message name="GetCityHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsCity" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWyethHttpGetIn">
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="address2" type="s:string" />
+    <wsdl:part name="address3" type="s:string" />
+    <wsdl:part name="cityid" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+    <wsdl:part name="listcode" type="s:string" />
+    <wsdl:part name="listqty" type="s:string" />
+    <wsdl:part name="listtotalpoint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWyethHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsRedeem" />
+  </wsdl:message>
+  <wsdl:message name="GetMilkUsedHttpGetIn" />
+  <wsdl:message name="GetMilkUsedHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsMilkUsed" />
+  </wsdl:message>
+  <wsdl:message name="UploadKKHttpGetIn">
+    <wsdl:part name="UserId" type="s:string" />
+    <wsdl:part name="Image" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadKKHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsUploadKK" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrukHttpGetIn">
+    <wsdl:part name="UserId" type="s:string" />
+    <wsdl:part name="Image" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrukHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsUploadStruk" />
+  </wsdl:message>
+  <wsdl:message name="LoginPGPCHttpGetIn">
+    <wsdl:part name="sPhoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginPGPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsLoginPGPC" />
+  </wsdl:message>
+  <wsdl:message name="SentUniqueCodePGPCHttpGetIn">
+    <wsdl:part name="sMemberId" type="s:string" />
+    <wsdl:part name="sUniqueCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SentUniqueCodePGPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsSentUniqueCodePGPC" />
+  </wsdl:message>
+  <wsdl:message name="SentMemberIdValidasiPGPCHttpGetIn">
+    <wsdl:part name="sMemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SentMemberIdValidasiPGPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsSentMemberIdValidasiPGPC" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberPGPCHttpGetIn">
+    <wsdl:part name="MEMBER_ID" type="s:string" />
+    <wsdl:part name="ACC_NAME" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE" type="s:string" />
+    <wsdl:part name="PHONE_MOBILE" type="s:string" />
+    <wsdl:part name="PHONE_MAIN" type="s:string" />
+    <wsdl:part name="PHONE_ALT1" type="s:string" />
+    <wsdl:part name="ADDRESS1" type="s:string" />
+    <wsdl:part name="CITY_ID" type="s:string" />
+    <wsdl:part name="EMAIL" type="s:string" />
+    <wsdl:part name="FIRST_NAME1" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE1" type="s:string" />
+    <wsdl:part name="GENDER1" type="s:string" />
+    <wsdl:part name="FIRST_NAME2" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE2" type="s:string" />
+    <wsdl:part name="GENDER2" type="s:string" />
+    <wsdl:part name="FIRST_NAME3" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE3" type="s:string" />
+    <wsdl:part name="GENDER3" type="s:string" />
+    <wsdl:part name="MOMPHOTO" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberPGPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsUpdateMemberPGPC" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberNoImagePGPCHttpGetIn">
+    <wsdl:part name="MEMBER_ID" type="s:string" />
+    <wsdl:part name="ACC_NAME" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE" type="s:string" />
+    <wsdl:part name="PHONE_MOBILE" type="s:string" />
+    <wsdl:part name="PHONE_MAIN" type="s:string" />
+    <wsdl:part name="PHONE_ALT1" type="s:string" />
+    <wsdl:part name="ADDRESS1" type="s:string" />
+    <wsdl:part name="CITY_ID" type="s:string" />
+    <wsdl:part name="EMAIL" type="s:string" />
+    <wsdl:part name="FIRST_NAME1" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE1" type="s:string" />
+    <wsdl:part name="GENDER1" type="s:string" />
+    <wsdl:part name="FIRST_NAME2" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE2" type="s:string" />
+    <wsdl:part name="GENDER2" type="s:string" />
+    <wsdl:part name="FIRST_NAME3" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE3" type="s:string" />
+    <wsdl:part name="GENDER3" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberNoImagePGPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsUpdateMemberNoImagePGPC" />
+  </wsdl:message>
+  <wsdl:message name="GrabMemberDetailPGPCHttpGetIn">
+    <wsdl:part name="sMemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GrabMemberDetailPGPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsGrabMemberDetailPGPC" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSubmitHttpGetIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSubmitHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsLastSubmit" />
+  </wsdl:message>
+  <wsdl:message name="PointMemberHttpPostIn">
+    <wsdl:part name="userid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PointMemberHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsPoint" />
+  </wsdl:message>
+  <wsdl:message name="GetItemHttpPostIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetItemHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsItemReward" />
+  </wsdl:message>
+  <wsdl:message name="GetLastShipmentHttpPostIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastShipmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsLastShipment" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRedeemHttpPostIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastRedeemHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsLastRedeem" />
+  </wsdl:message>
+  <wsdl:message name="GetCityHttpPostIn" />
+  <wsdl:message name="GetCityHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsCity" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWyethHttpPostIn">
+    <wsdl:part name="userid" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+    <wsdl:part name="address" type="s:string" />
+    <wsdl:part name="address2" type="s:string" />
+    <wsdl:part name="address3" type="s:string" />
+    <wsdl:part name="cityid" type="s:string" />
+    <wsdl:part name="zipcode" type="s:string" />
+    <wsdl:part name="listcode" type="s:string" />
+    <wsdl:part name="listqty" type="s:string" />
+    <wsdl:part name="listtotalpoint" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWyethHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsRedeem" />
+  </wsdl:message>
+  <wsdl:message name="GetMilkUsedHttpPostIn" />
+  <wsdl:message name="GetMilkUsedHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsMilkUsed" />
+  </wsdl:message>
+  <wsdl:message name="UploadKKHttpPostIn">
+    <wsdl:part name="UserId" type="s:string" />
+    <wsdl:part name="Image" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadKKHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsUploadKK" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrukHttpPostIn">
+    <wsdl:part name="UserId" type="s:string" />
+    <wsdl:part name="Image" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadStrukHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsUploadStruk" />
+  </wsdl:message>
+  <wsdl:message name="LoginPGPCHttpPostIn">
+    <wsdl:part name="sPhoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginPGPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsLoginPGPC" />
+  </wsdl:message>
+  <wsdl:message name="SentUniqueCodePGPCHttpPostIn">
+    <wsdl:part name="sMemberId" type="s:string" />
+    <wsdl:part name="sUniqueCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SentUniqueCodePGPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsSentUniqueCodePGPC" />
+  </wsdl:message>
+  <wsdl:message name="SentMemberIdValidasiPGPCHttpPostIn">
+    <wsdl:part name="sMemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SentMemberIdValidasiPGPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsSentMemberIdValidasiPGPC" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberPGPCHttpPostIn">
+    <wsdl:part name="MEMBER_ID" type="s:string" />
+    <wsdl:part name="ACC_NAME" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE" type="s:string" />
+    <wsdl:part name="PHONE_MOBILE" type="s:string" />
+    <wsdl:part name="PHONE_MAIN" type="s:string" />
+    <wsdl:part name="PHONE_ALT1" type="s:string" />
+    <wsdl:part name="ADDRESS1" type="s:string" />
+    <wsdl:part name="CITY_ID" type="s:string" />
+    <wsdl:part name="EMAIL" type="s:string" />
+    <wsdl:part name="FIRST_NAME1" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE1" type="s:string" />
+    <wsdl:part name="GENDER1" type="s:string" />
+    <wsdl:part name="FIRST_NAME2" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE2" type="s:string" />
+    <wsdl:part name="GENDER2" type="s:string" />
+    <wsdl:part name="FIRST_NAME3" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE3" type="s:string" />
+    <wsdl:part name="GENDER3" type="s:string" />
+    <wsdl:part name="MOMPHOTO" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberPGPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsUpdateMemberPGPC" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberNoImagePGPCHttpPostIn">
+    <wsdl:part name="MEMBER_ID" type="s:string" />
+    <wsdl:part name="ACC_NAME" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE" type="s:string" />
+    <wsdl:part name="PHONE_MOBILE" type="s:string" />
+    <wsdl:part name="PHONE_MAIN" type="s:string" />
+    <wsdl:part name="PHONE_ALT1" type="s:string" />
+    <wsdl:part name="ADDRESS1" type="s:string" />
+    <wsdl:part name="CITY_ID" type="s:string" />
+    <wsdl:part name="EMAIL" type="s:string" />
+    <wsdl:part name="FIRST_NAME1" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE1" type="s:string" />
+    <wsdl:part name="GENDER1" type="s:string" />
+    <wsdl:part name="FIRST_NAME2" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE2" type="s:string" />
+    <wsdl:part name="GENDER2" type="s:string" />
+    <wsdl:part name="FIRST_NAME3" type="s:string" />
+    <wsdl:part name="DT_BIRTHDATE3" type="s:string" />
+    <wsdl:part name="GENDER3" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMemberNoImagePGPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsUpdateMemberNoImagePGPC" />
+  </wsdl:message>
+  <wsdl:message name="GrabMemberDetailPGPCHttpPostIn">
+    <wsdl:part name="sMemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GrabMemberDetailPGPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsGrabMemberDetailPGPC" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSubmitHttpPostIn">
+    <wsdl:part name="MemberId" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLastSubmitHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfClsLastSubmit" />
+  </wsdl:message>
+  <wsdl:portType name="WyethWSSoap">
+    <wsdl:operation name="PointMember">
+      <wsdl:input message="tns:PointMemberSoapIn" />
+      <wsdl:output message="tns:PointMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input message="tns:GetItemSoapIn" />
+      <wsdl:output message="tns:GetItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastShipment">
+      <wsdl:input message="tns:GetLastShipmentSoapIn" />
+      <wsdl:output message="tns:GetLastShipmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRedeem">
+      <wsdl:input message="tns:GetLastRedeemSoapIn" />
+      <wsdl:output message="tns:GetLastRedeemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:input message="tns:GetCitySoapIn" />
+      <wsdl:output message="tns:GetCitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWyeth">
+      <wsdl:input message="tns:RedeemWyethSoapIn" />
+      <wsdl:output message="tns:RedeemWyethSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMilkUsed">
+      <wsdl:input message="tns:GetMilkUsedSoapIn" />
+      <wsdl:output message="tns:GetMilkUsedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadKK">
+      <wsdl:input message="tns:UploadKKSoapIn" />
+      <wsdl:output message="tns:UploadKKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStruk">
+      <wsdl:input message="tns:UploadStrukSoapIn" />
+      <wsdl:output message="tns:UploadStrukSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginPGPC">
+      <wsdl:input message="tns:LoginPGPCSoapIn" />
+      <wsdl:output message="tns:LoginPGPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SentUniqueCodePGPC">
+      <wsdl:input message="tns:SentUniqueCodePGPCSoapIn" />
+      <wsdl:output message="tns:SentUniqueCodePGPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SentMemberIdValidasiPGPC">
+      <wsdl:input message="tns:SentMemberIdValidasiPGPCSoapIn" />
+      <wsdl:output message="tns:SentMemberIdValidasiPGPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberPGPC">
+      <wsdl:input message="tns:UpdateMemberPGPCSoapIn" />
+      <wsdl:output message="tns:UpdateMemberPGPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberNoImagePGPC">
+      <wsdl:input message="tns:UpdateMemberNoImagePGPCSoapIn" />
+      <wsdl:output message="tns:UpdateMemberNoImagePGPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GrabMemberDetailPGPC">
+      <wsdl:input message="tns:GrabMemberDetailPGPCSoapIn" />
+      <wsdl:output message="tns:GrabMemberDetailPGPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSubmit">
+      <wsdl:input message="tns:GetLastSubmitSoapIn" />
+      <wsdl:output message="tns:GetLastSubmitSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WyethWSHttpGet">
+    <wsdl:operation name="PointMember">
+      <wsdl:input message="tns:PointMemberHttpGetIn" />
+      <wsdl:output message="tns:PointMemberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input message="tns:GetItemHttpGetIn" />
+      <wsdl:output message="tns:GetItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastShipment">
+      <wsdl:input message="tns:GetLastShipmentHttpGetIn" />
+      <wsdl:output message="tns:GetLastShipmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRedeem">
+      <wsdl:input message="tns:GetLastRedeemHttpGetIn" />
+      <wsdl:output message="tns:GetLastRedeemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:input message="tns:GetCityHttpGetIn" />
+      <wsdl:output message="tns:GetCityHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWyeth">
+      <wsdl:input message="tns:RedeemWyethHttpGetIn" />
+      <wsdl:output message="tns:RedeemWyethHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMilkUsed">
+      <wsdl:input message="tns:GetMilkUsedHttpGetIn" />
+      <wsdl:output message="tns:GetMilkUsedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadKK">
+      <wsdl:input message="tns:UploadKKHttpGetIn" />
+      <wsdl:output message="tns:UploadKKHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStruk">
+      <wsdl:input message="tns:UploadStrukHttpGetIn" />
+      <wsdl:output message="tns:UploadStrukHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginPGPC">
+      <wsdl:input message="tns:LoginPGPCHttpGetIn" />
+      <wsdl:output message="tns:LoginPGPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SentUniqueCodePGPC">
+      <wsdl:input message="tns:SentUniqueCodePGPCHttpGetIn" />
+      <wsdl:output message="tns:SentUniqueCodePGPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SentMemberIdValidasiPGPC">
+      <wsdl:input message="tns:SentMemberIdValidasiPGPCHttpGetIn" />
+      <wsdl:output message="tns:SentMemberIdValidasiPGPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberPGPC">
+      <wsdl:input message="tns:UpdateMemberPGPCHttpGetIn" />
+      <wsdl:output message="tns:UpdateMemberPGPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberNoImagePGPC">
+      <wsdl:input message="tns:UpdateMemberNoImagePGPCHttpGetIn" />
+      <wsdl:output message="tns:UpdateMemberNoImagePGPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GrabMemberDetailPGPC">
+      <wsdl:input message="tns:GrabMemberDetailPGPCHttpGetIn" />
+      <wsdl:output message="tns:GrabMemberDetailPGPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSubmit">
+      <wsdl:input message="tns:GetLastSubmitHttpGetIn" />
+      <wsdl:output message="tns:GetLastSubmitHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WyethWSHttpPost">
+    <wsdl:operation name="PointMember">
+      <wsdl:input message="tns:PointMemberHttpPostIn" />
+      <wsdl:output message="tns:PointMemberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <wsdl:input message="tns:GetItemHttpPostIn" />
+      <wsdl:output message="tns:GetItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastShipment">
+      <wsdl:input message="tns:GetLastShipmentHttpPostIn" />
+      <wsdl:output message="tns:GetLastShipmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRedeem">
+      <wsdl:input message="tns:GetLastRedeemHttpPostIn" />
+      <wsdl:output message="tns:GetLastRedeemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:input message="tns:GetCityHttpPostIn" />
+      <wsdl:output message="tns:GetCityHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWyeth">
+      <wsdl:input message="tns:RedeemWyethHttpPostIn" />
+      <wsdl:output message="tns:RedeemWyethHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMilkUsed">
+      <wsdl:input message="tns:GetMilkUsedHttpPostIn" />
+      <wsdl:output message="tns:GetMilkUsedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadKK">
+      <wsdl:input message="tns:UploadKKHttpPostIn" />
+      <wsdl:output message="tns:UploadKKHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadStruk">
+      <wsdl:input message="tns:UploadStrukHttpPostIn" />
+      <wsdl:output message="tns:UploadStrukHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginPGPC">
+      <wsdl:input message="tns:LoginPGPCHttpPostIn" />
+      <wsdl:output message="tns:LoginPGPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SentUniqueCodePGPC">
+      <wsdl:input message="tns:SentUniqueCodePGPCHttpPostIn" />
+      <wsdl:output message="tns:SentUniqueCodePGPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SentMemberIdValidasiPGPC">
+      <wsdl:input message="tns:SentMemberIdValidasiPGPCHttpPostIn" />
+      <wsdl:output message="tns:SentMemberIdValidasiPGPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberPGPC">
+      <wsdl:input message="tns:UpdateMemberPGPCHttpPostIn" />
+      <wsdl:output message="tns:UpdateMemberPGPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberNoImagePGPC">
+      <wsdl:input message="tns:UpdateMemberNoImagePGPCHttpPostIn" />
+      <wsdl:output message="tns:UpdateMemberNoImagePGPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GrabMemberDetailPGPC">
+      <wsdl:input message="tns:GrabMemberDetailPGPCHttpPostIn" />
+      <wsdl:output message="tns:GrabMemberDetailPGPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSubmit">
+      <wsdl:input message="tns:GetLastSubmitHttpPostIn" />
+      <wsdl:output message="tns:GetLastSubmitHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WyethWSSoap" type="tns:WyethWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PointMember">
+      <soap:operation soapAction="http://tempuri.org/PointMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap:operation soapAction="http://tempuri.org/GetItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastShipment">
+      <soap:operation soapAction="http://tempuri.org/GetLastShipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRedeem">
+      <soap:operation soapAction="http://tempuri.org/GetLastRedeem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <soap:operation soapAction="http://tempuri.org/GetCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWyeth">
+      <soap:operation soapAction="http://tempuri.org/RedeemWyeth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMilkUsed">
+      <soap:operation soapAction="http://tempuri.org/GetMilkUsed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadKK">
+      <soap:operation soapAction="http://tempuri.org/UploadKK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadStruk">
+      <soap:operation soapAction="http://tempuri.org/UploadStruk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginPGPC">
+      <soap:operation soapAction="http://tempuri.org/LoginPGPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentUniqueCodePGPC">
+      <soap:operation soapAction="http://tempuri.org/SentUniqueCodePGPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentMemberIdValidasiPGPC">
+      <soap:operation soapAction="http://tempuri.org/SentMemberIdValidasiPGPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberPGPC">
+      <soap:operation soapAction="http://tempuri.org/UpdateMemberPGPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberNoImagePGPC">
+      <soap:operation soapAction="http://tempuri.org/UpdateMemberNoImagePGPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrabMemberDetailPGPC">
+      <soap:operation soapAction="http://tempuri.org/GrabMemberDetailPGPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSubmit">
+      <soap:operation soapAction="http://tempuri.org/GetLastSubmit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WyethWSSoap12" type="tns:WyethWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PointMember">
+      <soap12:operation soapAction="http://tempuri.org/PointMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <soap12:operation soapAction="http://tempuri.org/GetItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastShipment">
+      <soap12:operation soapAction="http://tempuri.org/GetLastShipment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRedeem">
+      <soap12:operation soapAction="http://tempuri.org/GetLastRedeem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <soap12:operation soapAction="http://tempuri.org/GetCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWyeth">
+      <soap12:operation soapAction="http://tempuri.org/RedeemWyeth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMilkUsed">
+      <soap12:operation soapAction="http://tempuri.org/GetMilkUsed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadKK">
+      <soap12:operation soapAction="http://tempuri.org/UploadKK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadStruk">
+      <soap12:operation soapAction="http://tempuri.org/UploadStruk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginPGPC">
+      <soap12:operation soapAction="http://tempuri.org/LoginPGPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentUniqueCodePGPC">
+      <soap12:operation soapAction="http://tempuri.org/SentUniqueCodePGPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentMemberIdValidasiPGPC">
+      <soap12:operation soapAction="http://tempuri.org/SentMemberIdValidasiPGPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberPGPC">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMemberPGPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberNoImagePGPC">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMemberNoImagePGPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrabMemberDetailPGPC">
+      <soap12:operation soapAction="http://tempuri.org/GrabMemberDetailPGPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSubmit">
+      <soap12:operation soapAction="http://tempuri.org/GetLastSubmit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WyethWSHttpGet" type="tns:WyethWSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="PointMember">
+      <http:operation location="/PointMember" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <http:operation location="/GetItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastShipment">
+      <http:operation location="/GetLastShipment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRedeem">
+      <http:operation location="/GetLastRedeem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <http:operation location="/GetCity" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWyeth">
+      <http:operation location="/RedeemWyeth" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMilkUsed">
+      <http:operation location="/GetMilkUsed" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadKK">
+      <http:operation location="/UploadKK" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadStruk">
+      <http:operation location="/UploadStruk" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginPGPC">
+      <http:operation location="/LoginPGPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentUniqueCodePGPC">
+      <http:operation location="/SentUniqueCodePGPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentMemberIdValidasiPGPC">
+      <http:operation location="/SentMemberIdValidasiPGPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberPGPC">
+      <http:operation location="/UpdateMemberPGPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberNoImagePGPC">
+      <http:operation location="/UpdateMemberNoImagePGPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrabMemberDetailPGPC">
+      <http:operation location="/GrabMemberDetailPGPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSubmit">
+      <http:operation location="/GetLastSubmit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WyethWSHttpPost" type="tns:WyethWSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="PointMember">
+      <http:operation location="/PointMember" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItem">
+      <http:operation location="/GetItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastShipment">
+      <http:operation location="/GetLastShipment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastRedeem">
+      <http:operation location="/GetLastRedeem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <http:operation location="/GetCity" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWyeth">
+      <http:operation location="/RedeemWyeth" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMilkUsed">
+      <http:operation location="/GetMilkUsed" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadKK">
+      <http:operation location="/UploadKK" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadStruk">
+      <http:operation location="/UploadStruk" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginPGPC">
+      <http:operation location="/LoginPGPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentUniqueCodePGPC">
+      <http:operation location="/SentUniqueCodePGPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SentMemberIdValidasiPGPC">
+      <http:operation location="/SentMemberIdValidasiPGPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberPGPC">
+      <http:operation location="/UpdateMemberPGPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMemberNoImagePGPC">
+      <http:operation location="/UpdateMemberNoImagePGPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrabMemberDetailPGPC">
+      <http:operation location="/GrabMemberDetailPGPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastSubmit">
+      <http:operation location="/GetLastSubmit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WyethWS">
+    <wsdl:port name="WyethWSSoap" binding="tns:WyethWSSoap">
+      <soap:address location="http://202.92.198.97/WyethWS/WyethWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WyethWSSoap12" binding="tns:WyethWSSoap12">
+      <soap12:address location="http://202.92.198.97/WyethWS/WyethWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WyethWSHttpGet" binding="tns:WyethWSHttpGet">
+      <http:address location="http://202.92.198.97/WyethWS/WyethWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WyethWSHttpPost" binding="tns:WyethWSHttpPost">
+      <http:address location="http://202.92.198.97/WyethWS/WyethWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

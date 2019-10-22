@@ -1,0 +1,10 @@
+.htaccess
+assets/cache/*
+system/cms/cache/*
+system/cms/logs/*
+system/cms/config/database.php
+uploads/*
+/.project
+/addons/default/themes/wyeth-beta/node_modules
+/addons/default/themes/wyeth-beta/.sass-cache/
+addons/default/themes/wyeth_milestone/img/anak-none.jpg

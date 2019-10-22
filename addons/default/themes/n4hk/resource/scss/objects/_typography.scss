@@ -1,0 +1,104 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Heading
+//  *   CH02 - Paragraph, Span, Label
+//  *   CH03 - Themes Typography
+
+
+
+//================================================================================================================
+//  *   CH01 - Heading
+//================================================================================================================
+@include headings() {
+    @extend %font-primary-alt;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h2 {
+    @include font-size(35px);
+
+    &.fs-big {
+        @include font-size(40px);
+
+        @include breakpoint(md) {
+            @include font-size(74px);
+        }
+    }
+}
+
+h3 {
+    @include font-size(28px);
+}
+
+h4 {
+    @include font-size(18px);
+
+    @include breakpoint(md) {
+        @include font-size(30px);
+    }
+
+    @include breakpoint(lg) {
+        @include font-size(22px);
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH02 - Paragraph, Span, Label
+//================================================================================================================
+p,
+span,
+label {
+    @include font-size(15px);
+    line-height: 1.4;
+
+    @include breakpoint(md) {
+        @include font-size(22px);
+    }
+
+    @include breakpoint-max(xs) {
+        @include font-size(15px);
+    }
+
+    &.fs-small {
+        @include font-size(15px);
+
+        @include breakpoint-max(xs) {
+            @include font-size(13px);
+        }
+    }
+
+    &.fs-big {
+        @include font-size(30px);
+
+        @include breakpoint(md) {
+            @include font-size(50px);
+        }
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH03 - Themes Typography
+//================================================================================================================
+.theme-green {
+    .theme-color {
+        color: text-color(themes, green);
+    }
+}
+
+.theme-orange {
+    .theme-color {
+        color: text-color(themes, orange);
+    }
+}
+
+.theme-purple {
+    .theme-color {
+        color: text-color(themes, purple);
+    }
+}

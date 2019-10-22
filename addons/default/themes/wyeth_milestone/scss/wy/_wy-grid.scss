@@ -1,0 +1,41 @@
+.container{
+  @include buatContainer(15);
+  position: relative;
+  margin: auto;
+  max-width: $maxw * 1px;
+}
+
+.c-0{
+  position: relative;
+  margin: auto;
+  max-width: $maxw * 1px;
+}
+
+.c-outer{
+  margin: auto;
+  // @include make-container();
+  @include media-breakpoint-up(md){
+    width: 85%;
+    max-width: 0.85 * $maxw * 1px;
+  }
+  .c-inner{
+    @extend .px-0;
+    @include media-breakpoint-up(md){
+      width: percentage(1075/1220);
+      max-width: (1075/$wpsd-d) * $maxw * 1px;
+    }
+  }
+}
+
+.c-inner{
+  margin: auto;
+  // @include make-container();
+  @include media-breakpoint-up(md){
+    width: percentage(1080/$wpsd-d);
+    max-width: (1080/$wpsd-d) * $maxw * 1px;
+  }
+}
+
+.row-0{
+  @include buatRow();
+}

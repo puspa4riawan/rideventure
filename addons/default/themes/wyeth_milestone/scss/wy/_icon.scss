@@ -1,0 +1,888 @@
+@import '../fa/mixins';
+@import '../fa/variables';
+@mixin icon-maker($img, $x, $y, $px, $py){
+  background-image: url("#{$img}") no-repeat;
+  width: $x;
+  height: $y;
+  background-position: $px $py;
+}
+@mixin brd($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-o-border-radius: $radius;
+	border-radius: $radius;
+}
+.i{
+	display: inline;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../img/icon-pack.png) no-repeat;
+	&.circle-arrow{
+		width: 18px;
+		height: 18px;
+		background-position: 0 0;
+	}
+	&.circle-arrow-2{
+		width: 17px;
+		height: 17px;
+		background-position: 0 -18px;
+	}
+	&.circle-arrow-3{
+		width: 35px;
+		height: 34px;
+		background-position: 0 -35px;
+	}
+	&.circle-arrow-4{
+		width: 18px;
+		height: 18px;
+		background-position: -31px -14px;
+	}
+	&.wy-next{
+		width: 60px;
+		height: 61px;
+		background-position: -60px -69px;
+	}
+	&.wy-prev{
+		width: 61px;
+		height: 61px;
+		background-position: 0px -69px;
+	}
+	&.si{
+		width: 55px;
+		height: 55px;
+		@include brd(50%);
+		background-position: -100px 0px;	
+		&.cal{
+			background-position: -100px 0px;	
+		}
+		&.abc{
+			background-position: -155px 0px;	
+		}
+		&.heart{
+			background-position: -210px 0px;	
+		}
+		&.gear{
+			background-position: -265px 0px;	
+		}
+		&.pregnancy{
+			background-position: -320px 0px;	
+		}
+		&.toy{
+			background-position: -375px 0px;	
+		}
+	}
+	&.mi{
+		width: 65px;
+		height: 65px;
+		@include brd(50%);
+		border: solid 2px #D32919;
+		background-position: -150px -60px;	
+		&.prahamil{
+			background-position: -150px -60px;	
+		}
+		&.hamil{
+			background-position: -215px -60px;	
+		}
+		&.bayi{
+			background-position: -280px -60px;	
+		}
+		&.anak{
+			background-position: -345px -60px;	
+		}
+	}
+	&.footer-left{
+		width: 277px;
+		height: 263px;
+		background-position: 0 -167px;
+	}
+	&.footer-right{
+		width: 273px;
+		height: 267px;
+		background-position: -277px -163px;
+	}
+	&.ri{
+		width: 85px;
+		height: 85px;
+		@include brd(50%);
+		background-position: -239px -430px;
+		&.bottle{
+			background-position: -239px -430px;
+		}
+		&.toys{
+			background-position: -324px -430px;
+		}
+		&.gear{
+			background-position: -409px -430px;
+		}
+		&.cald{
+			background-position: -494px -430px;
+		}
+		&.baby{
+			background-position: -579px -430px;
+		}
+	}
+	&.play-btn{
+		width: 84px;
+		height: 84px;
+		background-position: 0px -430px;
+	}
+	&.play-btn-2{
+		width: 46px;
+		height: 46px;
+		background-position: -84px -474px;
+	}
+	&.arrow-1{
+		width: 8px;
+		height: 14px;
+		background-position: -18px 0px;
+	}
+	&.arrow-2{
+		width: 8px;
+		height: 14px;
+		background-position: -26px 0px;
+	}
+	&.arrow-3{
+		width: 14px;
+		height: 8px;
+		background-position: -34px 0px;
+	}
+	&.arrow-4{
+		width: 13px;
+		height: 17px;
+		background-position: -18px -14px;
+	}
+	&.phone{
+		width: 26px;
+		height: 26px;
+		background-position: -35px -35px;
+	}
+	&.sc-f-fb{
+		width: 38px;
+		height: 36px;
+		background-position: 0px -130px;
+	}
+	&.sc-f-tw{
+		width: 38px;
+		height: 36px;
+		background-position: -38px -130px;
+	}
+	&.sc-f-ig{
+		width: 39px;
+		height: 36px;
+		background-position: -76px -130px;
+	}
+	&.sc-f-yt{
+		width: 38px;
+		height: 36px;
+		background-position: -115px -130px;
+	}
+	&.eye{
+		width: 22px;
+		height: 13px;
+		background-position: -153px -130px;
+	}
+	&.msg{
+		width: 18px;
+		height: 15px;
+		background-position: -175px -130px;
+	}
+	&.eye-2{
+		width: 27px;
+		height: 16px;
+		background-position: -193px -130px;
+	}
+	&.msg-2{
+		width: 23px;
+		height: 19px;
+		background-position: -220px -130px;
+	}
+	&.sc-ar-fb{
+		width: 44px;
+		height: 44px;
+		background-position: -85px -430px;
+	}
+	&.sc-ar-tw{
+		width: 44px;
+		height: 44px;
+		background-position: -139px -430px;
+	}
+	&.sc-ar-ig{
+		width: 44px;
+		height: 44px;
+		background-position: -194px -430px;
+	}
+	&.cl-next{
+		width: 30px;
+		height: 30px;
+		background-position: -579px -163px;
+	}
+	&.cl-prev{
+		width: 29px;
+		height: 30px;
+		background-position: -550px -163px;
+	}
+	&.c-ar-next{
+		width: 8px;
+		height: 14px;
+		background-position: -618px -164px;
+	}
+	&.c-ar-prev{
+		width: 8px;
+		height: 14px;
+		background-position: -610px -164px;
+	}
+	&.cld{
+		width: 29px;
+		height: 29px;
+		background-position: -550px -193px;
+	}
+	&.x-1{
+		width: 23px;
+		height: 23px;
+		background-position: -550px -222px;
+	}
+	&.ht-b1{
+		width: 25px;
+		height: 24px;
+		background-position: -573px -222px;
+	}
+	&.ht-f1{
+		width: 23px;
+		height: 22px;
+		background-position: -598px -222px;
+	}
+	&.x-2{
+		width: 45px;
+		height: 45px;
+		background-position: -550px -249px;
+	}
+	&.ht-b2{
+		width: 49px;
+		height: 45px;
+		background-position: -595px -249px;
+	}
+	&.ht-f2{
+		width: 50px;
+		height: 47px;
+		background-position: -644px -249px;
+	}
+	&.star{
+		width: 18px;
+		height: 25px;
+		background-position: -626px -163px;
+	}
+	&.user{
+		width: 47px;
+		height: 47px;
+		background-position: -645px -163px;
+	}
+	&.user-2{
+		width: 41px;
+		height: 42px;
+		background-position: -817px -212px;
+	}
+	&.ht-b2{
+		width: 49px;
+		height: 45px;
+		background-position: -595px -249px;
+	}
+	&.blue-sc{
+		width: 122px;
+		height: 122px;
+		background-position: -695px -170px;
+	}
+	&.ab-1{
+		width: 92px;
+		height: 92px;
+		background-position: -550px -296px;
+	}
+	&.ab-2{
+		width: 89px;
+		height: 89px;
+		background-position: -642px -296px;
+	}
+	&.ab-3{
+		width: 93px;
+		height: 93px;
+		background-position: -731px -296px;
+	}
+	&.ab-next{
+		width: 32px;
+		height: 24px;
+		background-position: -550px -388px;
+	}
+	&.ab-prev{
+		width: 32px;
+		height: 24px;
+		background-position: -582px -388px;
+	}
+	&.girl{
+		width: 160px;
+		height: 184px;
+		background-position: 0px -520px;
+	}
+	&.girl-2{
+		width: 207px;
+		height: 76px;
+		background-position: -202px -784px;
+	}
+	&.girl-3{
+		width: 186px;
+		height: 219px;
+		background-position: -320px -860px;
+	}
+	&.girl-4{
+		width: 135px;
+		height: 291px;
+		background-position: -506px -838px;
+	}
+	&.girl-5{
+		width: 191px;
+		height: 231px;
+		background-position: -641px -948px;
+	}
+	&.mom{
+		width: 41px;
+		height: 113px;
+		background-position: -202px -922px;
+	}
+	&.cloud{
+		width: 164px;
+		height: 139px;
+		background-position: -160px -520px;
+	}
+	&.sun{
+		width: 174px;
+		height: 141px;
+		background-position: -324px -520px;
+	}
+	&.cloud-2{
+		width: 157px;
+		height: 170px;
+		background-position: -498px -520px;
+	}
+	&.cloud-3{
+		width: 99px;
+		height: 84px;
+		background-position: -655px -615px;
+	}
+	&.cloud-4{
+		width: 135px;
+		height: 61px;
+		background-position: -202px -723px;
+	}
+	&.cloud-5{
+		width: 140px;
+		height: 61px;
+		background-position: -691px -706px;
+	}
+	&.cloud-6{
+		width: 118px;
+		height: 62px;
+		background-position: -202px -860px;
+	}
+	&.cloud-7{
+		width: 136px;
+		height: 115px;
+		background-position: -409px -723px;
+	}
+	&.music{
+		width: 202px;
+		height: 360px;
+		background-position: 0px -704px;
+	}
+	&.sun-2{
+		width: 114px;
+		height: 91px;
+		background-position: -754px -615px;
+	}
+	&.sun-3{
+		width: 146px;
+		height: 115px;
+		background-position: -545px -723px;
+	}
+	&.book{
+		width: 156px;
+		height: 95px;
+		background-position: -655px -520px;
+	}
+	&.book-2{
+		width: 182px;
+		height: 110px;
+		background-position: -641px -838px;
+	}
+	&.love{
+		width: 17px;
+		height: 14px;
+		background-position: -621px -222px;
+	}
+	&.home{
+		width: 25px;
+		height: 23px;
+		background-position: -638px -222px;
+	}
+	&.st{
+		width: 15px;
+		height: 14px;
+		background-position: -579px -193px;
+	}
+	&.st-2{
+		width: 15px;
+		height: 14px;
+		background-position: -594px -193px;
+	}
+	&.mi-1{
+		width: 19px;
+		height: 28px;
+		background-position: -243px -125px;
+	}
+	&.mi-2{
+		width: 24px;
+		height: 24px;
+		background-position: -262px -125px;
+	}
+	&.mi-3{
+		width: 23px;
+		height: 24px;
+		background-position: -286px -125px;
+	}
+	&.mi-4{
+		width: 32px;
+		height: 32px;
+		background-position: -614px -388px;
+	}
+	&.mi-5{
+		width: 32px;
+		height: 32px;
+		background-position: -646px -388px;
+	}
+	&.mi-6{
+		width: 32px;
+		height: 32px;
+		background-position: -678px -388px;
+	}
+	&.mi-7{
+		width: 37px;
+		height: 37px;
+		background-position: -710px -389px;
+	}
+	&.mi-8{
+		width: 37px;
+		height: 37px;
+		background-position: -747px -389px;
+	}
+	&.search{
+		width: 44px;
+		height: 42px;
+		background-position: -817px -170px;
+	}
+	&.sc-1{
+		width: 19px;
+		height: 28px;
+		background-position: -243px -125px;
+	}
+	&.sc-2{
+		width: 24px;
+		height: 24px;
+		background-position: -262px -125px;
+	}
+	&.sc-3{
+		width: 23px;
+		height: 24px;
+		background-position: -286px -125px;
+	}
+	&.ssf-1{
+		width: 16px;
+		height: 30px;
+		background-position: -784px -389px;
+	}
+	&.ssf-2{
+		width: 27px;
+		height: 23px;
+		background-position: -800px -389px;
+	}
+	&.ssf-3{
+		width: 17px;
+		height: 27px;
+		background-position: -827px -389px;
+	}
+	&.o-boy{
+		width: 50px;
+		height: 50px;
+		background-position: -430px 0px;
+		&:hover{
+			background-position: -480px 0px;
+		}
+		&.active{
+			background-position: -530px 0px;
+		}
+	}
+	&.o-girl{
+		width: 50px;
+		height: 50px;
+		background-position: -580px 0px;
+		&:hover{
+			background-position: -630px 0px;
+		}
+		&.active{
+			background-position: -680px 0px;
+		}
+	}
+	&.plus{
+		width: 19px;
+		height: 18px;
+		background-position: -309px -125px;
+	}
+	&.numb{
+		width: 32px;
+		height: 26px;
+		background-position: -328px -125px;
+	}
+	&.activity{
+		width: 23px;
+		height: 28px;
+		background-position: -360px -125px;
+	}
+	&.smart{
+		width: 17px;
+		height: 28px;
+		background-position: -383px -125px;
+	}
+	&.numb-2{
+		width: 43px;
+		height: 36px;
+		background-position: -400px -125px;
+	}
+	&.music{
+		width: 21px;
+		height: 38px;
+		background-position: -443px -125px;
+	}
+	&.music-2{
+		width: 16px;
+		height: 30px;
+		background-position: -784px -389px;
+	}
+	&.abc-2{
+		width: 27px;
+		height: 23px;
+		background-position: -800px -389px;
+	}
+	&.cld-2{
+		width: 24px;
+		height: 29px;
+		background-position: -609px -193px;
+	}
+	&.user-ssf{
+		width: 97px;
+		height: 99px;
+		background-position: -861px -163px;
+	}
+	&.user-ssf-2{
+		width: 107px;
+		height: 106px;
+		background-position: -851px -262px;
+	}
+	&.ate-1{
+		width: 20px;
+		height: 18px;
+		background-position: -121px -62px;
+	}
+	&.ate-2{
+		width: 20px;
+		height: 15px;
+		background-position: -121px -90px;
+	}
+	&.ate-3{
+		width: 20px;
+		height: 18px;
+		background-position: -121px -112px;
+	}
+	&.ate{
+		width: 50px;
+		height: 50px;
+		background-position: -827px -389px;
+	}
+	&.blogger{
+		width: 17px;
+		height: 27px;
+		background-position: -61px -35px;
+	}
+	
+	/*&.{
+		width: px;
+		height: px;
+		background-position: -px -px;
+	}*/
+}
+
+
+i.wy{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+
+	&::before{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+		content:'';
+		display: block;
+		height: 0;
+		width: 100%;
+		padding-top: 100%;
+	}
+
+	&-smart {
+		@include size(1.6rem);
+
+		&-body::before{ @include icon('../img/i-smart-body.png', contain);}
+		&-music::before{ @include icon('../img/i-smart-music.png', contain);}
+		&-nature::before{ @include icon('../img/i-smart-nature.png', contain);}
+		&-number::before{ @include icon('../img/i-smart-number.png', contain);}
+		&-people::before{ @include icon('../img/i-smart-people.png', contain);}
+		&-picture::before{ @include icon('../img/i-smart-picture.png', contain);}
+		&-self::before{ @include icon('../img/i-smart-self.png', contain);}
+		&-word::before{ @include icon('../img/i-smart-word.png', contain);}
+	}
+
+	&-ssf, &-school, &-stimulation{
+		&::before{
+			@include icon('../img/i-ssf.png', contain);
+		}
+	}
+	&-duedate{
+		&::before{
+			@include icon('../img/i-duedate.png', contain);
+		}
+	}
+	&-ovulation{
+		&::before{
+			@include icon('../img/i-ovulation.png', contain);
+		}
+	}
+	// &-stimulation{
+	// 	&::before{
+	// 		@include icon('../img/i-stimulation.png', contain);
+	// 	}
+	// }
+	&-consultation{
+		&::before{
+			@include icon('../img/i-consultation.png', contain);
+		}
+	}
+	&-babyname{
+		&::before{
+			@include icon('../img/i-babyname.png', contain);
+		}
+	}
+	&-bbm{
+		@include size(1rem);
+
+		&::before{
+			@include icon('../img/i-bbm.png', contain);
+		}
+	}
+	&-ginekologi{
+		@include size(2.8rem);
+		&::before{
+			@include icon('../img/ico-ginekologi.png', 90%);
+		}
+	}
+	&-nutrisi{
+		@include size(2.8rem);
+		&::before{
+			@include icon('../img/ico-nutrisi.png', 90%);
+		}
+	}
+	&-parenting{
+		@include size(2.8rem);
+		&::before{
+			@include icon('../img/ico-parenting.png', 80%);
+		}
+	}
+	&-pediatrik{
+		@include size(2.8rem);
+		&::before{
+			@include icon('../img/ico-pediatrik.png', 90%);
+		}
+	}
+	&-psikologi{
+		@include size(2.8rem);
+		&::before{
+			@include icon('../img/ico-psikologi.png', 90%);
+		}
+	}
+	&-d1{
+		&::before{
+			@include icon('../img/i-d1.png', contain);
+		}
+	}
+	&-dOv{
+		&::before{
+			@include icon('../img/i-dOv.png', contain);
+		}
+	}
+	&-dFer{
+		&::before{
+			@include icon('../img/i-dFer.png', contain);
+		}
+	}
+	&-date{
+		&::before{
+			@include icon('../img/i-date.png', contain);
+		}
+	}
+	&-place{
+		&::before{
+			@include icon('../img/i-place.png', contain);
+		}
+	}
+	&-reminder-kalender {
+		@include size(4rem);
+		&::before{
+			@include icon('../img/i-reminder-kalender.png', contain);
+		}		
+	}
+	&-kalender-update {
+		@include size(4rem);
+		&::before{
+			@include icon('../img/i-kalender-update.png', contain);
+		}		
+	}
+	&-help {
+		@include size(4rem);
+		&::before{
+			@include icon('../img/i-help.png', contain);
+		}		
+	}
+	&-envelope {
+		@include size(1.5rem);
+		&::before{
+			@include icon('../img/i-envelope.png', contain);
+		}		
+	}
+	&-calendar {
+		@include size(1.5rem);
+		&::before{
+			@include icon('../img/i-calendar.png', contain);
+		}		
+	}
+	&-gesture-left-right {
+		@include size(2rem);
+		&::before{
+			@include icon('../img/i-gesture-left-right.png', contain);
+		}		
+	}
+}
+
+.icon {
+	&-check-green,
+	&-check-white,
+	&-times-white, 
+	&-times-red, {
+		@include fa-icon;
+		@include size(18em / 14 * .7);
+		text-align: center;
+		line-height: (18em / 14) * .7;
+		color: $white;
+		border-radius: 50%;
+		vertical-align: middle;
+
+		&::before { 
+			font-size: 70%;
+			vertical-align: middle;
+		}
+	}
+
+	&-check-green {
+		background-color: $green;
+
+		&::before { 
+			content: $fa-var-check; 
+		}
+	}
+
+	&-check-white {
+		background-color: $white;
+		color: $green;
+
+		&::before { 
+			content: $fa-var-check; 
+		}
+	}
+
+	&-times-red {
+		background-color: $red;
+
+		&::before { 
+			content: $fa-var-exclamation; 
+		}
+	}
+
+	&-times-white {
+		background-color: $white;
+		color: $red;
+
+		&::before { 
+			content: $fa-var-exclamation; 
+		}
+	}
+}
+
+.i-vaksin {
+	@include size(4rem);
+
+	&.i-anak::before { @include icon('../img/icon-vaksin/i-anak.png', contain); }
+	&.i-bakteri-coret::before { @include icon('../img/icon-vaksin/i-bakteri-coret.png', contain); }
+	&.i-bangunan-faskes::before { @include icon('../img/icon-vaksin/i-bangunan-faskes.png', contain); }
+	&.i-bangunan-house::before { @include icon('../img/icon-vaksin/i-bangunan-house.png', contain); }
+	&.i-bangunan-rs::before { @include icon('../img/icon-vaksin/i-bangunan-rs.png', contain); }
+	&.i-bayi-anak::before { @include icon('../img/icon-vaksin/i-bayi-anak.png', contain); }
+	&.i-bayi-bakteri::before { @include icon('../img/icon-vaksin/i-bayi-bakteri.png', contain); }
+	&.i-bayi-sakit::before { @include icon('../img/icon-vaksin/i-bayi-sakit.png', contain); }
+	&.i-bayi-spuit::before { @include icon('../img/icon-vaksin/i-bayi-spuit.png', contain); }
+	&.i-bayi-tunggu::before { @include icon('../img/icon-vaksin/i-bayi-tunggu.png', contain); }
+	&.i-bayi::before { @include icon('../img/icon-vaksin/i-bayi.png', contain); }
+	&.i-dokter::before { @include icon('../img/icon-vaksin/i-dokter.png', contain); }
+	&.i-envelope::before { @include icon('../img/icon-vaksin/i-envelope.png', contain); }
+	&.i-envelope-sent::before { @include icon('../img/icon-vaksin/i-envelope-sent.png', contain); }
+	&.i-hemat::before { @include icon('../img/icon-vaksin/i-hemat.png', contain); }
+	&.i-ibu::before { @include icon('../img/icon-vaksin/i-ibu.png', contain); }
+	&.i-jam::before { @include icon('../img/icon-vaksin/i-jam.png', contain); }
+	&.i-jangan::before { @include icon('../img/icon-vaksin/i-jangan.png', contain); }
+	&.i-kalender-check::before { @include icon('../img/icon-vaksin/i-kalender-check.png', contain); }
+	&.i-kalender-idai::before { @include icon('../img/icon-vaksin/i-kalender-idai.png', contain); }
+	&.i-kalender-jam::before { @include icon('../img/icon-vaksin/i-kalender-jam.png', contain); }
+	&.i-kalender-spuit::before { @include icon('../img/icon-vaksin/i-kalender-spuit.png', contain); }
+	&.i-kalender::before { @include icon('../img/icon-vaksin/i-kalender.png', contain); }
+	&.i-kuman-spuit::before { @include icon('../img/icon-vaksin/i-kuman-spuit.png', contain); }
+	&.i-otot::before { @include icon('../img/icon-vaksin/i-otot.png', contain); }
+	&.i-perisai-anak::before { @include icon('../img/icon-vaksin/i-perisai-anak.png', contain); }
+	&.i-perisai-bakteri::before { @include icon('../img/icon-vaksin/i-perisai-bakteri.png', contain); }
+	&.i-perisai-bayi::before { @include icon('../img/icon-vaksin/i-perisai-bayi.png', contain); }
+	&.i-perisai-kuman::before { @include icon('../img/icon-vaksin/i-perisai-kuman.png', contain); }
+	&.i-perisai-spuit-check::before { @include icon('../img/icon-vaksin/i-perisai-spuit-check.png', contain); }
+	&.i-perisai-spuit::before { @include icon('../img/icon-vaksin/i-perisai-spuit.png', contain); }
+	&.i-perisai-tanaman::before { @include icon('../img/icon-vaksin/i-perisai-tanaman.png', contain); }
+
+	&.i-warning {
+		@include fa-icon;
+		@include border-radius(50%);
+		background-color: $danger;
+		&::before {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding-top: 0;
+			content: $fa-var-exclamation;
+			vertical-align: middle;
+			color: $white;
+			font-size: 3rem;
+		}
+	}
+}

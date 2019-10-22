@@ -1,0 +1,356 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Setup Variabels
+//  *   CH02 - Footer Icon
+//  *   CH03 - Base Footer Layout
+//  *   CH04 - Footer Entry
+//  *   CH05 - Footer Costumer Service
+
+
+
+//================================================================================================================
+//  *   CH01 - Setup Variabels
+//================================================================================================================
+
+
+
+//================================================================================================================
+//  *   CH02 - Footer Icon
+//================================================================================================================
+.footer-icon {
+    display: inline-block;
+    height: 44px;
+    transition: .2s all ease-in-out;
+    width: 44px;
+
+    @include breakpoint(md) {
+        height: 88px;
+        width: 88px;
+    }
+
+    @include breakpoint(wd) {
+        height: 44px;
+        width: 44px;
+    }
+
+    &:hover {
+        transform: scale(.9);
+    }
+
+    &.rounded-white-ig {
+        @include img-retina('../img/style/icon/icon-white-rounded-ig-sm', png, 44px, 44px, center, no-repeat);
+
+        @include breakpoint(md) {
+            @include img-retina('../img/style/icon/icon-white-rounded-ig-md', png, 88px, 88px, center, no-repeat);
+        }
+
+        @include breakpoint(wd) {
+            @include img-retina('../img/style/icon/icon-white-rounded-ig-sm', png, 44px, 44px, center, no-repeat);
+        }
+    }
+
+    &.rounded-white-fb {
+        @include img-retina('../img/style/icon/icon-white-rounded-fb-sm', png, 44px, 44px, center, no-repeat);
+
+        @include breakpoint(md) {
+            @include img-retina('../img/style/icon/icon-white-rounded-fb-md', png, 88px, 88px, center, no-repeat);
+        }
+
+        @include breakpoint(wd) {
+            @include img-retina('../img/style/icon/icon-white-rounded-fb-sm', png, 44px, 44px, center, no-repeat);
+        }
+    }
+
+    &.rounded-white-tw {
+        @include img-retina('../img/style/icon/icon-white-rounded-tw-sm', png, 44px, 44px, center, no-repeat);
+
+        @include breakpoint(md) {
+            @include img-retina('../img/style/icon/icon-white-rounded-tw-md', png, 88px, 88px, center, no-repeat);
+        }
+
+        @include breakpoint(wd) {
+            @include img-retina('../img/style/icon/icon-white-rounded-tw-sm', png, 44px, 44px, center, no-repeat);
+        }
+    }
+
+    &.rounded-white-yt {
+        @include img-retina('../img/style/icon/icon-white-rounded-yt-sm', png, 44px, 44px, center, no-repeat);
+
+        @include breakpoint(md) {
+            @include img-retina('../img/style/icon/icon-white-rounded-yt-md', png, 88px, 88px, center, no-repeat);
+        }
+
+        @include breakpoint(wd) {
+            @include img-retina('../img/style/icon/icon-white-rounded-yt-sm', png, 44px, 44px, center, no-repeat);
+        }
+    }
+
+    &.white-phone {
+        @include img-retina('../img/style/icon/icon-white-phone-sm', png, 44px, 44px, center, no-repeat);
+
+        @include breakpoint(md) {
+            @include img-retina('../img/style/icon/icon-white-phone-md', png, 88px, 88px, center, no-repeat);   
+        }
+
+        @include breakpoint(wd) {
+            @include img-retina('../img/style/icon/icon-white-phone-sm', png, 44px, 44px, center, no-repeat);
+        }
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH03 - Base Footer Layout
+//================================================================================================================
+.footer-container {
+    @include breakpoint(sm) {
+        padding-left: 30px;
+        padding-right: 30px;    
+    }
+
+    @include breakpoint(md) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @include breakpoint(wd) {
+        padding-left: $l-section-gutter;
+        padding-right: $l-section-gutter;
+    }
+
+    .l-section-shrink {
+        @include breakpoint(sm) {
+            margin-left: -30px;
+            margin-right: -30px;    
+        }
+
+        @include breakpoint(md) {
+            margin-left: -60px;
+            margin-right: -60px;    
+        }
+
+        @include breakpoint(wd) {
+            margin-left: -$l-section-gutter;
+            margin-right: -$l-section-gutter;
+        }
+    }
+
+    .safebox {
+        padding-bottom: 30px;
+        padding-top: 30px;
+
+        @include breakpoint(md) {
+            padding-bottom: 60px;
+            padding-top: 60px;
+        }
+
+        @include breakpoint(wd) {
+            padding-bottom: 70px;
+            padding-top: 40px;
+        }
+
+        &.main {
+            @include breakpoint(wd) {
+                @include flex(row, space-between, flex-start, wrap);
+                width: 100%;
+            }
+        }
+
+        .c-panel {
+            padding-left: $l-section-gutter;
+            padding-right: $l-section-gutter;
+
+            @include breakpoint(sm) {
+                padding-left: 30px;
+                padding-right: 30px;    
+            }
+
+            @include breakpoint(md) {
+                padding-left: 60px;
+                padding-right: 60px;    
+            }
+
+            @include breakpoint(wd) {
+                padding-left: $l-section-gutter;
+                padding-right: $l-section-gutter;
+            }
+        }
+    }
+}
+
+.c-footer-entry,
+.c-footer-costumer-service {
+    color: text-color(themes, white);
+    font-weight: bold;
+}
+
+
+
+//================================================================================================================
+//  *   CH04 - Footer Entry
+//================================================================================================================
+.footer-container .footer-main-entry {
+    @include breakpoint(wd) {
+        width: 70%;
+    }
+
+    .safebox {
+        @include breakpoint(md) {
+            padding-top: 0;
+            padding-bottom: 85px;
+        }
+
+        @include breakpoint(wd) {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.c-footer-entry {
+    color: text-color(themes, white);
+    text-align: center;
+    padding-bottom: 25px;
+
+    @include breakpoint(md) {
+        padding-bottom: 50px;
+    }
+
+    @include breakpoint(wd) {
+        padding-bottom: 24px;
+        text-align: left;
+    }
+}
+
+.c-footer-menu {
+    .footer-menu {
+        @include flex(row, center, center, wrap);
+
+        @include breakpoint(wd) {
+            justify-content: flex-start;
+        }
+    }
+
+    .list {
+        display: block;
+        font-weight: bold;
+        padding: .5rem 0;
+        text-align: center;
+        width: 100%;
+
+        @include breakpoint(md) {
+            @include font-size(22px);
+            padding: 1rem 0;
+        }
+
+        @include breakpoint(wd) {
+            @include font-size(20px);
+            border-right: 2px solid #ffffff;
+            padding: 0 1rem;
+            width: auto;
+        }
+
+        &:first-child {
+            @include breakpoint(wd) {
+                padding-left: 0;
+            }
+        }
+
+        &.icon {
+            padding: 0;
+            margin: 0 .5rem;
+            height: 44px;
+            width: 44px;
+
+            @include breakpoint(md) {
+                height: 88px;
+                width: 88px;
+                margin: 0 12px;
+            }
+
+            @include breakpoint(wd) {
+                height: 44px;
+                margin: 0 4px;
+                width: 44px;
+            }
+            
+            @include breakpoint(wd) {
+                border-right: none;
+            }
+
+            .footer-icon {
+                display: block;
+            }
+        }
+    }
+
+    p {
+        color: text-color(themes, white);
+        font-weight: bold;
+        padding: .5rem 0 2rem;
+        text-align: center;
+        width: 100%;
+
+        @include breakpoint(wd) {
+            @include font-size(20px);
+            padding: 0 1rem;
+            width: auto;
+        }
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH05 - Footer Costumer Service
+//================================================================================================================
+.c-footer-costumer-service {
+    @include flex(row, center, flex-start, wrap);
+    width: 100%;
+
+    @include breakpoint-max(xs)  {
+        justify-content: space-between;
+    }
+
+    @include breakpoint(wd) {
+        width: 30%;
+    }
+
+    .bounds {
+        padding-left: 12px;
+        width: auto;
+
+        @include breakpoint-max(xs) {
+            width: calc(100% - 56px);
+        }
+
+        @include breakpoint(md) {
+            padding-left: 24px;
+            width: calc(100% - 112px);
+        }
+
+        @include breakpoint(wd) {
+            padding-left: 12px;
+            width: calc(100% - 56px);
+        }
+
+        p,
+        .c-link {
+            @include breakpoint-max(xs) {
+                @include font-size(13px);
+                line-height: 1.4;
+            }
+
+            @include breakpoint(md) {
+                @include font-size(24px);
+                line-height: 1.5;
+            }
+
+            @include breakpoint(wd) {
+                @include font-size(15px);
+                line-height: 1.4;
+            }
+        }
+    }
+}

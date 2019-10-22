@@ -1,0 +1,94 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Layout container
+//  *   CH02 - Page Content
+//  *   CH03 - Page Section Themes
+
+
+
+//================================================================================================================
+//  *   CH01 - Layout container
+//  *   Variables stored on variables/layouts.scss
+//================================================================================================================
+.l-section,
+.l-section-fluid {
+    @include clearfix();
+    @include relative();
+    margin: 0 auto;
+    padding: 0 $l-section-gutter;
+    width: 100%;
+
+    .l-section-shrink {
+        margin-left: -$l-section-gutter;
+        margin-right: -$l-section-gutter;
+    }
+}
+
+.l-section {
+    @include breakpoint(sm) {
+        max-width: $l-section-width-sm;
+    }
+
+    @include breakpoint(md) {
+        max-width: $l-section-width-md;
+    }
+
+    @include breakpoint(lg) {
+        max-width: $l-section-width-lg;
+    }
+
+    @include breakpoint(wd) {
+        max-width: $l-section-width-wd;
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH02 - Page Content
+//================================================================================================================
+.l-site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    .l-site-content {
+        flex: 1;
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH03 - Page Section Themes
+//================================================================================================================
+.theme-green .section-theme {
+    background-color: #9fd656;
+
+    &.secondary-theme {
+        background-color: background-color(themes, green);
+    }
+}
+
+.theme-orange .section-theme {
+    background-color: #ffd088;
+
+    &.secondary-theme {
+        background-color: background-color(themes, orange);
+    }
+}
+
+.theme-purple .section-theme {    
+    background-color: #bd84d2;
+
+    &.secondary-theme {
+        background-color: background-color(themes, purple);
+    }
+}
+
+.theme-green .section-theme.reverse,
+.theme-orange .section-theme.reverse,
+.theme-purple .section-theme.reverse {
+    background-color: background-color(themes, white);
+}

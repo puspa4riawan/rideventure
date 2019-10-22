@@ -1,0 +1,91 @@
+/*!
+ * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Embed fonts
+@import "wy/fonts";
+
+
+//
+// Core variables and mixins
+//
+@import "wy/wy-variables";
+@import "bs/functions";
+@import "bs/custom";
+@import "bs/mixins";
+@import "wy/wy-mixins";
+
+
+// 
+// Reboot
+// 
+@import "bs/root";
+@import "bs/print";
+@import "bs/reboot";
+
+
+// 
+// Bootstrap Components
+// 
+@import "bs/type";
+@import "bs/images";
+// @import "bs/code";
+@import "bs/grid";
+@import "bs/tables";
+@import "bs/forms";
+@import "bs/buttons";
+@import "bs/transitions";
+@import "bs/dropdown";
+@import "bs/button-group";
+@import "bs/input-group";
+@import "bs/custom-forms";
+@import "bs/nav";
+@import "bs/navbar";
+@import "bs/card";
+@import "bs/breadcrumb";
+@import "bs/pagination";
+@import "bs/badge";
+@import "bs/jumbotron";
+@import "bs/alert";
+@import "bs/progress";
+@import "bs/media";
+@import "bs/list-group";
+@import "bs/close";
+@import "bs/modal";
+@import "bs/tooltip";
+@import "bs/popover";
+@import "bs/carousel";
+@import "bs/utilities";
+
+
+// 
+// Plugins
+// 
+@import "swiper/swiper.scss";
+@import "fa/font-awesome.scss";
+@import "bs-select/bootstrap-select";
+@import "bootstrap-datepicker.min.css";
+
+
+// Wyeth Setup
+@import "wy/wy-grid";
+@import "wy/wy-backgrounds";
+@import "wy/wy-buttons";
+@import "wy/wy-forms";
+@import "wy/wy-text";
+@import "wy/wy-image";
+@import "wy/wy-smartness";
+@import "wy/icon";
+@import "wy/pane";
+
+@import "wy/popup";
+@import "wy/loginregister";
+
+@import "wy/mainNavbar";
+@import "wy/mainContent";
+@import "wy/wy-articles";
+@import "wy/mainFooter";
+

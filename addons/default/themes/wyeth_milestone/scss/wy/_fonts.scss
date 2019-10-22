@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@font-face {
+  font-family: 'KohinoorDevanagari';
+  src: url('../fonts/KohinoorDevanagari-Light.eot');
+  src: url('../fonts/KohinoorDevanagari-Light.woff2') format('woff2'),
+       url('../fonts/KohinoorDevanagari-Light.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Light.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Light.svg#KohinoorDevanagari-Light') format('svg'),
+       url('../fonts/KohinoorDevanagari-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari';
+  src: url('../fonts/KohinoorDevanagari-Book.eot');
+  src: url('../fonts/KohinoorDevanagari-Book.woff2') format('woff2'),
+       url('../fonts/KohinoorDevanagari-Book.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Book.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Book.svg#KohinoorDevanagari-Book') format('svg'),
+       url('../fonts/KohinoorDevanagari-Book.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari';
+  src: url('../fonts/KohinoorDevanagari-Demi.eot');
+  src: url('../fonts/KohinoorDevanagari-Demi.woff2') format('woff2'),
+       url('../fonts/KohinoorDevanagari-Demi.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Demi.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Demi.svg#KohinoorDevanagari-Demi') format('svg'),
+       url('../fonts/KohinoorDevanagari-Demi.eot?#iefix') format('embedded-opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari';
+  src: url('../fonts/KohinoorDevanagari-Medium.eot');
+  src: url('../fonts/KohinoorDevanagari-Medium.woff2') format('woff2'),
+       url('../fonts/KohinoorDevanagari-Medium.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Medium.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Medium.svg#KohinoorDevanagari-Medium') format('svg'),
+       url('../fonts/KohinoorDevanagari-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KohinoorDevanagari';
+  src: url('../fonts/KohinoorDevanagari-Bold.eot');
+  src: url('../fonts/KohinoorDevanagari-Bold.woff2') format('woff2'),
+       url('../fonts/KohinoorDevanagari-Bold.woff') format('woff'),
+       url('../fonts/KohinoorDevanagari-Bold.ttf') format('truetype'),
+       url('../fonts/KohinoorDevanagari-Bold.svg#KohinoorDevanagari-Bold') format('svg'),
+       url('../fonts/KohinoorDevanagari-Bold.eot?#iefix') format('embedded-opentype');
+  font-weight: bold;
+  font-style: normal;
+}

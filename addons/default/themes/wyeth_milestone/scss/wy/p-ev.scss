@@ -1,0 +1,154 @@
+@import "sCore";
+@import "../wy/wy-variables";
+@import "../bs/functions";
+@import "../bs/custom";
+@import "../bs/mixins";
+@import "../wy/wy-mixins";
+
+.voucher-banner{
+	@include buatRow;
+	@include border-radius($border-radius);
+	@include mask;
+	margin-top: 2rem;
+	margin-bottom: 2.5rem;
+	background-color: $gray-100;
+
+	figure{
+		@include buatColReady;
+		@include pfs(height, 140px, 240px);
+		// @include embed-responsive;
+		// &::before{padding-top: percentage(236/510);}
+		img{
+			// display: block;
+			margin: auto;
+			@include img-full(cover);
+			// @include embed-responsive-item;
+			// @include object-fit(cover);
+		}
+		@include media-breakpoint-up(md){
+			@include make-col(6);
+		}
+	}
+
+	.txt{
+		@include buatColReady;
+		align-self: center;
+		padding: 1.5rem;
+		p{
+			margin-bottom: 1rem;
+		}
+		@include media-breakpoint-down(sm){
+			.btn{width: 100%;}
+		}
+		@include media-breakpoint-up(md){
+			@include make-col(6);
+			.btn{float: right;}
+		}
+	}
+}
+
+.ev-step{
+	@include buatRow($grid-gutter-width-sm / 3px);
+	margin-bottom: 3.5rem;
+}
+
+.step{
+	@include buatColReady($grid-gutter-width-sm / 3px);
+	padding: $grid-gutter-width-sm / 3;
+	@include make-col(6);
+	display: flex;
+	@include media-breakpoint-up(lg){
+		@include make-col(3);
+	}
+	>div{
+		display: flex;
+		flex-direction: column;
+		@include border-radius($border-radius);
+		@include mask;
+		height: 100%;
+		@include bgEmasGr(1);
+	}
+	figure{
+		background-color: $gray-100;
+		flex: 0 0 auto;
+		position: relative;
+		@include pfs(height, 90px, 215px);
+		img{
+			@include embed-responsive-item;
+			right: 0;
+			margin: auto;
+			display: block;
+			width: auto;
+			max-width: 70%;
+			height: auto;
+			max-height: 60%;
+			@include object-fit(contain);
+		}
+	}
+	.txt{
+		// flex: 1 0 100%;
+		padding: 1rem 1rem 1.5rem;
+		color: $white;
+		font-size: .9rem;
+		@include fw(bold);
+	}
+}
+
+.join{
+	@include buatRow;
+	background-color: $gray-100;
+	@include border-radius($border-radius);
+	@include mask;
+
+	figure, .txt{
+		@include buatColReady;
+		@include media-breakpoint-up(md){
+			@include make-col(6);
+		}
+	}
+
+	figure{
+		img{
+			@include img-full(cover);
+		}
+	}
+
+	.txt{
+		padding: 1.5rem 1.5rem 2rem;
+		h3{
+			@include fw(bold);
+			@include pfs(font-size, 32px, 37px);
+		}
+		p{margin-bottom: 1rem;}
+		ul {
+		  margin: 0 0 1rem;
+		  padding: 0;
+			> li {
+			  margin: 0;
+			  padding: 0 0 0 9px;
+			  text-indent: -5px;
+			  list-style-type: none;
+			  counter-increment: item;
+			  font-size: .9rem;
+			  padding-bottom: .25rem;
+				&::before {
+				  display: inline-block;
+				  font-weight: bold;
+				  content: "\2022";
+				  width: 5px;
+				}
+			}
+		}
+		.form-group{
+			margin-bottom: 1rem;
+		}
+		.btns{
+			@include media-breakpoint-down(sm){
+				.btn{width: 100%;}
+			}
+			@include media-breakpoint-up(md){
+				text-align: right;
+			}
+		}
+	}
+}

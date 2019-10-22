@@ -1,0 +1,63 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Mobile first breakpoint
+//  *   CH02 - Desktop first breakpoint
+
+
+
+//================================================================================================================
+//  >   CH01 - Mobile First breakpoint
+//================================================================================================================
+@mixin breakpoint($media) {
+    @if $media==xs {
+        @include min-screen($xs) {
+            @content;
+        }
+    } @else if $media==sm {
+        @include min-screen($sm) {
+            @content;
+        }
+    } @else if $media==md {
+        @include min-screen($md) {
+            @content;
+        }
+    } @else if $media==lg {
+        @include min-screen($lg) {
+            @content;
+        }
+    } @else if $media==wd {
+        @include min-screen($wd) {
+            @content;
+        }
+    }
+}
+
+
+
+//================================================================================================================
+//  >   CH02 - Desktop First breakpoint
+//================================================================================================================
+@mixin breakpoint-max($media) {
+    @if $media==xs {
+        @include max-screen($xs) {
+            @content;
+        }
+    } @else if $media==sm {
+        @include max-screen($sm) {
+            @content;
+        }
+    } @else if $media==md {
+        @include max-screen($md) {
+            @content;
+        }
+    } @else if $media==lg {
+        @include max-screen($lg) {
+            @content;
+        }
+    } @else if $media==wd {
+        @include max-screen($wd) {
+            @content;
+        }
+    }
+}

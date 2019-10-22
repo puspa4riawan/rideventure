@@ -1,0 +1,12 @@
+.scrollbox {
+	border: 1px solid #CCCCCC;
+	width: 350px;
+	height: 200px;
+	background: #FFFFFF;
+	overflow-y: scroll;
+}
+
+li.flexible-item {
+    margin-left: 10px;
+    padding: 2px;
+}

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'LunchBoxW01';
+    src: url('LunchBoxW01-Light.eot');
+    src: url('LunchBoxW01-Light.eot?#iefix') format('embedded-opentype'),
+        url('LunchBoxW01-Light.woff2') format('woff2'),
+        url('LunchBoxW01-Light.woff') format('woff'),
+        url('LunchBoxW01-Light.ttf') format('truetype'),
+        url('LunchBoxW01-Light.svg#LunchBoxW01-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+

@@ -1,0 +1,462 @@
+.left-side {
+  float: left; }
+
+.right-side {
+  float: right; }
+
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+.ovulation-page {
+  z-index: 1;
+  border-bottom: solid 1px #f3f3f3;
+  position: relative; }
+  .ovulation-page .i.mom {
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+  .ovulation-page .i.cloud-7 {
+    position: absolute;
+    right: -50px;
+    top: 20%;
+    -moz-transform: rotate(0) scale(0.7) translate(0, 0);
+    -webkit-transform: rotate(0) scale(0.7) translate(0, 0);
+    -o-transform: rotate(0) scale(0.7) translate(0, 0);
+    -ms-transform: rotate(0) scale(0.7) translate(0, 0);
+    transform: rotate(0) scale(0.7) translate(0, 0); }
+  .ovulation-page .nav-social {
+    position: relative;
+    top: -7px; }
+    .ovulation-page .nav-social .a-cate {
+      float: left;
+      margin: 7px 10px 0 0; }
+    .ovulation-page .nav-social .btn {
+      -moz-transform: rotate(0) scale(0.7) translate(0, 0);
+      -webkit-transform: rotate(0) scale(0.7) translate(0, 0);
+      -o-transform: rotate(0) scale(0.7) translate(0, 0);
+      -ms-transform: rotate(0) scale(0.7) translate(0, 0);
+      transform: rotate(0) scale(0.7) translate(0, 0);
+      margin: 0 -5px; }
+  .ovulation-page .col-5, .ovulation-page .col-6, .ovulation-page .col-7 {
+    margin: 20px 0; }
+  .ovulation-page .legend {
+    margin: 20px 0;
+    font-size: 10px; }
+    @media (min-width: 320px) {
+      .ovulation-page .legend {
+        font-size: calc(0.17857vw + 9.42857px); } }
+    @media (min-width: 1440px) {
+      .ovulation-page .legend {
+        font-size: 12px; } }
+    .ovulation-page .legend .i {
+      -moz-transform: rotate(0) scale(0.7) translate(0, 0);
+      -webkit-transform: rotate(0) scale(0.7) translate(0, 0);
+      -o-transform: rotate(0) scale(0.7) translate(0, 0);
+      -ms-transform: rotate(0) scale(0.7) translate(0, 0);
+      transform: rotate(0) scale(0.7) translate(0, 0);
+      margin-right: -5px; }
+  .ovulation-page#mainContent {
+    min-height: 0;
+    padding: 82px 0 30px; }
+  .ovulation-page .calendar-wrapper {
+    margin: 20px 0; }
+    .ovulation-page .calendar-wrapper h2 {
+      color: #c89a35;
+      font-size: 28px; }
+      @media (min-width: 320px) {
+        .ovulation-page .calendar-wrapper h2 {
+          font-size: calc(0.35714vw + 26.85714px); } }
+      @media (min-width: 1440px) {
+        .ovulation-page .calendar-wrapper h2 {
+          font-size: 32px; } }
+    .ovulation-page .calendar-wrapper .fc-scroller {
+      height: 240px !important;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: solid 1px #c2c2c2; }
+    .ovulation-page .calendar-wrapper .fc-toolbar.fc-header-toolbar {
+      margin-bottom: 0; }
+    .ovulation-page .calendar-wrapper .fc-left, .ovulation-page .calendar-wrapper .fc-right {
+      margin-top: 5px; }
+    .ovulation-page .calendar-wrapper .fc-view {
+      height: 100%; }
+    .ovulation-page .calendar-wrapper .fc table {
+      height: 100%; }
+    .ovulation-page .calendar-wrapper .fc-widget-header {
+      margin-right: 0 !important; }
+    .ovulation-page .calendar-wrapper .fc-scroller {
+      overflow: hidden !important; }
+    .ovulation-page .calendar-wrapper .fc-event {
+      background-color: transparent;
+      border: none; }
+    .ovulation-page .calendar-wrapper .fc-day-grid-event {
+      padding: 0; }
+    .ovulation-page .calendar-wrapper .fc-row.fc-week {
+      height: 40px !important;
+      min-height: 0 !important; }
+    .ovulation-page .calendar-wrapper .sDay {
+      position: relative;
+      z-index: 1; }
+      .ovulation-page .calendar-wrapper .sDay .fc-title {
+        color: white; }
+    .ovulation-page .calendar-wrapper .oDay {
+      position: relative;
+      z-index: 1; }
+      .ovulation-page .calendar-wrapper .oDay .fc-title {
+        color: #4B4B4B; }
+    .ovulation-page .calendar-wrapper .fDay {
+      position: relative;
+      z-index: 1; }
+      .ovulation-page .calendar-wrapper .fDay .fc-title {
+        color: white; }
+    .ovulation-page .calendar-wrapper .fc-day-top {
+      position: relative; }
+    .ovulation-page .calendar-wrapper .fc-day-number {
+      position: absolute;
+      height: 40px;
+      line-height: 40px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      padding: 0 !important; }
+    .ovulation-page .calendar-wrapper .fc-event-container {
+      text-align: center; }
+    .ovulation-page .calendar-wrapper .fc-day-grid-event {
+      color: white; }
+    .ovulation-page .calendar-wrapper .fc-title {
+      position: relative;
+      top: 4px; }
+    .ovulation-page .calendar-wrapper .fc-unthemed td {
+      border-color: transparent;
+      height: 40px;
+      vertical-align: middle; }
+      .ovulation-page .calendar-wrapper .fc-unthemed td.fc-day {
+        border-color: #c2c2c2; }
+    .ovulation-page .calendar-wrapper .fc-widget-header .fc-day-header, .ovulation-page .calendar-wrapper .fc-head td, .ovulation-page .calendar-wrapper .fc-widget-header {
+      border: none !important; }
+    .ovulation-page .calendar-wrapper .fc-unthemed td.fc-today {
+      border: none; }
+    .ovulation-page .calendar-wrapper .fc-day-grid-event .fc-content {
+      overflow: inherit;
+      z-index: 1;
+      position: relative; }
+    .ovulation-page .calendar-wrapper .fc-content-skeleton {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%; }
+      .ovulation-page .calendar-wrapper .fc-content-skeleton td.fc-today {
+        color: white;
+        border: none; }
+        .ovulation-page .calendar-wrapper .fc-content-skeleton td.fc-today:before {
+          content: 'TODAY';
+          font-size: 8px;
+          position: absolute;
+          left: 0;
+          top: 27px;
+          text-align: center;
+          width: 100%;
+          color: white; }
+      .ovulation-page .calendar-wrapper .fc-content-skeleton thead {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 40px;
+        display: table; }
+    .ovulation-page .calendar-wrapper .fc-button {
+      background: white;
+      border: none;
+      -webkit-box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0);
+      box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0);
+      -webkit-transition: all 200ms;
+      -moz-transition: all 200ms;
+      -o-transition: all 200ms;
+      -ms-transition: all 200ms;
+      transition: all 200ms;
+      -webkit-transition-timing-function: ease-out;
+      -moz-transition-timing-function: ease-out;
+      -o-transition-timing-function: ease-out;
+      -ms-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0.5; }
+      .ovulation-page .calendar-wrapper .fc-button.fc-state-hover, .ovulation-page .calendar-wrapper .fc-button:focus {
+        border: none;
+        -webkit-box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0);
+        box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0);
+        outline: 0px dotted;
+        outline: 0px auto -webkit-focus-ring-color;
+        outline: 0px solid rgba(0, 0, 0, 0); }
+      .ovulation-page .calendar-wrapper .fc-button:hover {
+        opacity: 1; }
+      .ovulation-page .calendar-wrapper .fc-button .fc-icon-right-single-arrow:after {
+        display: none; }
+      .ovulation-page .calendar-wrapper .fc-button .fc-icon-left-single-arrow:after {
+        display: none; }
+    .ovulation-page .calendar-wrapper .fc-unthemed tbody.fc-body {
+      border: solid 1px #333333;
+      overflow: hidden;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px; }
+  .ovulation-page h2.h1 {
+    margin-bottom: 30px; }
+  .ovulation-page p {
+    margin-bottom: 10px; }
+  .ovulation-page .btn-primary {
+    width: 100%;
+    max-width: 390px;
+    display: block; }
+  .ovulation-page .input {
+    position: relative;
+    min-height: 150px;
+    padding-top: 5px; }
+    .ovulation-page .input .inner {
+      height: 35px;
+      position: relative;
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      -o-border-radius: 7px;
+      border-radius: 7px;
+      margin: 10px auto; }
+      .ovulation-page .input .inner:after {
+        content: '';
+        position: absolute;
+        right: 5px;
+        top: 2px;
+        -moz-transform: rotate(0) scale(0.6) translate(0, 0);
+        -webkit-transform: rotate(0) scale(0.6) translate(0, 0);
+        -o-transform: rotate(0) scale(0.6) translate(0, 0);
+        -ms-transform: rotate(0) scale(0.6) translate(0, 0);
+        transform: rotate(0) scale(0.6) translate(0, 0); }
+    .ovulation-page .input #datepicker {
+      height: 35px;
+      width: 100%;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+      padding: 0 35px 0 10px;
+      color: white;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px; }
+      .ovulation-page .input #datepicker:hover {
+        cursor: pointer; }
+      .ovulation-page .input #datepicker:focus {
+        outline: none; }
+    .ovulation-page .input .siklus {
+      margin: 20px 0; }
+      .ovulation-page .input .siklus .left-side, .ovulation-page .input .siklus .right-side {
+        width: 50%; }
+      .ovulation-page .input .siklus input[type="text"] {
+        width: 70px;
+        height: 30px;
+        text-align: center;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -o-border-radius: 7px;
+        border-radius: 7px;
+        margin-left: 10px;
+        border: solid 1px #c2c2c2;
+        padding: 0 20px; }
+      .ovulation-page .input .siklus .left-side .i {
+        -moz-transform: rotate(0) scale(0.7) translate(0, 0);
+        -webkit-transform: rotate(0) scale(0.7) translate(0, 0);
+        -o-transform: rotate(0) scale(0.7) translate(0, 0);
+        -ms-transform: rotate(0) scale(0.7) translate(0, 0);
+        transform: rotate(0) scale(0.7) translate(0, 0);
+        margin: 0 -10px 0 0; }
+  .ovulation-page #datepicker-container {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    background: white;
+    top: 0; }
+  .ovulation-page .right-side {
+    width: 100%; }
+  @media (min-width: 576px) {
+    .ovulation-page .input .siklus .left-side {
+      width: 40%; }
+    .ovulation-page .input .siklus .right-side {
+      width: 60%; } }
+  @media (min-width: 768px) {
+    .ovulation-page#mainContent {
+      padding-top: 130px; }
+    .ovulation-page .container {
+      width: 100%; }
+    .ovulation-page .input {
+      width: 50%;
+      min-height: 320px;
+      float: left; }
+      .ovulation-page .input #datepicker-container {
+        left: 100%;
+        width: 100%; }
+    .ovulation-page .right-side {
+      width: 50%; } }
+  @media (min-width: 992px) {
+    .ovulation-page .input .siklus .left-side {
+      width: 40%; }
+      .ovulation-page .input .siklus .left-side .i {
+        -moz-transform: rotate(0) scale(1) translate(0, 0);
+        -webkit-transform: rotate(0) scale(1) translate(0, 0);
+        -o-transform: rotate(0) scale(1) translate(0, 0);
+        -ms-transform: rotate(0) scale(1) translate(0, 0);
+        transform: rotate(0) scale(1) translate(0, 0);
+        margin: 0; }
+      .ovulation-page .input .siklus .left-side input[type="text"] {
+        margin: 0;
+        height: 45px;
+        width: 100px; }
+    .ovulation-page .input .siklus .right-side {
+      width: 60%; }
+    .ovulation-page .legend {
+      font-size: 12px; }
+      .ovulation-page .legend span {
+        margin-right: 10px; }
+      .ovulation-page .legend .i {
+        -moz-transform: rotate(0) scale(1) translate(0, 0);
+        -webkit-transform: rotate(0) scale(1) translate(0, 0);
+        -o-transform: rotate(0) scale(1) translate(0, 0);
+        -ms-transform: rotate(0) scale(1) translate(0, 0);
+        transform: rotate(0) scale(1) translate(0, 0);
+        margin-right: 0; }
+    .ovulation-page .calendar-wrapper .fc-title {
+      top: 2px; } }
+  @media (min-width: 1200px) {
+    .ovulation-page .container {
+      width: 75%; } }
+
+.datepicker {
+  padding: 0;
+  border: none;
+  width: 100% !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important; }
+  .datepicker:before, .datepicker:after {
+    display: none; }
+  .datepicker .datepicker-days td, .datepicker .datepicker-days th {
+    height: 40px;
+    width: 14.2%; }
+  .datepicker .datepicker-days tbody {
+    position: relative; }
+    .datepicker .datepicker-days tbody:after {
+      content: '';
+      border: solid 1px #c2c2c2;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 241px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px;
+      z-index: -1; }
+  .datepicker .prev, .datepicker .next {
+    height: 40px; }
+    .datepicker .prev:hover, .datepicker .next:hover {
+      background: transparent !important; }
+      .datepicker .prev:hover:after, .datepicker .next:hover:after {
+        opacity: 1; }
+  .datepicker .dow {
+    color: #c89a35; }
+  .datepicker .datepicker-switch {
+    color: #c89a35;
+    font-size: 28px; }
+    @media (min-width: 320px) {
+      .datepicker .datepicker-switch {
+        font-size: calc(0.35714vw + 26.85714px); } }
+    @media (min-width: 1440px) {
+      .datepicker .datepicker-switch {
+        font-size: 32px; } }
+  .datepicker .prev {
+    color: transparent; }
+    .datepicker .prev:after {
+      content: '';
+      position: relative;
+      left: -5px;
+      -webkit-transition: all 200ms;
+      -moz-transition: all 200ms;
+      -o-transition: all 200ms;
+      -ms-transition: all 200ms;
+      transition: all 200ms;
+      -webkit-transition-timing-function: ease-out;
+      -moz-transition-timing-function: ease-out;
+      -o-transition-timing-function: ease-out;
+      -ms-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0.5; }
+  .datepicker .next {
+    color: transparent; }
+    .datepicker .next:after {
+      content: '';
+      position: relative;
+      -webkit-transition: all 200ms;
+      -moz-transition: all 200ms;
+      -o-transition: all 200ms;
+      -ms-transition: all 200ms;
+      transition: all 200ms;
+      -webkit-transition-timing-function: ease-out;
+      -moz-transition-timing-function: ease-out;
+      -o-transition-timing-function: ease-out;
+      -ms-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0.5; }
+  .datepicker table {
+    width: 100%; }
+    .datepicker table .active {
+      background-image: none !important; }
+    .datepicker table tr td {
+      border: solid 1px #c2c2c2;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      -o-border-radius: 0px;
+      border-radius: 0px; }
+      .datepicker table tr td.day:hover {
+        background: #eeeeee; }
+      .datepicker table tr td .datepicker table tr td.old, .datepicker table tr td.new {
+        color: #4b4b4b;
+        opacity: .3; }
+    .datepicker table tr:nth-child(1) td {
+      border-top: none; }
+      .datepicker table tr:nth-child(1) td:nth-child(1) {
+        border-left: none;
+        -webkit-border-radius: 10px 0 0 0;
+        -moz-border-radius: 10px 0 0 0;
+        -o-border-radius: 10px 0 0 0;
+        border-radius: 10px 0 0 0; }
+      .datepicker table tr:nth-child(1) td:nth-child(7) {
+        border-right: none;
+        -webkit-border-radius: 0 10px 0 0;
+        -moz-border-radius: 0 10px 0 0;
+        -o-border-radius: 0 10px 0 0;
+        border-radius: 0 10px 0 0; }
+    .datepicker table tr:nth-child(2) td:nth-child(1), .datepicker table tr:nth-child(3) td:nth-child(1), .datepicker table tr:nth-child(4) td:nth-child(1), .datepicker table tr:nth-child(5) td:nth-child(1) {
+      border-left: none; }
+    .datepicker table tr:nth-child(2) td:nth-child(7), .datepicker table tr:nth-child(3) td:nth-child(7), .datepicker table tr:nth-child(4) td:nth-child(7), .datepicker table tr:nth-child(5) td:nth-child(7) {
+      border-right: none; }
+    .datepicker table tr:nth-child(6) td {
+      border-bottom: none; }
+      .datepicker table tr:nth-child(6) td:nth-child(1) {
+        border-left: none;
+        -webkit-border-radius: 0 0 0 10px;
+        -moz-border-radius: 0 0 0 10px;
+        -o-border-radius: 0 0 0 10px;
+        border-radius: 0 0 0 10px; }
+      .datepicker table tr:nth-child(6) td:nth-child(7) {
+        border-right: none;
+        -webkit-border-radius: 0 0 10px 0;
+        -moz-border-radius: 0 0 10px 0;
+        -o-border-radius: 0 0 10px 0;
+        border-radius: 0 0 10px 0; }

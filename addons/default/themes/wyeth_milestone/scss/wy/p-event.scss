@@ -1,0 +1,162 @@
+@import "../wy/wy-variables";
+@import "../bs/functions";
+@import "../bs/custom";
+@import "../bs/mixins";
+@import "../wy/wy-mixins";
+
+.events{
+  @include make-row;
+  @include pfs(margin-top, -$grid-gutter-width-sm/2, -$grid-gutter-width/2);
+  @include pfs(margin-bottom, -$grid-gutter-width-sm/2, -$grid-gutter-width/2);
+
+  &+.btn-more{
+    margin-top: 2rem;
+  }
+}
+.event{
+  @include make-col-ready;
+  display: flex;
+  @include pfs(padding-top, $grid-gutter-width-sm/2, $grid-gutter-width/2);
+  @include pfs(padding-bottom, $grid-gutter-width-sm/2, $grid-gutter-width/2);
+  @include media-breakpoint-only(md){
+    @include make-col(6);
+  }
+  @include media-breakpoint-up(lg){
+    @include make-col(4);
+  }
+
+  >div{
+    flex: 0 1 100%;
+    display: flex;
+    flex-direction: column;
+    @include border-bottom-radius($border-radius);
+    @include bgEmasGr(1);
+  }
+
+  .img{
+    @include embed-responsive;
+    &::before{padding-top: percentage(203/350);}
+    img{
+      @include border-top-radius($border-radius);
+      @include embed-responsive-item;
+      @include object-fit(cover);
+    }
+  }
+  .txt{
+    padding: 1rem 1rem 2rem;
+    color: $white;
+
+    .title{
+      @include fw(bold);
+      margin-bottom: .5rem;
+      @include pfs(font-size, 16px, 22px);
+      @include pfs(max-height, 16px*2*$line-height, 22px*2*$line-height);
+      @include textclamp(2);
+    }
+    p{
+      @include text-clamp(1rem, $line-height, 3);
+    }
+  }
+}
+
+.event-single{
+  margin-bottom: 3rem;
+  .title{
+    @include pfs(font-size, 26px, 32px);
+    @include fw(bold);
+    line-height: $line-height-sm;
+    margin-bottom: 1rem;
+  }
+  .content{
+    margin-bottom: 3rem;
+    color: $gray-700;
+    line-height: $line-height-lg;
+  }
+  .nav-social{
+    h6{
+      color: $emas-1;
+      display: inline-block;
+      @include fw(bold);
+    }
+    @include media-breakpoint-down(md){
+      .btn{
+        @include size(2rem);
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+.recap{
+  background-color: $gray-100;
+  // @include buatRow();
+  margin-left: -$c-gutter/2;
+  margin-right: -$c-gutter/2;
+  @include pfs(padding, $c-gutter/2, 40px);
+  margin-bottom: 3rem;
+  color: $gray-700;
+  i.wy{
+    @include pfs(width, 40px, 88px);
+    &::before{
+      position: relative;
+    }
+  }
+
+  h3{
+    font-size: 18px;
+    @include fw(bold);
+    border-bottom: 1px solid $gray-700;
+    padding-bottom: .75rem;
+  }
+
+  h4{
+    font-size: 15px;
+  }
+  p, ul{
+    font-size: 18px;
+    @include fw(bold);
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .event-title, .event-narasumber {
+    border-bottom: 1px solid $gray-700;
+  } 
+  .event-title, .event-narasumber, .date, .place{
+    @include buatColReady();
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  @include media-breakpoint-down(sm){
+    .date, .place{
+      @include buatRow;
+      align-items: center;
+      i{margin-right: 1rem;}
+    }
+    .date{
+      border-bottom: 1px solid $gray-700;
+    }
+    .place{
+      padding-bottom: 0;
+    }
+  }
+  @include media-breakpoint-up(md){
+    @include border-radius($border-radius);
+    margin-left: 0;
+    margin-right: 0;
+    width: percentage(8/12);
+    padding-bottom: 1rem;
+    
+    .row-0{margin-top: 1rem;}
+    .date, .place{
+      @include make-col(6);
+      text-align: center;
+      i{margin-bottom: 1rem;}
+    }
+    .date{
+      border-right: 1px solid $gray-700;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+//
+// Core variables and mixins
+//
+@import "../wy/wy-variables";
+@import "../bs/functions";
+@import "../bs/custom";
+@import "../bs/mixins";
+@import "../wy/wy-mixins";
+
+.p-sitemap{
+  background-color: $gray-100;
+  line-height: $line-height-lg;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    @include media-breakpoint-down(sm){
+      background-image: url("../img/404-m.png");
+      background-position: 100% 0;
+      left: 0;
+      bottom: 0;
+      @include size( 450px/2, 638px/2);
+    }
+    @include media-breakpoint-up(md){
+      background-image: url("../img/404-d.png");
+      background-position: 100% 100%;
+      background-size: contain;
+      right: 10%;
+      bottom: 0;
+      @include size(65%, 90%);
+    }
+  }
+
+  .intro{
+    margin-bottom: 2.5rem;
+    max-width: 550px;
+    @include media-breakpoint-down(sm){
+      text-align: center;
+    }
+  }
+
+  p{
+    margin-bottom: .5rem;
+  }
+
+  a{
+    color: $body-color;
+    display: block;
+    padding: .25rem 0;
+    &:hover{
+      text-decoration: none;
+      color: $link-hover-color;
+    }
+    i{
+      font-size: 1.5rem;
+      vertical-align: middle;
+      @include size(1.5rem);
+      text-align: center;
+      margin-right: .25rem;
+      position: relative;
+      color: $body-color;
+    }
+    .wy-bbm::before{
+      width: 1.5rem;
+    }
+    .fa-facebook, .fa-twitter, .fa-instagram{
+      font-size: .9rem;
+      line-height: 1.55rem;
+      &::after{
+        content: '';
+        @include size(100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: .1rem solid $body-color;
+      }
+    }
+  }
+  
+  .row-0{
+    padding-bottom: 5rem;
+  }
+
+  .main-link a, .page-title{
+    text-transform: uppercase;
+    font-size: 1rem;
+    @include fw(bold);
+  }
+
+  .main-link{
+    @include buatColReady;
+    @include make-col(6);
+    @include media-breakpoint-up(md){
+      @include make-col(4);
+    }
+  }
+  .sub-link{
+    @include buatColReady;
+    @include make-col(5.5);
+    @include make-col-offset(.5);
+    font-size: .9rem;
+
+    @include media-breakpoint-up(md){
+      @include buatRow;
+      @include make-col(6.5);
+    }
+  }
+  .support, .git{
+    @include buatColReady;
+  }
+  .support{
+    margin-bottom: 2rem;
+    @include media-breakpoint-up(md){
+      @include make-col(5);
+    }
+  }
+  .git{
+    @include media-breakpoint-up(md){
+      @include make-col(6);
+    }
+  }
+}

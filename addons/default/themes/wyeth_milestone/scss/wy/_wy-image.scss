@@ -1,0 +1,25 @@
+.img-fullwidth{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.img-full{
+	@include img-full(cover);
+}
+
+.img-rounded {
+  border-radius: 1rem;
+}
+
+.hidden-portrait {
+  @media only screen and (orientation: portrait) {
+    display: none;
+  }
+}
+
+.hidden-landscape {
+  @media only screen and (orientation: landscape) {
+    display: none;
+  }
+}

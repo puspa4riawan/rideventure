@@ -1,0 +1,253 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<?php if ($this->uri->segment(1) != '') { ?>
+    <?php if ($this->uri->segment(1) == 'login') { ?>
+        <title>{{ settings:site_name }} - Login</title>
+    <?php } elseif ($this->uri->segment(1) == 'register') { ?>
+        <title>{{ settings:site_name }} - Register</title>
+    <?php } else { ?>
+        <title>{{ template:title }}</title>
+    <?php } ?>
+<?php } else { ?>
+    <title>{{ settings:site_name }}</title>
+<?php } ?>
+
+<style id="antiClickjack">body{display:none !important;}</style>
+<script type="text/javascript">
+   if (self === top) {
+       var antiClickjack = document.getElementById("antiClickjack");
+       antiClickjack.parentNode.removeChild(antiClickjack);
+   } else {
+       top.location = self.location;
+   }
+</script>
+
+<!-- Bootstrap core CSS -->
+{{ asset:css file="jquery.mCustomScrollbar.min.css" }}
+{{ asset:css file="wy-global.css" }}
+{{ asset:css file="cropper.css" }}
+{{ asset:render }}
+
+{{ asset:js file="jquery-3.4.1.min.js" }}
+{{ asset:js file="popper.min.js" }}
+{{ asset:js file="bootstrap.min.js" }}
+{{ asset:js file="bootstrap-select.min.js" }}
+{{ asset:js file="swiper.min.js" }}
+{{ asset:js file="ofi.min.js" }}
+{{ asset:js file="moment.js" }}
+{{ asset:js file="moment-timezone.js" }}
+{{ asset:js file="bootstrap-datepicker.min.js" }}
+{{ asset:js file="bootstrap-datepicker.id.min.js" }}
+{{ asset:js file="cropper.js" }}
+{{ asset:js file="jquery.mCustomScrollbar.concat.min.js" }}
+{{ asset:js file="simple-ajax-uploader.js" }}
+{{ asset:js file="fe.js" }}
+{{ asset:js file="milestone-input.js" }}
+{{ asset:js file="milestone.js" }}
+{{ asset:render }}
+{{ asset:render_js_inline }}
+{{ template:metadata }}
+
+<link rel="stylesheet" href="{{ asset:css_url file='fullcalendar.min.css' }}">
+<script src="{{ asset:js_url file='fullcalendar.min.js' }}"></script>
+
+<!--[if lt IE 9]>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+    var BASE_URL = '{{ url:base }}';
+    var SITE_URL = '{{ url:site }}';
+    var user_login = '<?php echo $this->current_user ? true : false; ?>';
+    var puReg = '<?php echo $this->session->flashdata("first_register") ? true : false; ?>';
+    var login_register = '<?php echo isset($login_register) ? $login_register : false; ?>';
+    var captchaKey = '<?php echo Settings::get("recaptcha_public_key"); ?>';
+    var noactive = '<?php echo $this->session->flashdata("noactive") ? $this->session->flashdata("noactive") : false; ?>';
+    var tokens ={<?php echo '\''.$this->security->get_csrf_token_name().'\':\''.$this->security->get_csrf_hash().'\''; ?>};
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '<?php echo Settings::get("fb_app_id") ?>',
+            xfbml      : true,
+            version    : 'v2.7'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // if (navigator.cookieEnabled) {
+    //     document.cookie = 'tzu='+(moment.tz.guess());
+    // }
+</script>
+
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '526024850937775');
+    fbq('track', "PageView");
+    fbq('track', 'ViewContent');
+</script>
+
+<!-- <script>
+    (function(i,s,o,g,r,a,m){i['EmaticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//api.ematicsolutions.com/v1/ematic.min.js','ematics');
+
+    var ematicApikey = "45f26f45156211e8a4630242ac110002-sg4";
+    var opt = {
+        email: "<?php echo $this->current_user ? $this->current_user->email : ''; ?>",
+        country_iso: "ID",
+        currency_iso: "IDR",
+        language_iso: "id"
+    };
+    //initialize
+    ematics("create", ematicApikey, opt);
+</script> -->
+
+<!-- Lightning Bolt Begins -->
+ <script type="text/javascript">
+     var lbTrans = '[TRANSACTION ID]';
+     var lbValue = '[TRANSACTION VALUE]';
+     var lbData = '[Attribute/Value Pairs for Custom Data]';
+     var lb_rn = new String(Math.random()); var lb_rns = lb_rn.substring(2, 12);
+     var boltProtocol = ('https:' == document.location.protocol) ? 'https://' : 'http://';
+     try {
+         var newScript = document.createElement('script');
+         var scriptElement = document.getElementsByTagName('script')[0];
+         newScript.type = 'text/javascript';
+         newScript.id = 'lightning_bolt_' + lb_rns;
+         newScript.src = boltProtocol + 'cdn-akamai.mookie1.com/LB/LightningBolt.js';
+         scriptElement.parentNode.insertBefore(newScript, scriptElement);
+         scriptElement = null; newScript = null;
+     } catch (e) { }
+       </script>
+ <!-- Lightning Bolt Ends -->
+
+<!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script> -->
+
+<!-- 3 main popup -->
+<script type="text/javascript">
+<?php
+/*
+if(!$this->session->userdata('popup_cookie')){
+    $this->session->set_userdata('popup_cookie', true);
+?>
+$(document).ready(function () {
+    $('#puCookie').modal();
+
+    $('body').on('click', '.cookie-consent', function(evt) {
+        _consent = evt.currentTarget.dataset.consent;
+        if(_consent=='accept') {
+            if (navigator.cookieEnabled) {
+                document.cookie = 'tzu='+(moment.tz.guess());
+            }
+        }
+        $('#puCookie').modal('hide');
+        $('#puCookie').on('hidden.bs.modal', function (e) {
+            // popup asi
+            <?php
+            if(!$this->session->userdata('popup_asi')){
+                $this->session->set_userdata('popup_asi', true);
+            ?>
+            $('#puASI').modal();
+
+            $('#puASI').on('hidden.bs.modal', function (e) {
+                // add class .modal-open on body if login-register popup exist
+                _existPopUpLoginRegister = $('#puLoginRegister').hasClass('show');
+                <?php
+                if($this->uri->segment(1)!='') {
+                    if($this->uri->segment(1)=='vaksin' || $this->uri->segment(1)=='vaksin-tools') {
+                        if(!$this->session->userdata('popup_vaksin')) {
+                            $this->session->set_userdata('popup_vaksin', true);
+                ?>
+                    // popup vaksin
+                    $('#puIntroVaksin').modal();
+                <?php }
+                    }
+                } ?>
+                
+                if(_existPopUpLoginRegister) {
+                    $('body').addClass('modal-open');
+                }
+            });
+            <?php } ?>
+        });
+        // evt.preventDefault();
+    });
+});
+<?php } 
+*/ ?>
+</script>
+
+<!-- landing -->
+<?php
+// if(!$this->session->userdata('popup_asi')){
+//     $this->session->set_userdata('popup_asi', true);
+?>
+<script type="text/javascript">
+var _set_popupasi = localStorage.section_popupasi;
+$(document).ready(function(){
+    if(_set_popupasi == undefined) {
+        $('#puASI').modal();
+
+        $('#puASI').on('hidden.bs.modal', function (e) {
+            _existPopUpLoginRegister = $('#puLoginRegister').hasClass('show');
+            <?php
+            /*
+            if($this->uri->segment(1)!='') {
+                if($this->uri->segment(1)=='vaksin' || $this->uri->segment(1)=='vaksin-tools') {
+                    if(!$this->session->userdata('popup_vaksin')) {
+                        $this->session->set_userdata('popup_vaksin', true);
+            ?>
+                $('#puIntroVaksin').modal();
+            <?php }
+                }
+            }
+            */ ?>
+            
+            if(_existPopUpLoginRegister) {
+                $('body').addClass('modal-open');
+            }
+        });
+    }
+});
+</script>
+<?php 
+// } 
+?>
+
+<!-- landing vaksin -->
+<?php
+/*
+if($this->uri->segment(1)!='') {
+    if($this->uri->segment(1)=='vaksin' || $this->uri->segment(1)=='vaksin-tools') {
+        if(!$this->session->userdata('popup_vaksin')) {
+            $this->session->set_userdata('popup_vaksin', true);
+?>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('#puIntroVaksin').modal();
+    $('#puIntroVaksin').on('hidden.bs.modal', function (e) {
+        _existPopUpLoginRegister = $('#puLoginRegister').hasClass('show');
+        if(_existPopUpLoginRegister) {
+            $('body').addClass('modal-open');
+        }
+    });
+});
+</script>
+<?php }
+    }
+} */
+?>

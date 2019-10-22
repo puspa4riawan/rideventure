@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'LunchBox';
+    src: url('LunchBox-Light.eot');
+    src: url('LunchBox-Light.eot?#iefix') format('embedded-opentype'),
+        url('LunchBox-Light.woff2') format('woff2'),
+        url('LunchBox-Light.woff') format('woff'),
+        url('LunchBox-Light.ttf') format('truetype'),
+        url('LunchBox-Light.svg#LunchBox-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LunchBox';
+    src: url('LunchBox.eot');
+    src: url('LunchBox.eot?#iefix') format('embedded-opentype'),
+        url('LunchBox.woff2') format('woff2'),
+        url('LunchBox.woff') format('woff'),
+        url('LunchBox.ttf') format('truetype'),
+        url('LunchBox.svg#LunchBox') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

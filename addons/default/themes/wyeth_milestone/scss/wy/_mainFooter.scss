@@ -1,0 +1,221 @@
+#footerAbout{
+  .c-0{
+    background-repeat: no-repeat;
+    background-image: 
+      url("../img/o-awan.png"),
+      url("../img/o-awan.png"),
+      url("../img/o-awan1.png"),
+      url("../img/o-footerL.png"),
+      url("../img/o-footerR.png");
+
+    @include media-breakpoint-down(xs){
+      background-size: 
+        percentage(44/$wpsd-m) auto,
+        0 0,
+        percentage(47/$wpsd-m) auto,
+        percentage(68/$wpsd-m) auto,
+        percentage(98/$wpsd-m) auto;
+      background-position: 
+        percentage(-20/$wpsd-m) percentage(50/170),
+        0 0,
+        percentage(341/$wpsd-m) percentage(31/170),
+        percentage(28/$wpsd-m) 100%,
+        percentage(315/$wpsd-m) 100%;
+    }
+    @include media-breakpoint-up(sm){
+      background-size: 
+        auto percentage(23/170),
+        0 0,
+        auto percentage(40/170),
+        auto percentage(42/170),
+        auto percentage(43/170);
+      background-position: 
+        percentage(-20/$wpsd-m) percentage(50/170),
+        0 0,
+        percentage(341/$wpsd-m) percentage(31/170),
+        percentage(28/$wpsd-m) 100%,
+        percentage(315/$wpsd-m) 100%;      
+    }
+    @include media-breakpoint-up(md){
+      background-size: 
+        auto percentage(100/269),
+        auto percentage(45/269),
+        auto percentage(72/269),
+        auto percentage(114/269),
+        auto percentage(118/269);
+      background-position: 
+        percentage(7/$wpsd-d) percentage(9/269),
+        percentage(250/$wpsd-d) percentage(69/269),
+        percentage(1390/$wpsd-d) percentage(6/269),
+        percentage(80/$wpsd-d) 100%,
+        percentage(1408.00/$wpsd-d) 100%;
+    }
+  }
+
+  .txt{
+    @extend .col-lg-8;
+    margin: auto;
+    text-align: center;
+    padding: 3.5rem 0 4rem;
+
+    @include media-breakpoint-up(md){
+      padding-bottom: 3.5rem;
+    }
+
+    h2{
+      @extend .h1;
+      @extend .text-emas3;
+      padding-bottom: 1.2rem;
+    }
+    p{
+      @include pfs(font-size, 10.5px, 18px);
+      color: rgba($emas-2, .8);
+      @include fw(light);
+    }
+  }
+}
+
+#mainFooter{
+  @extend .bg-gray-100;
+
+  text-align: center;
+  @include pfs(font-size, 11px, 13px);
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+
+  nav{
+    @extend .nav;
+    justify-content: center;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    a{
+      @extend .nav-link;
+      color: $body-color;
+      // padding: .5rem .5rem;
+      font-weight: fw(bold);
+    }
+  }
+
+  p{
+    margin-bottom: .25rem;
+  }
+
+  img{
+    margin: .5rem 0;
+  }
+
+  .nav-social{
+    .btn{
+      @include border-radius(50%);
+    }
+  }
+}
+
+#hubungi{
+  position: fixed;
+  right: -263px;
+  top: 50%;
+  @include media-breakpoint-up(md){
+    top: 40%; right: -303px;
+  }
+  z-index: $zindex-fixed - 1;
+  transition: $transition-base;
+
+  &.pop{
+    right: 0;
+  }
+  &-btn, &-txt{
+    display: inline-block;
+    // margin-right: -4px;
+    vertical-align: top;
+  }
+  &-btn{
+    @include size(50px, 50px);
+    @include border-radius(2rem 0 0 2rem);
+    text-indent: -9999px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: contain;
+    background-color: #BD1701;
+    background-image: url('../img/hubungi-kami-m.png');
+    box-shadow:  0 0 3px rgba($gray-500, 50%);
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    right: 100%;
+  }
+  &-txt{
+    position: relative;
+    z-index: 10;
+    background-color: #F3F3F3;
+
+    box-shadow: 0 0 3px rgba($gray-500, 50%);
+    @include size(260px, 225px);
+    img{ @include img-full(contain);}
+
+    @include media-breakpoint-up(md){
+      @include size(300px, 268px);
+    }
+
+    a{
+      display: block;
+      height: 100%;
+    }
+  }
+}
+.cd-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include size(35px);
+  @include border-radius(50%);
+  cursor: pointer;
+
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  z-index: 10;
+
+  box-shadow: 0 0 10px rgba(#000, 0.2);
+  background-color: $emas;
+  text-align: center;
+  color: $white;
+
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity .3s 0s, visibility 0s .3s;
+  
+  &.cd-is-visible, &.cd-fade-out, .no-touch &:hover {
+    transition: opacity .3s 0s, visibility 0s 0s;
+  }
+
+  &.cd-is-visible { /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.cd-fade-out { /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+    opacity: .5;
+  }
+  
+  .fa{ font-size: 1.3rem; padding-bottom: 4px;}
+  .no-touch, &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: $body-color;
+  }
+
+  @include media-breakpoint-up(sm) {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  @include media-breakpoint-up(md) {
+    @include size(50px);
+    right: 30px;
+    bottom: 30px;
+  }
+}

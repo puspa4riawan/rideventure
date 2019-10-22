@@ -1,0 +1,238 @@
+.left-side {
+  float: left; }
+
+.right-side {
+  float: right; }
+
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+.voucher-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 100%;
+  width: auto;
+  border-radius: 9px;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  background-color: #F3F3F3; }
+  .voucher-banner figure {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    height: 140px; }
+    @media (min-width: 320px) {
+      .voucher-banner figure {
+        height: calc(8.92857vw + 111.42857px); } }
+    @media (min-width: 1440px) {
+      .voucher-banner figure {
+        height: 240px; } }
+    .voucher-banner figure img {
+      margin: auto;
+      display: block;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      font-family: "object-fit: cover"; }
+    @media (min-width: 768px) {
+      .voucher-banner figure {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%; } }
+  .voucher-banner .txt {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    padding: 1.5rem; }
+    .voucher-banner .txt p {
+      margin-bottom: 1rem; }
+    @media (max-width: 767px) {
+      .voucher-banner .txt .btn {
+        width: 100%; } }
+    @media (min-width: 768px) {
+      .voucher-banner .txt {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%; }
+        .voucher-banner .txt .btn {
+          float: right; } }
+
+.ev-step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+  min-width: 100%;
+  width: auto;
+  margin-bottom: 3.5rem; }
+
+.step {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding: 5px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (min-width: 992px) {
+    .step {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%; } }
+  .step > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 9px;
+    overflow: hidden;
+    height: 100%;
+    background: #e3b44e;
+    background: url("../img/emas-gr.png") repeat-y top center;
+    background-size: 100% auto;
+    background: -moz-linear-gradient(left, #f5e59e 0%, #e3b44e 6%, #c3932d 22%, #e3b44e 39%, #c3932d 71%, #e3b44e 86%, #f5e59e 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #f5e59e), color-stop(6%, #e3b44e), color-stop(22%, #c3932d), color-stop(39%, #e3b44e), color-stop(71%, #c3932d), color-stop(86%, #e3b44e), color-stop(100%, #f5e59e));
+    background: -webkit-linear-gradient(left, #f5e59e 0%, #e3b44e 6%, #c3932d 22%, #e3b44e 39%, #c3932d 71%, #e3b44e 86%, #f5e59e 100%);
+    background: -o-linear-gradient(left, #f5e59e 0%, #e3b44e 6%, #c3932d 22%, #e3b44e 39%, #c3932d 71%, #e3b44e 86%, #f5e59e 100%);
+    background: -ms-linear-gradient(left, #f5e59e 0%, #e3b44e 6%, #c3932d 22%, #e3b44e 39%, #c3932d 71%, #e3b44e 86%, #f5e59e 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#f5e59e), color-stop(6%, #e3b44e), color-stop(22%, #c3932d), color-stop(39%, #e3b44e), color-stop(71%, #c3932d), color-stop(86%, #e3b44e), to(#f5e59e));
+    background: linear-gradient(to right, #f5e59e 0%, #e3b44e 6%, #c3932d 22%, #e3b44e 39%, #c3932d 71%, #e3b44e 86%, #f5e59e 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$emas-gr1', endColorstr='$emas-gr1', GradientType=1 ); }
+  .step figure {
+    background-color: #F3F3F3;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    position: relative;
+    height: 90px; }
+    @media (min-width: 320px) {
+      .step figure {
+        height: calc(11.16071vw + 54.28571px); } }
+    @media (min-width: 1440px) {
+      .step figure {
+        height: 215px; } }
+    .step figure img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      right: 0;
+      margin: auto;
+      display: block;
+      width: auto;
+      max-width: 70%;
+      height: auto;
+      max-height: 60%;
+      -o-object-fit: contain;
+      object-fit: contain;
+      font-family: "object-fit: contain"; }
+  .step .txt {
+    padding: 1rem 1rem 1.5rem;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 500; }
+
+.join {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 100%;
+  width: auto;
+  background-color: #F3F3F3;
+  border-radius: 9px;
+  overflow: hidden; }
+  .join figure, .join .txt {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px; }
+    @media (min-width: 768px) {
+      .join figure, .join .txt {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%; } }
+  .join figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    font-family: "object-fit: cover"; }
+  .join .txt {
+    padding: 1.5rem 1.5rem 2rem; }
+    .join .txt h3 {
+      font-weight: 500;
+      font-size: 32px; }
+      @media (min-width: 320px) {
+        .join .txt h3 {
+          font-size: calc(0.44643vw + 30.57143px); } }
+      @media (min-width: 1440px) {
+        .join .txt h3 {
+          font-size: 37px; } }
+    .join .txt p {
+      margin-bottom: 1rem; }
+    .join .txt ul {
+      margin: 0 0 1rem;
+      padding: 0; }
+      .join .txt ul > li {
+        margin: 0;
+        padding: 0 0 0 9px;
+        text-indent: -5px;
+        list-style-type: none;
+        counter-increment: item;
+        font-size: .9rem;
+        padding-bottom: .25rem; }
+        .join .txt ul > li::before {
+          display: inline-block;
+          font-weight: bold;
+          content: "\2022";
+          width: 5px; }
+    .join .txt .form-group {
+      margin-bottom: 1rem; }
+    @media (max-width: 767px) {
+      .join .txt .btns .btn {
+        width: 100%; } }
+    @media (min-width: 768px) {
+      .join .txt .btns {
+        text-align: right; } }

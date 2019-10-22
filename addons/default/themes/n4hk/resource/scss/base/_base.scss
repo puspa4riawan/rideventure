@@ -1,0 +1,107 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Resets margins and paddings for headers, figure, ul, ol, p, and blackquote
+//  *   CH02 - Super hard reset that removes all borders and radius of all form items
+//  *   CH03 - Use border-box for everything
+//  *   CH04 - Set image and objects to have a max-width of 100%
+//  *   CH05 - Set html and body to have default styling
+
+
+
+//================================================================================================================
+//  *   CH01 - Resets margins and paddings for headers, figure, ul, ol, p, and blackquote
+//================================================================================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+ul,
+li,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+//================================================================================================================
+//  *   CH02 - Super hard reset that removes all borders and radius of all form items
+//================================================================================================================
+input,
+textarea,
+button {
+    border: none;
+    border-radius: 0;
+    outline: none;
+    appearance: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH03 - Use border-box for everything
+//================================================================================================================
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+
+//================================================================================================================
+//  *   CH04 - Set image and objects to have a max-width of 100%
+//================================================================================================================
+embed,
+iframe,
+img,
+object,
+video {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+
+    &.lazy {
+        width: 100%;
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH05 - Set html and body to have default styling
+//================================================================================================================
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    width: 100%;
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: text-color(p-primary, default);
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}

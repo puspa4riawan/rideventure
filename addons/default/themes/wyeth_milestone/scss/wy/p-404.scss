@@ -1,0 +1,40 @@
+//
+// Core variables and mixins
+//
+@import "../wy/wy-variables";
+@import "../bs/functions";
+@import "../bs/custom";
+@import "../bs/mixins";
+@import "../wy/wy-mixins";
+
+.p-404{
+  background-color: $gray-100;
+  display: flex;
+  >.container{
+    position: relative;
+
+    >img{
+      @include img-full(contain);
+    }
+  }
+  .text{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 75%;
+    height: 7rem;
+    text-align: center;
+    line-height: $line-height-lg;
+    @include media-breakpoint-up(md){
+      width: 40%;
+    }
+  }
+  .page-title{
+    @include pfs(font-size, 24px, 42px);
+    @include fw(bold);
+    margin-bottom: .5rem;
+  }
+}

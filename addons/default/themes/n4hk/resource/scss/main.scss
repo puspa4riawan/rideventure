@@ -1,0 +1,95 @@
+// The lib/ folder contains a single file — _lib.scss. 
+// This _lib.scss declares all libraries I use for the project. 
+// In case you were wondering, the libraries I use are:
+// Normalize.css
+// sass-mediaqueries (for breakpoints)
+// Themify (if I’m working with themes)
+@import 'lib/lib';
+
+
+
+// The helpers/ folder contains convenient mixins and functions I use in the project.
+// In case you were wondering, the helpers I use are:
+// Mixin generate font family
+// Mixin element positioning
+// Mixin centered position of an element in a short 2 lines of code
+// Mixin converting font size from px to rem
+// Mixin converting line height from px to rem
+// Mixin generates the image in either standard size or retina display version
+// Mixin clearfix
+// Mixin CSS triangle
+// Extend embed video
+@import 'helpers/helpers';
+@import 'helpers/breakpoint';
+
+
+
+// The variables/ folder is where I store variables used in the project.
+// As you can tell from my styles.scss file, I use only four types of variables:
+@import 'variables/colors';
+@import 'variables/breakpoints';
+@import 'variables/typography';
+@import 'variables/layouts';
+@import 'variables/themes'; // only when necessary
+
+
+
+// The base/ folder is where I write any resets in addition to Normalize.css.
+// I’m pretty aggressive with resetting margins, paddings and the looks of input and button elements
+@import 'base/base';
+
+
+
+// The layouts/ folder is where I write layouts that apply globally to my project.
+@import 'layouts/layouts';
+@import 'layouts/main-navigation';
+@import 'layouts/header';
+@import 'layouts/section';
+@import 'layouts/footer';
+
+
+
+// Objects (.o-) are the smallest building blocks of a website.
+// They have the following properties:
+// 1. Objects uses the .o- prefix.
+// 2. They cannot contain other objects or components.
+// 3. They are context independent.
+// 4. Certain objects can ignore the .o- prefix when it makes sense.
+@import 'objects/buttons';
+@import 'objects/input';
+@import 'objects/typography';
+// Other objects as necessary
+
+
+
+// Vendors are the a way to track code that's supplied by the vendor – or the author – of the framework
+// For example:
+// Swiper from http://idangero.us
+// Animate CSS from https://daneden.github.io/animate.css/
+// Usage: @import 'vendors/folderName/fileName';
+// Other vendor library as necessary
+$ph-color: rgba(206, 212, 218, .5) !default;
+$ph-gutter: 16px !default;
+
+@import 'placeholder-loading/src/scss/placeholder-loading';
+
+
+
+// Components (.c-) are the larger building blocks of a website.
+// They have the following properties:
+// 1. They use the .c- prefix.
+// 2. They can contain other objects or components.
+// 3. They are context aware.
+@import 'components/card-thumbnail';
+@import 'components/form';
+@import 'components/link';
+@import 'components/table';
+// Other components as necessary
+
+
+
+// The _utilities.scss file is where I write utility-namespaced classes like .u-text-center
+// Utility classes are helper classes that perform one thing extremely well.
+// They do it so well, they override everything else.
+// As such, they often only contain one property, and they include the !important declaration.
+@import 'utilities';

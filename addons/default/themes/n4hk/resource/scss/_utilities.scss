@@ -1,0 +1,159 @@
+//================================================================================================================
+//  *   Chapther
+//================================================================================================================
+//  *   CH01 - Text align
+//  *   CH02 - Hide element
+//  *   CH03 - Show element
+
+
+
+//================================================================================================================
+//  *   CH01 - Text Align
+//================================================================================================================
+.u-text-left {
+    text-align: left !important;
+}
+
+.u-text-center {
+    text-align: center !important;
+
+}
+
+.u-text-right {
+    text-align: right !important;
+}
+
+
+
+//================================================================================================================
+//  *   CH02 - Hide element
+//================================================================================================================
+// Mobile first
+.u-hide-bp-min-xs {
+    @include breakpoint(xs) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-min-sm {
+    @include breakpoint(sm) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-min-md {
+    @include breakpoint(md) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-min-lg {
+    @include breakpoint(lg) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-min-wd {
+    @include breakpoint(wd) {
+        display: none !important;
+    }
+}
+
+// Desktop first
+.u-hide-bp-max-xs {
+    @include breakpoint-max(xs) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-max-sm {
+    @include breakpoint-max(sm) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-max-md {
+    @include breakpoint-max(md) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-max-lg {
+    @include breakpoint-max(lg) {
+        display: none !important;
+    }
+}
+
+.u-hide-bp-max-wd {
+    @include breakpoint-max(wd) {
+        display: none !important;
+    }
+}
+
+
+
+//================================================================================================================
+//  *   CH03 - Show element
+//  *   Display: block
+//================================================================================================================
+// Mobile first
+.u-visible-bp-min-xs {
+    @include breakpoint(xs) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-min-sm {
+    @include breakpoint(sm) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-min-md {
+    @include breakpoint(md) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-min-lg {
+    @include breakpoint(lg) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-min-wd {
+    @include breakpoint(wd) {
+        display: block !important;
+    }
+}
+
+// Desktop first
+.u-visible-bp-max-xs {
+    @include breakpoint-max(xs) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-max-sm {
+    @include breakpoint-max(sm) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-max-md {
+    @include breakpoint-max(md) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-max-lg {
+    @include breakpoint-max(lg) {
+        display: block !important;
+    }
+}
+
+.u-visible-bp-max-wd {
+    @include breakpoint-max(wd) {
+        display: block !important;
+    }
+}
