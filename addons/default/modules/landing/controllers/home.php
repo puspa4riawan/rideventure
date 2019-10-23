@@ -15,48 +15,10 @@ class Home extends Public_Controller {
         
         $slug = $this->security->xss_clean($slug);
 
-        if(!in_array($slug, array('dancow', 'koko', 'milo')) and !empty($slug)) {
-            var_dump($slug);
-            redirect();
-        }
-            
-        $campaign_head = $slug;
-        switch ($slug) {
-            case 'koko':
-                $color = 'theme-orange';
-                $heading = 'Aktif Bersama Si Kecil';
-                $campaign_head = 'Koko krunch';
-                $main_banner = Asset::get_filepath_img('upload/figure/figure-heading-main-banner-koko.svg', true);
-                break;
-
-            case 'dancow':
-                $color = 'theme-purple';
-                $heading = 'Gizi Seimbang untuk Si Kecil';
-                $main_banner = Asset::get_filepath_img('upload/figure/figure-heading-main-banner-dancow.svg', true);
-                break;
-                
-            default:
-                $slug = 'milo';
-                $color = 'theme-green';
-                $heading = 'Tumbuh Kembang Si Kecil';
-                $main_banner = Asset::get_filepath_img('upload/figure/figure-heading-main-banner.svg', true);
-                break;
-        }
-        
 
         $meta_title = 'Nestle for Healthier Kids';
 
-        //get article by slug
-        $this->db->where('status','live');
-        $this->db->like('campaign',$slug,'both');
-        $this->db->where('categories_id',1);
-        $article_slug = $this->article_m->get_all_data('article');
-
-        //get recipe by slug
-        $this->db->where('status','live');
-        $this->db->like('campaign',$slug,'both');
-        $this->db->where('categories_id',2);
-        $recipe_slug = $this->article_m->get_all_data('article');
+       
 
 		$this->template->title($meta_title)
             // ->set_metadata('robots', $meta_robots)
@@ -67,13 +29,6 @@ class Home extends Public_Controller {
             // ->set_metadata('og:title', $og_title)
             // ->set_metadata('og:description', $og_description)
             // ->set_metadata('og:url', $og_url)
-            ->set('color', $color)
-            ->set('campaign_slug',$slug)
-            ->set('article_slug',$article_slug)
-            ->set('recipe_slug',$recipe_slug)
-            ->set('campaign_head', $campaign_head)
-            ->set('heading', $heading)
-            ->set('main_banner', $main_banner)
             ->set_layout('landing.html')
             ->build('public/landing');
     }

@@ -1,0 +1,54 @@
+<!-- banner -->
+<div id="home" class="banner">
+    <div class="banner-agileinfo">
+        <!-- header -->
+        <div class="header">
+            <div class="container">     
+                <div class="logo">
+                    <h1><a href="index.html">Motorbike</a></h1>
+                </div> 
+                <div class="menu">
+                    <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
+                    <nav>  
+                        <a href="#home" class="active scroll">Home</a> 
+                        <a href="#about" class="scroll">About</a>  
+                        <a href="#services" class="scroll">Services</a>  
+                        <a href="#news" class="scroll">News</a>
+                        <a href="#spec" class="scroll">Specifications</a> 
+                        <a href="#gallery" class="scroll">Gallery</a> 
+                        <a href="#contact" class="scroll">Contact</a> 
+                    </nav>
+                    <script>
+                    (function($){
+                        // Menu Functions
+                        $(document).ready(function(){
+                        $('#menuToggle').click(function(e){
+                            var $parent = $(this).parent('.menu');
+                          $parent.toggleClass("open");
+                          var navState = $parent.hasClass('open') ? "hide" : "show";
+                          $(this).attr("title", navState + " navigation");
+                                // Set the timeout to the animation length in the CSS.
+                                setTimeout(function(){
+                                    console.log("timeout set");
+                                    $('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+                                }, 200);
+                            e.preventDefault();
+                        });
+                      });
+                    })(jQuery);
+                    </script>
+     
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- //header -->
+        <div class="banner-text">
+            <div class="container">     
+                <h2>WE OFFER THE BEST <span>MOTORBIKES</span></h2>
+                <a href="#about" class="buy btn-wayra scroll"> More About</a>
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- //banner -->

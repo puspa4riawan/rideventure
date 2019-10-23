@@ -1,0 +1,47 @@
+    <meta charset="utf-8">
+    <title>{{ settings:site_name }}</title>
+    <meta name="theme-color" content="#8DC044" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="" />
+
+    <style id="antiClickjack">body{display:none !important;}</style>
+    <script type="text/javascript">
+    if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+        top.location = self.location;
+    }
+    </script>
+
+    <script type="text/javascript">
+        var BASE_URL = '{{ url:base }}';
+        var SITE_URL = '{{ url:site }}';
+        var tokens ={<?php echo '\''.$this->security->get_csrf_token_name().'\':\''.$this->security->get_csrf_hash().'\''; ?>};
+    </script>
+
+    <!-- favicon -->
+    <link href="{{ theme:image_url file='upload/favicon/favicon.jpg' }}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ theme:image_url file='upload/favicon/web-clip.jpg' }}" rel="apple-touch-icon">
+    <!-- endfavicon -->
+
+   <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+   <!--  <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/lightbox.css"> -->
+
+    <link href="{{ asset:css_url file='bootstrap.css' }}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{ asset:css_url file='style.css' }}" type="text/css" rel="stylesheet" media="all"> 
+    <link href="{{ asset:css_url file='font-awesome.css' }}" rel="stylesheet"> <!-- font-awesome icons -->
+    <link rel="stylesheet" href="{{ asset:css_url file='lightbox.css' }}">
+    <!--//Custom Theme files-->
+    <!-- js -->
+    <script src="{{ asset:js_url file='jquery-2.2.3.min.js' }}"></script>  
+    <!-- //js -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet"> 
