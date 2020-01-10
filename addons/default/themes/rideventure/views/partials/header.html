@@ -1,3 +1,17 @@
+<style type="text/css">
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+</style>
+<video autoplay muted loop id="myVideo">
+  <source src="addons/default/themes/rideventure/video/VID-20191002-WA0004.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
 <!-- banner -->
 <div id="home" class="banner">
     <div class="banner-agileinfo">
@@ -19,13 +33,13 @@
                 <div class="menu">
                     <a href="" id="menuToggle"> <span class="navClosed"></span> </a>
                     <nav>  
-                        <a href="#home" class="active scroll">Home</a> 
-                        <a href="#about" class="scroll">About</a>  
-                        <a href="#services" class="scroll">Services</a>  
-                        <a href="#news" class="scroll">News</a>
-                        <a href="#spec" class="scroll">Specifications</a> 
-                        <a href="#gallery" class="scroll">Gallery</a> 
-                        <a href="#contact" class="scroll">Contact</a> 
+                        <a href="#home" class="active scroll">HOME</a> 
+                        <a href="#about" class="scroll">GUIDE TOURS</a>  
+                        <a href="#services" class="scroll">PRIVATE GROUP TOURS</a>  
+                        <a href="#news" class="scroll">SELF GUIDE TOUR</a>
+                        <a href="#spec" class="scroll">MOTORCYCLES</a> 
+                        <a href="#gallery" class="scroll">ABOUT</a> 
+                        <a href="#contact" class="scroll">CONTACT</a> 
                     </nav>
                     <script>
                     (function($){
@@ -52,6 +66,7 @@
             </div>
         </div>
         <!-- //header -->
+        
         <div class="banner-text">
             <div class="container">     
                 <h2>WE OFFER THE BEST <span>MOTORBIKES</span></h2>
@@ -61,3 +76,9 @@
     </div>
 </div>
 <!-- //banner -->
+<script type="text/javascript">
+$(document).ready(function(){
+    var vid = document.getElementById("myVideo");
+    vid.volume = 100;
+})
+</script>

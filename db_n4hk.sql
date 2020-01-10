@@ -12,12 +12,6 @@
 
 SET FOREIGN_KEY_CHECKS=0;
 
-CREATE DATABASE `db_n4hk`
-    CHARACTER SET 'latin1'
-    COLLATE 'latin1_swedish_ci';
-
-USE `db_n4hk`;
-
 #
 # Structure for the `core_settings` table : 
 #
