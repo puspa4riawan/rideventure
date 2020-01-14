@@ -2,13 +2,13 @@
     <!-- news -->
     <div id="news" class="news">   
         <div class="container"> 
-            <h3 class="agileits-title w3title2"><span>N</span>ews </h3>
+            <h3 class="agileits-title w3title2"><span>T</span>ours </h3>
             <div class="news-agileinfo">
                 <div class="col-md-4 news-w3grid">
-                    <img src="{{theme:image_url file='img2.jpg'}}" alt="">
+                    <img src="{{theme:image_url file='tours/1.jpeg'}}" alt="">
                     <div class="news-w3grid-info">
-                        <h5><span>10</span> April </h5>
-                        <h4>Donec cursus</h4>
+                        <h5><span></span>Tour 1 </h5>
+                        <h4>USD 400</h4>
                         <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
                         <div class="article-links">
                             <ul>
@@ -19,10 +19,10 @@
                     </div>
                 </div>
                 <div class="col-md-4 news-w3grid">
-                    <img src="{{theme:image_url file='img3.jpg'}}" alt="">
+                    <img src="{{theme:image_url file='tours/13.jpeg'}}" alt="">
                     <div class="news-w3grid-info">
-                        <h5><span>15</span> April </h5>
-                        <h4>Suscipit dapib</h4>
+                        <<h5><span></span>Tour 2 </h5>
+                        <h4>USD 300</h4>
                         <p>Lorem cursus vitae placerat etiam ex suscipit dapibus tortor sed nec augue</p>
                         <div class="article-links">
                             <ul>
@@ -33,10 +33,10 @@
                     </div>
                 </div>
                 <div class="col-md-4 news-w3grid">
-                    <img src="{{theme:image_url file='img4.jpg'}}" alt="">
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="">
                     <div class="news-w3grid-info">
-                        <h5><span>18</span> April </h5>
-                        <h4>Tortor sed</h4>
+                        <h5><span></span>Tour 3 </h5>
+                        <h4>USD 500</h4>
                         <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
                         <div class="article-links">
                             <ul>
@@ -54,10 +54,11 @@
     <!-- specifications -->
     <div id="spec" class="spec jarallax">
         <div class="container"> 
-            <h3 class="agileits-title w3title2"><span>O</span>ur Product</h3>
+            <h3 class="agileits-title w3title2"><span>D</span>estination</h3>
             <div class="specw3-agileits">
-                <div class="col-md-6 spec-grids">   
-                    <h4>1. Product 1</h4>
+                <div class="col-md-4 spec-grids">   
+                    <h4>1. Destination 1</h4>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
                     <ul>
                         <li>
                             <div class="specf-left">
@@ -115,60 +116,121 @@
                         </li>
                     </ul>
                 </div>  
-                <div class="col-md-6 spec-grids">   
-                    <h4>2. Product 2</h4>
+                <div class="col-md-4 spec-grids">   
+                    <h4>1. Destination 2</h4>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
                     <ul>
                         <li>
                             <div class="specf-left">
-                                <p>Tyre Type</p>
+                                <p>Ex-showroom Price Value</p>
                             </div>
                             <div class="specf-right">
-                                <p>Bridgestone</p>
+                                <p>$50,85,182 </p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Bluetooth Connectivity</p>
+                                <p>Displacement</p>
                             </div>
                             <div class="specf-right">
-                                <p>Available</p>
+                                <p>346 cc</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Stroke</p>
+                                <p>fuel economy</p>
                             </div>
                             <div class="specf-right">
-                                <p>90 mm</p>
+                                <p>30kmpl </p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Clutch</p>
+                                <p>No. of Gears</p>
                             </div>
                             <div class="specf-right">
-                                <p>Wet, Multi-plate</p>
+                                <p>5</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Warranty Time</p>
+                                <p>Speedometer</p>
                             </div>
                             <div class="specf-right">
-                                <p>3 Years</p>
+                                <p>Analogue</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Maximum Torque</p>
+                                <p>Latest technology</p>
                             </div>
                             <div class="specf-right">
-                                <p>28 Nm @ 4,000 rpm </p>
+                                <p>Available </p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="col-md-4 spec-grids">   
+                    <h4>1. Destination 3</h4>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
+                    <ul>
+                        <li>
+                            <div class="specf-left">
+                                <p>Ex-showroom Price Value</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>$50,85,182 </p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Displacement</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>346 cc</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>fuel economy</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>30kmpl </p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>No. of Gears</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>5</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Speedometer</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>Analogue</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </li>
+                        <li>
+                            <div class="specf-left">
+                                <p>Latest technology</p>
+                            </div>
+                            <div class="specf-right">
+                                <p>Available </p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
@@ -183,49 +245,49 @@
     
     <!-- //welcome -->  
     <!-- slid -->
-    <div class="slid jarallax">
+    <!-- <div class="slid jarallax">
         <div class="slid-text">
             <h4>24/7 Customer Service Support</h4>
             <p>Proin tincidunt sodales faucibus. Curabitur ut metus sed urna dignissim sodales ac a tellus. Sed varius justo tellus, at convallis libero cursus non. In malesuada accumsan felis, a imperdiet arcu blandit sed. Ut id faucibus eros. Fusce sed vulputate dui, non consectetur felis. Etiam id enim sem. Suspendisse commodo tempor magna </p>
         </div>
         <div class="clearfix"> </div>
-    </div>
+    </div> -->
     <!-- //slid -->
     <!-- services -->
     <div id="services" class="services">
         <div class="container"> 
-            <h3 class="agileits-title w3title2"><span>S</span>ervices</h3>
+            <h3 class="agileits-title w3title2"><span>A</span>rmada</h3>
             <div class="services-row-agileinfo">
                 <div class="col-sm-4 col-xs-6 services-w3grid">
-                    <span class="fa fa-heart hi-icon" aria-hidden="true"></span>
-                    <h5>Cum soluta nobis</h5>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
+                    <h5>Armada 1</h5>
                     <p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
                 </div>
                 <div class="col-sm-4 col-xs-6 services-w3grid">
-                    <span class="fa fa-wrench hi-icon" aria-hidden="true"></span>
-                    <h5>Soluta vum nobis</h5>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
+                    <h5>Armada 2</h5>
                     <p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
                 </div>
                 <div class="col-sm-4 col-xs-6 services-w3grid">
-                    <span class="fa fa-bell hi-icon" aria-hidden="true"></span>
-                    <h5>Nobis cum soluta</h5>
-                    <p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-                </div> 
-                <div class="col-sm-4 col-xs-6 services-w3grid">
-                    <span class="fa fa-motorcycle hi-icon" aria-hidden="true"></span>
-                    <h5>Cum soluta nobis</h5>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
+                    <h5>Armada 3</h5>
                     <p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
                 </div>
                 <div class="col-sm-4 col-xs-6 services-w3grid">
-                    <span class="fa fa-check-square-o hi-icon" aria-hidden="true"></span>
-                    <h5>Soluta vum nobis</h5>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
+                    <h5>Armada 4</h5>
                     <p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
                 </div>
                 <div class="col-sm-4 col-xs-6 services-w3grid">
-                    <span class="fa fa-gears hi-icon" aria-hidden="true"></span>
-                    <h5>Nobis cum soluta</h5>
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
+                    <h5>Armada 5</h5>
                     <p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
-                </div> 
+                </div>
+                <div class="col-sm-4 col-xs-6 services-w3grid">
+                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
+                    <h5>Armada 6</h5>
+                    <p>Itaque earum rerum hic a sapiente delectus finibus gravida</p>
+                </div>
                 <div class="clearfix"> </div>
             </div> 
          </div>
@@ -312,8 +374,8 @@
                 <div class="col-md-6 w3ls_welcome_left"> 
                     <div class="w3ls_welcome_right1">
                         <h3 class="agileits-title"><span>A</span>bout Us</h3>
-                        <h6>Lorem ipsum dolor <span> Consectetur </span> sit adipisicing. </h6>
-                        <p>Quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
+                        <h6>RideVenture Indonesia. </h6>
+                        <p>RideVenture Indonesia is quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, 
                             vel illum qui dolorem eum fugiat quo voluptas nulla pariatur Duis finibus sollicitudin libero, sed tempor diam euismod sed. Sed interdum odio a finibus gravida. Aliquam tincidunt nisl nec urna euismod, ullamcorper scelerisque magna vulputate. .</p>
                     </div> 
                 </div>
@@ -332,8 +394,8 @@
             <h3 class="agileits-title w3title2"><span>C</span>ontact Us</h3>
             <div class="contact-grids">
                 <div class="col-md-5 address">
-                    <h4>Get in touch with us</h4>
-                    <p class="cnt-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit,sheets containing Lorem Ipsum passages sed do </p>
+                    <h4>RideVenture Indonesia</h4>
+                    <p class="cnt-p">RideVenture Indonesia located at Lorem ipsum dolor sit amet, consectetur adipisicing elit,sheets containing Lorem Ipsum passages sed do </p>
                     <div class="agile_social_icons">
                         <ul class="agileits_social_list">
                             <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -342,10 +404,10 @@
                             <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>  
-                    <p>Broome St, NY 10002, Canada. </p>
-                    <p>Telephone : +01 111 222 3333</p>
-                    <p>FAX : +1 888 4444</p>
-                    <p>Email : <a href="mailto:example@mail.com">mail@example.com</a></p>
+                    <p>Denpasar, Bali. </p>
+                    <p>Telephone : +0362 11111</p>
+                    <p>FAX : +0362 11111</p>
+                    <p>Email : <a href="mailto:info@rideventureindonesia.com">info@rideventureindonesia.com</a></p>
                 </div>
                 <div class="col-md-7 contact-form">
                     <form action="#" method="post">
