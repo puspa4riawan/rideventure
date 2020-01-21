@@ -37,8 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-var_dump(ADMIN_URL);
-exit;
+
 $route['default_controller']                = 'landing/home';
 $route['404_override']                      = 'landing/home/page_404';
 
