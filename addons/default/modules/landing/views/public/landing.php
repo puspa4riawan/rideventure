@@ -2,13 +2,13 @@
     <!-- news -->
     <div id="news" class="news">   
         <div class="container"> 
-            <h3 class="agileits-title w3title2"><span>T</span>ours </h3>
+            <h3 class="agileits-title w3title2"><span>D</span>estination </h3>
             <div class="news-agileinfo">
                 <div class="col-md-4 news-w3grid">
                     <img src="{{theme:image_url file='tours/1.jpeg'}}" alt="">
                     <div class="news-w3grid-info">
-                        <h5><span></span>Tour 1 </h5>
-                        <h4>USD 400</h4>
+                        <h5><span></span>Destination 1 </h5>
+                        <h4>More ...</h4>
                         <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
                         <div class="article-links">
                             <ul>
@@ -21,8 +21,8 @@
                 <div class="col-md-4 news-w3grid">
                     <img src="{{theme:image_url file='tours/13.jpeg'}}" alt="">
                     <div class="news-w3grid-info">
-                        <<h5><span></span>Tour 2 </h5>
-                        <h4>USD 300</h4>
+                        <<h5><span></span>Destination 2 </h5>
+                        <h4>More ...</h4>
                         <p>Lorem cursus vitae placerat etiam ex suscipit dapibus tortor sed nec augue</p>
                         <div class="article-links">
                             <ul>
@@ -35,8 +35,8 @@
                 <div class="col-md-4 news-w3grid">
                     <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="">
                     <div class="news-w3grid-info">
-                        <h5><span></span>Tour 3 </h5>
-                        <h4>USD 500</h4>
+                        <h5><span></span>Destination 3 </h5>
+                        <h4>More ...</h4>
                         <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
                         <div class="article-links">
                             <ul>
@@ -54,15 +54,15 @@
     <!-- specifications -->
     <div id="spec" class="spec jarallax">
         <div class="container"> 
-            <h3 class="agileits-title w3title2"><span>D</span>estination</h3>
+            <h3 class="agileits-title w3title2"><span>T</span>ours</h3>
             <div class="specw3-agileits">
                 <div class="col-md-4 spec-grids">   
-                    <h4>1. Destination 1</h4>
+                    <h4>1. Tour 1</h4>
                     <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
                     <ul>
                         <li>
                             <div class="specf-left">
-                                <p>Ex-showroom Price Value</p>
+                                <p>Price </p>
                             </div>
                             <div class="specf-right">
                                 <p>$50,85,182 </p>
@@ -71,25 +71,25 @@
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Displacement</p>
+                                <p>Package</p>
                             </div>
                             <div class="specf-right">
-                                <p>346 cc</p>
+                                <p>Batur Mountain Tour</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>fuel economy</p>
+                                <p>Motor Type</p>
                             </div>
                             <div class="specf-right">
-                                <p>30kmpl </p>
+                                <p>Matic </p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>No. of Gears</p>
+                                <p>No. Pax</p>
                             </div>
                             <div class="specf-right">
                                 <p>5</p>
@@ -98,31 +98,23 @@
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Speedometer</p>
+                                <p>Full Board</p>
                             </div>
                             <div class="specf-right">
-                                <p>Analogue</p>
+                                <p>Include</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
-                        <li>
-                            <div class="specf-left">
-                                <p>Latest technology</p>
-                            </div>
-                            <div class="specf-right">
-                                <p>Available </p>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </li>
+                        
                     </ul>
                 </div>  
                 <div class="col-md-4 spec-grids">   
-                    <h4>1. Destination 2</h4>
+                    <h4>1. Tour 2</h4>
                     <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
                     <ul>
                         <li>
                             <div class="specf-left">
-                                <p>Ex-showroom Price Value</p>
+                                <p>Price </p>
                             </div>
                             <div class="specf-right">
                                 <p>$50,85,182 </p>
@@ -131,25 +123,25 @@
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Displacement</p>
+                                <p>Package</p>
                             </div>
                             <div class="specf-right">
-                                <p>346 cc</p>
+                                <p>Batur Mountain Tour</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>fuel economy</p>
+                                <p>Motor Type</p>
                             </div>
                             <div class="specf-right">
-                                <p>30kmpl </p>
+                                <p>Matic </p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>No. of Gears</p>
+                                <p>No. Pax</p>
                             </div>
                             <div class="specf-right">
                                 <p>5</p>
@@ -158,31 +150,22 @@
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Speedometer</p>
+                                <p>Full Board</p>
                             </div>
                             <div class="specf-right">
-                                <p>Analogue</p>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </li>
-                        <li>
-                            <div class="specf-left">
-                                <p>Latest technology</p>
-                            </div>
-                            <div class="specf-right">
-                                <p>Available </p>
+                                <p>Include</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                     </ul>
                 </div> 
                 <div class="col-md-4 spec-grids">   
-                    <h4>1. Destination 3</h4>
+                    <h4>1. Tour 3</h4>
                     <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="" style="width: 100%; margin-bottom: 20px;">
                     <ul>
                         <li>
                             <div class="specf-left">
-                                <p>Ex-showroom Price Value</p>
+                                <p>Price </p>
                             </div>
                             <div class="specf-right">
                                 <p>$50,85,182 </p>
@@ -191,25 +174,25 @@
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Displacement</p>
+                                <p>Package</p>
                             </div>
                             <div class="specf-right">
-                                <p>346 cc</p>
+                                <p>Batur Mountain Tour</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>fuel economy</p>
+                                <p>Motor Type</p>
                             </div>
                             <div class="specf-right">
-                                <p>30kmpl </p>
+                                <p>Matic </p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>No. of Gears</p>
+                                <p>No. Pax</p>
                             </div>
                             <div class="specf-right">
                                 <p>5</p>
@@ -218,19 +201,10 @@
                         </li>
                         <li>
                             <div class="specf-left">
-                                <p>Speedometer</p>
+                                <p>Full Board</p>
                             </div>
                             <div class="specf-right">
-                                <p>Analogue</p>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </li>
-                        <li>
-                            <div class="specf-left">
-                                <p>Latest technology</p>
-                            </div>
-                            <div class="specf-right">
-                                <p>Available </p>
+                                <p>Include</p>
                             </div>
                             <div class="clearfix"> </div>
                         </li>
