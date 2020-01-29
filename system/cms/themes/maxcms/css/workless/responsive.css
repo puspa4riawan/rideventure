@@ -150,14 +150,14 @@ body#login-body {
   background: #333333 url(../../img/nav-grain.png) repeat;
 }
 
-#login-logo {
+/*#login-logo {
   display: inline-block;
   height: 40px;
   margin: 10px 0;
   width: 126px;
-  background-image: url(../../img/login-logo.png);
+  background-image: url(../../img/login-logo.jpeg);
   background-repeat: no-repeat;
-}
+}*/
 
 .login-screen #content {
   margin: 10px 10px 70px!important;
@@ -1035,7 +1035,8 @@ button#login-submit:hover {
     background-size: 113px 113px;
   }
   #login-logo {
-    background-image: url('../../img/login-logo@2x.png');
+    /*background-image: url('../../img/login-logo@2x.png');*/
+    background-image: url('../../img/login-logo.jpeg');
     background-size: 126px 40px;
   }
   button#login-submit {

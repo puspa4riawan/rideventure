@@ -1,4 +1,4 @@
-# .htaccess
+.htaccess
 assets/cache/*
 system/cms/cache/*
 system/cms/logs/*
