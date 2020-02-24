@@ -215,58 +215,6 @@
         </div>
     </div>          
     <!-- //specifications -->
-    <!-- news -->
-    <div id="news" class="news">   
-        <div class="container"> 
-            <h3 class="agileits-title w3title2"><span>D</span>estination </h3>
-            <div class="news-agileinfo">
-                <div class="col-md-4 news-w3grid">
-                    <img src="{{theme:image_url file='tours/1.jpeg'}}" alt="">
-                    <div class="news-w3grid-info">
-                        <h5><span></span>Tour 1 </h5>
-                        <h4>More ...</h4>
-                        <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
-                        <div class="article-links">
-                            <ul>
-                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
-                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 news-w3grid">
-                    <img src="{{theme:image_url file='tours/13.jpeg'}}" alt="">
-                    <div class="news-w3grid-info">
-                        <<h5><span></span>Tour 2 </h5>
-                        <h4>More ...</h4>
-                        <p>Lorem cursus vitae placerat etiam ex suscipit dapibus tortor sed nec augue</p>
-                        <div class="article-links">
-                            <ul>
-                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
-                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 news-w3grid">
-                    <img src="{{theme:image_url file='tours/9.jpeg'}}" alt="">
-                    <div class="news-w3grid-info">
-                        <h5><span></span>Tour 3 </h5>
-                        <h4>More ...</h4>
-                        <p>Etiam ex lorem cursus vitae placerat suscipit dapibus tortor sed nec augue</p>
-                        <div class="article-links">
-                            <ul>
-                                <li><a href="#"><i class="glyphicon glyphicon-heart-empty"></i><span>1,052</span></a></li>
-                                <li><a href="#"><i class="glyphicon glyphicon-comment"></i><span>10K</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div> 
-        </div> 
-    </div>
-
     
     <!-- //news -->   
     
