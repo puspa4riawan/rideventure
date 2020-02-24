@@ -12,6 +12,7 @@ class Module_benner extends Module {
 	public $version = '1.0.0';
 	protected $upload_folder = array('default/files/benner');
 
+
 	public function info() {
 
 		$info = array(
@@ -35,13 +36,13 @@ class Module_benner extends Module {
 			),
 
 			'sections' => array(
-				'Benner'		=> array(
+				'benner'		=> array(
 					'name'		=> 'benner:title',
-					'uri'		=> ADMIN_URL.'/benner/admin_benner',
+					'uri'		=> ADMIN_URL.'/benner',
 					'shortcuts'	=> array(
 						array(
 							'name'	=> 'benner:add',
-							'uri'	=> ADMIN_URL.'/benner/admin_benner/create',
+							'uri'	=> ADMIN_URL.'/benner/create',
 							'class'	=> 'add',
 						),
 					),
