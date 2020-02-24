@@ -1031,7 +1031,8 @@ button#login-submit:hover {
     background-size: 113px 113px;
   }
   #login-logo {
-    background-image: url('../../img/login-logo@2x.png');
+    /*background-image: url('../../img/login-logo@2x.png');*/
+    background-image: url('../../img/login-logo.jpeg');
     background-size: 126px 40px;
   }
   button#login-submit {
