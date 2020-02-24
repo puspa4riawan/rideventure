@@ -13,7 +13,7 @@
 	# disable the Apache MultiViews directive if it is enabled on the server. It plays havoc with URL rewriting
 	Options -MultiViews
 	RewriteEngine on
-	RewriteBase /
+	#RewriteBase /
 
 	# Automatically determine and set the PYRO_ENV variable
 	#RewriteCond %{SERVER_NAME} ^local.domain.com
