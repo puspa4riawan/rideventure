@@ -8,7 +8,7 @@
 			<?php if ($data_) : ?>
 				<?php  echo $this->load->view('admin/benner/partials/filters') ?>
 	
-				<?php echo form_open(ADMIN_URL.'/benner/'.$u_admin.'/action') ?>
+				<?php echo form_open(ADMIN_URL.'/benner/action') ?>
 					<div id="filter-stage">
 						<?php echo $this->load->view('admin/benner/tables/table') ?>
 					</div>

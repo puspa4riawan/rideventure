@@ -472,7 +472,7 @@ class Admin_benner extends Admin_Controller {
 		if ( ! empty($ids)) {
 			foreach ($ids as $id) {
 				if ($post = $this->benner_m->get_single_data('id', $id, 'benner')) {
-					$this->article_m->publish_data('benner', 'id', $id);
+					$this->benner_m->publish_data('benner', 'id', $id);
 					$this->maxcache->delete('benner_m');
 					$post_titles[] = $post->title;
 				}
