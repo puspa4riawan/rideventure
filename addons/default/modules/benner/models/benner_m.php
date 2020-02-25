@@ -409,8 +409,8 @@ class Benner_m extends MY_Model
 			$this->db->where($table.'.slug', $params['slug']);
 		}
 
-		if ( ! empty($params['article_id'])) {
-			$this->db->where($table.'.article_id !=', $params['article_id']);
+		if ( ! empty($params['id'])) {
+			$this->db->where($table.'.id !=', $params['id']);
 		}
 
 		if ( ! empty($params['ads_id'])) {

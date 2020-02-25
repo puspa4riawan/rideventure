@@ -52,23 +52,7 @@ class Admin_benner extends Admin_Controller {
 			'rules'	=> 'trim|xss_clean'
 		),
 
-		'intro' => array(
-			'field'	=> 'intro',
-			'label'	=> 'lang:general:intro',
-			'rules'	=> 'trim|xss_clean'
-		),
-
-		'categories_id' => array(
-			'field'	=> 'categories_id',
-			'label'	=> 'lang:categories:title',
-			'rules'	=> ''
-		),
-
-		'campaign' => array(
-			'field'	=> 'campaign',
-			'label'	=> 'campaign',
-			'rules'	=> ''
-		),
+		
 
     );
 
@@ -87,10 +71,10 @@ class Admin_benner extends Admin_Controller {
 
 
 		$_template = array(
-			'no-image'			=>'Article without image',
-			'thumb' 			=>'Article with thumbnail',
-			'2-tile' 			=>'Article with merge tile',
-			'gallery' 			=>'Article with gallery',
+			'no-image'			=>'Benner without image',
+			'thumb' 			=>'Benner with thumbnail',
+			'2-tile' 			=>'Benner with merge tile',
+			'gallery' 			=>'Benner with gallery',
 			// 'downloadable' 		=>'Article with downloadable item',
 		);
 
@@ -143,11 +127,6 @@ class Admin_benner extends Admin_Controller {
 			$base_where['keywords'] = $this->input->post('f_keywords');
 		}
 
-		
-		// if ($this->input->post('f_categories')) {
-		// 	$base_where['categories'] = $this->input->post('f_categories');
-		// }
-
 
 		$total_rows = $this->benner_m->count_benner($base_where);
 		$pagination = create_pagination(ADMIN_URL.'/benner/'.$this->u_admin.'/index', $total_rows, Settings::get('records_per_page'),5);
@@ -182,49 +161,36 @@ class Admin_benner extends Admin_Controller {
 
 		if ($this->form_validation->run()) {
 			if ($this->input->post('status') == 'live') {
-				role_or_die('article/admin_article', 'put_live');
+				role_or_die('benner/admin_benner', 'put_live');
 				$hash = "";
 			}
 
 			$created 		= date('Y-m-d H:i:s');
 			$created_on 	= strtotime($created);
-			$featured_kecil_hebat = 0;
-			if($this->input->post('featured_kecil_hebat')){
-				$featureds = array('yes'=>1,'no'=>0);
-				$featured_kecil_hebat = isset($featureds[$this->input->post('featured_kecil_hebat')]) 
-					? $featureds[$this->input->post('featured_kecil_hebat')] : '';
-			}
+			
 			$extra = array(
 				'title'			=> $this->input->post('title'),
 				'slug'			=> $this->input->post('slug'),
 				'status'        => $this->input->post('status'),
-				'categories_id'	=> implode(',',$this->input->post('categories_id')),
 				'description'	=> $this->input->post('description'),
 				'meta_title'	=> $this->input->post('meta_title'),
 				'meta_keyword'	=> $this->input->post('meta_keyword'),
 				'meta_desc'		=> $this->input->post('meta_desc'),
-				'featured'		=> 0,
-				'altr_url'		=> $this->input->post('altr_url'),
-				'campaign'		=> implode(',',$this->input->post('campaign')),
 				'created'		=> $created,
-				'created_on'	=> $created_on,
 			);			
 
-			$fname 			 	= $this->input->post('fname');
-			$as_background 		= $this->input->post('as_background');
-
-			if ($id = $this->article_m->insert_data('article', $extra)) {
+			if ($id = $this->benner_m->insert_data('benner', $extra)) {
 				if($_FILES['thumb']['name']!=''){
 					$this->upload->initialize($this->set_upload_options($_FILES['thumb'], $id));
 					if($this->upload->do_upload('thumb')){
 						$data = $this->upload->data();
 						$new_data = array(
 	                		'filename' 	=> $data['file_name'],
-	                		'path'		=> 'uploads/default/files/article/'.$id.'/',
-	                		'full_path'	=> 'uploads/default/files/article/'.$id.'/'.$data['file_name'],
+	                		'path'		=> 'uploads/default/files/benner/'.$id.'/',
+	                		'full_path'	=> 'uploads/default/files/benner/'.$id.'/'.$data['file_name'],
 	                	);
 
-	                	$this->article_m->update_data('article', $new_data, 'article_id', $id);
+	                	$this->benner_m->update_data('benner', $new_data, 'id', $id);
 
 					}else{
 						$errors = $this->upload->display_errors();
@@ -232,19 +198,7 @@ class Admin_benner extends Admin_Controller {
 					}
 				}
 
-				if ($_FILES['thumb_mobile']['name'] != '') {
-					$this->upload->initialize($this->set_upload_options($_FILES['thumb_mobile'], $id));
-					if ($this->upload->do_upload('thumb_mobile')) {
-						$data = $this->upload->data();
-						$new_data = array('filename_mobile' => $data['file_name']);
-	                	$this->article_m->update_data('article', $new_data, 'article_id', $id);
-					} else {
-						$errors = $this->upload->display_errors();
-						$this->session->set_flashdata('error', $errors);
-					}
-				}
-
-				$files = $_FILES;
+				
                 
 
                 $this->session->set_flashdata(array('success' => sprintf(lang('general:add_success'), $this->input->post('title'))));
@@ -254,7 +208,7 @@ class Admin_benner extends Admin_Controller {
 				$this->session->set_flashdata('error', lang('general:post_add_error'));
 			}
 
-			($this->input->post('btnAction') == 'save_exit') ? redirect(ADMIN_URL.'/article/'.$this->u_admin) : redirect(ADMIN_URL.'/article/'.$this->u_admin.'/edit/'.$id);
+			($this->input->post('btnAction') == 'save_exit') ? redirect(ADMIN_URL.'/benner/'.$this->u_admin) : redirect(ADMIN_URL.'/benner/'.$this->u_admin.'/edit/'.$id);
 
 		}else {
 
@@ -269,7 +223,7 @@ class Admin_benner extends Admin_Controller {
 		}			
 
        	$this->template
-			->title($this->module_details['name'], lang('articles:title'))
+			->title($this->module_details['name'], lang('benner:title'))
 			->append_metadata($this->load->view('fragments/wysiwyg', array(), true))
 			->append_css('module::selectize.default.css')
 			->append_js('module::dago_gallery_form.js')
@@ -280,7 +234,7 @@ class Admin_benner extends Admin_Controller {
 			->set('data_', $data_)
 			// ->set('sections', $this->sections())
 			->set('featureds', array(''=>'Select Options','yes'=>'YES','no'=>'NO'))
-            ->build('admin/article/form');
+            ->build('admin/benner/form');
 	}
 
 	private function sections(){
@@ -294,24 +248,24 @@ class Admin_benner extends Admin_Controller {
 	}
 
 	public function edit($id = 0) {
-		$id or redirect(ADMIN_URL.'/article/'.$this->u_admin);
-		$data_ = $this->article_m->get_single_data('article_id', $id, 'article');
+		$id or redirect(ADMIN_URL.'/benner/'.$this->u_admin);
+		$data_ = $this->benner_m->get_single_data('id', $id, 'benner');
 		// $data_usr = $this->ion_auth->get_user($data_->authors_id);
 
 		if(! ($data_)) {
-			redirect(ADMIN_URL.'/article/'.$this->u_admin);
+			redirect(ADMIN_URL.'/benner/'.$this->u_admin);
 		}
 
 		$article_validation = array_merge($this->forms_validation, array(
 			'title'	=> array(
 	    		'field'	=> 'title',
-	    		'label'	=> 'lang:articles:title',
+	    		'label'	=> 'lang:benner:title',
 	    		'rules'	=> 'trim|required|xss_clean|callback__check_title['.$id.']'
 	    	),
 
 	    	'slug'	=> array(
 	    		'field'	=> 'slug',
-	    		'label'	=> 'lang:articles:slug',
+	    		'label'	=> 'lang:benner:slug',
 	    		'rules'	=> 'trim|required|xss_clean|callback__check_slug['.$id.']'
 	    	),
 		));
@@ -329,51 +283,26 @@ class Admin_benner extends Admin_Controller {
 					'title'			=> $this->input->post('title'),
 					'slug'			=> $this->input->post('slug'),
 					'status'        => $this->input->post('status'),
-					'categories_id'	=> implode(',',$this->input->post('categories_id')),
 					'description'	=> $this->input->post('description'),
 					'meta_title'	=> $this->input->post('meta_title'),
 					'meta_keyword'	=> $this->input->post('meta_keyword'),
 					'meta_desc'		=> $this->input->post('meta_desc'),
-					'altr_url'		=> $this->input->post('altr_url'),
-					'campaign'		=> implode(',',$this->input->post('campaign')),
 					'updated'		=> date('Y-m-d H:i:s')
 					
-				);				
-			/*} else {
-				$extra = array(
-					// 'title'			=> $this->input->post('title'),
-					// 'slug'			=> $this->input->post('slug'),
-					'status'        => $this->input->post('status'),
-					// 'intro'			=> $this->input->post('intro'),
-					'categories_id'	=> implode(',',$this->input->post('categories_id')),
-					'kidsage_id'	=> implode(',',$this->input->post('kidsage_id')),
-					// 'authors_id'	=> $this->current_user->id,
-					// 'description'	=> $this->input->post('description'),
-					'meta_title'	=> $this->input->post('meta_title'),
-					'meta_keyword'	=> $this->input->post('meta_keyword'),
-					'meta_desc'		=> $this->input->post('meta_desc'),
-					'show_comments'	=> $this->input->post('show_comments'),
-					'bg_color'		=> $this->input->post('bg_color'),
-					// 'template'		=> $this->input->post('template'),
-					// 'click'			=> ($this->input->post('click')) ? $this->input->post('click') : 0,
-					// 'likes'			=> ($this->input->post('likes')) ? $this->input->post('likes') : 0,
-				);
-			}*/
+				);						
 
-			
-
-			if ($this->article_m->update_data('article', $extra, 'article_id', $id)) {
+			if ($this->benner_m->update_data('benner', $extra, 'id', $id)) {
 				if($_FILES['thumb']['name']!=''){
 					$this->upload->initialize($this->set_upload_options($_FILES['thumb'], $id));
 					if($this->upload->do_upload('thumb')){
 						$data = $this->upload->data();
 						$new_data = array(
 	                		'filename' 	=> $data['file_name'],
-	                		'path'		=> 'uploads/default/files/article/'.$id.'/',
-	                		'full_path'	=> 'uploads/default/files/article/'.$id.'/'.$data['file_name'],
+	                		'path'		=> 'uploads/default/files/benner/'.$id.'/',
+	                		'full_path'	=> 'uploads/default/files/benner/'.$id.'/'.$data['file_name'],
 	                	);
 
-	                	$this->article_m->update_data('article', $new_data, 'article_id', $id);
+	                	$this->benner_m->update_data('benner', $new_data, 'id', $id);
 
 					}else{
 						$errors = $this->upload->display_errors();
@@ -381,26 +310,8 @@ class Admin_benner extends Admin_Controller {
 					}
 				}
 
-				if ($_FILES['thumb_mobile']['name'] != '') {
-					$this->upload->initialize($this->set_upload_options($_FILES['thumb_mobile'], $id));
-					if ($this->upload->do_upload('thumb_mobile')) {
-						$data = $this->upload->data();
-						$new_data = array('filename_mobile' => $data['file_name']);
-	                	$this->article_m->update_data('article', $new_data, 'article_id', $id);
-					} else {
-						$errors = $this->upload->display_errors();
-						$this->session->set_flashdata('error', $errors);
-					}
-				}
-
-				$files = $_FILES;
-
-
-				// if($this->input->post('status')=='live'){
-				// 	$tes = $this->email_notifApproved($id);
-				// }
-
 				
+				$files = $_FILES;
 
 				$this->session->set_flashdata(array('success' => sprintf(lang('general:edit_success'), $this->input->post('title'))));
                 $this->session->unset_userdata('upload');
@@ -410,7 +321,7 @@ class Admin_benner extends Admin_Controller {
 				$this->session->set_flashdata('error', lang('general:edit_error'));
 			}
 
-			($this->input->post('btnAction') == 'save_exit') ? redirect(ADMIN_URL.'/article/'.$this->u_admin) : redirect(ADMIN_URL.'/article/'.$this->u_admin.'/edit/'.$id);
+			($this->input->post('btnAction') == 'save_exit') ? redirect(ADMIN_URL.'/benner/'.$this->u_admin) : redirect(ADMIN_URL.'/benner/'.$this->u_admin.'/edit/'.$id);
 		}
 
 		foreach ($this->form_validation->set_rules($rules) as $key => $field) {
@@ -420,7 +331,7 @@ class Admin_benner extends Admin_Controller {
 		}
 		
 		$this->template
-			->title($this->module_details['name'], lang('articles:title'))
+			->title($this->module_details['name'], lang('benner:title'))
 			->append_metadata($this->load->view('fragments/wysiwyg', array(), true))
 			->append_css('module::selectize.default.css')
 			// ->append_js('module::dago_gallery_form.js')
@@ -432,7 +343,7 @@ class Admin_benner extends Admin_Controller {
 			->set('article_id', $id)
 			// ->set('sections', $this->sections())
 			->set('featureds', array(''=>'Select Options','yes'=>'YES','no'=>'NO'))
-            ->build('admin/article/form');
+            ->build('admin/benner/form');
 	}
 
 	function email_notifApproved($artikel_id){
@@ -514,22 +425,22 @@ class Admin_benner extends Admin_Controller {
 				break;
 
 			default:
-				redirect(ADMIN_URL.'/article/'.$this->u_admin);
+				redirect(ADMIN_URL.'/benner/'.$this->u_admin);
 				break;
 		}
 	}
 
 	public function delete($id = 0) {
-		role_or_die('article_m', 'delete_live');
+		role_or_die('benner_m', 'delete_live');
 		$ids = ($id = $this->input->post('id')) ? array($id) : $this->input->post('action_to');
 		$post_titles = array();
 		$deleted_ids = array();
 
         if ( ! empty($ids)) {
 			foreach ($ids as $id) {
-				if ($post = $this->article_m->get_single_data('article_id', $id, 'article')) {
-					$this->article_m->delete_data('article', 'article_id', $id);
-                    $this->maxcache->delete('article_m');
+				if ($post = $this->benner_m->get_single_data('id', $id, 'benner')) {
+					$this->benner_m->delete_data('benner', 'id', $id);
+                    $this->maxcache->delete('benner_m');
 					$post_titles[] = $post->title;
 					$deleted_ids[] = $id;
 
@@ -550,19 +461,19 @@ class Admin_benner extends Admin_Controller {
 			$this->session->set_flashdata('error', lang('general:delete_error'));
 		}
 
-		redirect(ADMIN_URL.'/article/'.$this->u_admin);
+		redirect(ADMIN_URL.'/benner/'.$this->u_admin);
 	}
 
 	public function publish($id = 0) {
-		role_or_die('article_m', 'put_live');
+		role_or_die('benner_m', 'put_live');
 		$ids = ($id) ? array($id) : $this->input->post('action_to');
 		$post_titles = array();
 
 		if ( ! empty($ids)) {
 			foreach ($ids as $id) {
-				if ($post = $this->article_m->get_single_data('article_id', $id, 'article')) {
-					$this->article_m->publish_data('article', 'article_id', $id);
-					$this->maxcache->delete('article_m');
+				if ($post = $this->benner_m->get_single_data('id', $id, 'benner')) {
+					$this->article_m->publish_data('benner', 'id', $id);
+					$this->maxcache->delete('benner_m');
 					$post_titles[] = $post->title;
 				}
 			}
@@ -578,19 +489,19 @@ class Admin_benner extends Admin_Controller {
 			$this->session->set_flashdata('error', $this->lang->line('general:publish_error'));
 		}
 
-		redirect(ADMIN_URL.'/article/'.$this->u_admin);
+		redirect(ADMIN_URL.'/benner/'.$this->u_admin);
 	}
 
 	public function _check_title($title, $id=0) {
-		$this->form_validation->set_message('_check_title', sprintf(lang('articles:already_exist_error'), lang('global:title')));
+		$this->form_validation->set_message('_check_title', sprintf(lang('benner:already_exist_error'), lang('global:title')));
 
-		return $this->article_m->check_exists('article', array('title'=>$title, 'article_id'=>$id));
+		return $this->benner_m->check_exists('benner', array('title'=>$title, 'id'=>$id));
 	}
 
 	public function _check_slug($slug, $id=0) {
-		$this->form_validation->set_message('_check_slug', sprintf(lang('articles:already_exist_error'), lang('global:slug')));
+		$this->form_validation->set_message('_check_slug', sprintf(lang('benner:already_exist_error'), lang('global:slug')));
 
-		return $this->article_m->check_exists('article', array('slug'=>$slug, 'article_id'=>$id));
+		return $this->benner_m->check_exists('benner', array('slug'=>$slug, 'id'=>$id));
 	}
 
 	public function delete_arinfo() {
@@ -612,56 +523,18 @@ class Admin_benner extends Admin_Controller {
 		echo json_encode($ret);
 	}
 
-	public function set_featured(){
-		$id = (int)$this->input->post('id_data');
-		$aksi = (int)$this->input->post('featured');
-		$ret['status'] = false;
-
-		$count_featured = $this->article_m->cheker_data('default_article', array('featured'=>1));
-
-		if($aksi==1){
-			// if($count_featured->num_rows() < 8) {
-				$cek = $this->article_m->get_single_data('article_id', $id, 'article');
-				if(count((array)$cek)>0){
-					$featured = $this->article_m->update_data('article', array('featured'=>1), 'article_id', $id);
-					$ret['status'] = true;
-				}else{
-					$ret['msg'] = "There's no data";
-				}
-			// } else {
-			// 	$ret['msg'] = "max 8 featured items";
-			// }
-
-		} else {
-			$cek = $this->article_m->get_single_data('article_id', $id, 'article');
-			if(count((array)$cek)>0){
-				$featured = $this->article_m->update_data('article', array('featured'=>null), 'article_id', $id);
-				$ret['status'] = true;
-			}else{
-				$ret['msg'] = "There's no data";
-			}
-		}
-
-		if ($this->input->is_ajax_request()){
-			echo json_encode($ret);
-			exit();
-		}
-
-		redirect(ADMIN_URL.'/'.$this->sect);
-	}
+	
 
 	private function set_upload_options($file, $id) {
-		$new_path = '/uploads/default/files/article/'.$id.'/';
+		$new_path = '/uploads/default/files/benner/'.$id.'/';
 		if(!is_dir(getcwd().$new_path)) {
 			mkdir(getcwd().$new_path,0775,true);
 		}
 
 	    $judul = $this->img_slug($this->input->post('title',TRUE));
 		$config = array(
-            'allowed_types' 	=> 'jpg|png|gif|jpeg|JPG|PNG|GIF|JPEG|pdf',
+            'allowed_types' 	=> 'avi|flv|wmv|mp3|mp4',
             'max_size'			=> '60000',
-            // 'max_width'			=> '2000',
-            // 'max_height'		=> '2000',
             'upload_path' 		=> getcwd().$new_path,
             'overwrite'			=> TRUE,
             'file_name'			=> $judul.'_'.$id.'_'.$file['name'],
@@ -670,30 +543,7 @@ class Admin_benner extends Admin_Controller {
 	    return $config;
 	}
 
-	private function set_upload_options_arfile($file=array(), $id='', $path='') {
-		if ($path=='') {
-			$new_path = '/uploads/default/files/article_files/'.$id.'/';
-		} else {
-			$new_path = $path;
-		}
-
-		if(!is_dir(getcwd().$new_path)) {
-			mkdir(getcwd().$new_path,0775,true);
-		}
-
-	    $judul = $this->img_slug($this->input->post('title',TRUE));
-		$config = array(
-            'allowed_types' 	=> 'jpg|png|gif|jpeg|JPG|PNG|GIF|JPEG|pdf',
-            'max_size'			=> '60000',
-            // 'max_width'			=> '2000',
-            // 'max_height'		=> '2000',
-            'upload_path' 		=> getcwd().$new_path,
-            'overwrite'			=> TRUE,
-            'file_name'			=> $judul.'_'.$id.'_'.$file['name'],
-        );
-
-	    return $config;
-	}
+	
 
 	private function set_upload_options_video($file = array(), $id = '', $path = '')
 	{
@@ -879,211 +729,9 @@ class Admin_benner extends Admin_Controller {
         $objWriter->save('php://output');
 	}
 
-	public function set_featured_milestone()
-	{
-		if ($this->input->is_ajax_request()) {
-			$id = (int) $this->input->post('id_data');
-			$featured = (int) $this->input->post('featured');
-			$data = array('featured_milestone' => $featured == 0 ? 1 : 0);
-			$check = $this->article_m->get_single_data('article_id', $id, 'article');
-			$count = $this->article_m->cheker_data('default_article', array('featured_milestone' => 1));
-			$response = array(
-				'status' => false,
-				'msg' => 'no data available'
-			);
-
-			if (count((array) $check) > 0) {
-				$this->article_m->update_data('article', $data, 'article_id', $id);
-				$response['status'] = true;
-				$response['msg'] = '';
-			}
-
-			echo json_encode($response);
-			return;
-		}
-
-		redirect(ADMIN_URL.'/'.$this->sect);
-	}
-
-	public function set_featured_afs(){
-		$id = (int)$this->input->post('id_data');
-		$aksi = (int)$this->input->post('featured_afs');
-		$ret['status'] = false;
-
-		$count_featured_afs = $this->article_m->cheker_data('default_article', array('featured_afs'=>1));
-
-		if($aksi==1){
-			if($count_featured_afs->num_rows() < 4) {
-				$cek = $this->article_m->get_single_data('article_id', $id, 'article');
-				if(count((array)$cek)>0){
-					$featured_afs = $this->article_m->update_data('article', array('featured_afs'=>1), 'article_id', $id);
-					$ret['status'] = true;
-				}else{
-					$ret['msg'] = "There's no data";
-				}
-			} else {
-				$ret['msg'] = "max 4 featured afs items";
-			}
-
-		} else {
-			$cek = $this->article_m->get_single_data('article_id', $id, 'article');
-			if(count((array)$cek)>0){
-				$featured_afs = $this->article_m->update_data('article', array('featured_afs'=>null), 'article_id', $id);
-				$ret['status'] = true;
-			}else{
-				$ret['msg'] = "There's no data";
-			}
-		}
-
-		if ($this->input->is_ajax_request()){
-			echo json_encode($ret);
-			exit();
-		}
-
-		redirect(ADMIN_URL.'/'.$this->sect);
-	}
-
-	public function _check_yt_link()
-	{
-		$url = $this->input->post('yt_video');
-	    $valid_schemes = array('https');
-	    $valid_hosts = array('www.youtube.com', 'youtube.com', 'youtu.be');
-	    $valid_paths = array('/watch');
-	    $bits = parse_url($url);
-
-	    if (is_array($bits)) {
-	    	if (isset($bits['scheme']) && in_array($bits['scheme'], $valid_schemes)) {
-		    	if (isset($bits['host'])) {
-			    	if (in_array($bits['host'], $valid_hosts)) {
-				    	if ($bits['host'] != 'youtu.be') {
-					    	if (isset($bits['path']) && in_array($bits['path'], $valid_paths)) {
-					    		if (isset($bits['query'])) {
-					    			$id = explode('=', $bits['query']);
-
-					    			if (isset($id[1]) && !empty($id[1])) {
-					    				return true;
-					    			}
-					    		}
-					    	}
-					    } else {
-					    	return true;
-					    }
-			    	}
-			    }
-		    }
-	    }
-
-	    $this->form_validation->set_message('_check_yt_link', 'Invalid Youtube URL');
-
-	    return false;
-	}
-
-	public function extract_yt_id($url)
-	{
-		$valid_schemes = array('https');
-	    $valid_hosts = array('www.youtube.com', 'youtube.com', 'youtu.be');
-	    $valid_paths = array('/watch');
-	    $bits = parse_url($url);
-
-	    if (is_array($bits)) {
-	    	if (isset($bits['scheme']) && in_array($bits['scheme'], $valid_schemes)) {
-		    	if (isset($bits['host'])) {
-			    	if (in_array($bits['host'], $valid_hosts)) {
-				    	if ($bits['host'] != 'youtu.be') {
-					    	if (isset($bits['path']) && in_array($bits['path'], $valid_paths)) {
-					    		if (isset($bits['query'])) {
-					    			$id = explode('=', $bits['query']);
-
-					    			if (isset($id[1]) && !empty($id[1])) {
-					    				return $id[1];
-					    			}
-					    		}
-					    	}
-					    } else {
-					    	return ltrim($bits['path'], '/');
-					    }
-			    	}
-			    }
-		    }
-	    }
-
-	    return '';
-	}
-
-
-	/* tambahan si kecil hebat */
-	public function set_featured_kecilhebat(){
-		$id = (int)$this->input->post('id_data');
-		$aksi = (int)$this->input->post('featured_kecilhebat');
-		$ret['status'] = false;
-		$ret['msg'] = "There's no data";
-		
-		$cek = $this->article_m->get_single_data('article_id', $id, 'article');				
-		if($cek){
-			$featured = null;
-			if($aksi==1){
-				$featured = 1;
-			}			
-			$update = $this->article_m->update_data('article', array('featured_kecil_hebat'=>$featured), 'article_id', $id);			
-			if($update){
-				$ret['status'] = true;
-				$ret['msg'] = "success";
-			}			
-		}
-
-		if ($this->input->is_ajax_request()){
-			echo json_encode($ret);
-			exit();
-		}
-
-		redirect(ADMIN_URL.'/'.$this->sect);
-	}
-
+	
 	/**
 	 * because iframe is set to DENY
 	 */
-	public function upload_custom(){
-		if ($this->input->is_ajax_request()){
-			if($this->input->post('title') && $_FILES['userfile']){
-				$data = array();
-				$results = array();
-				$status = true;
-				$message = 'success';
-
-				$filedir  = 'uploads/contents/'.date('Ym').'/';
-				if (!is_dir('./'.$filedir)) {
-					mkdir('./'.$filedir, 0755, TRUE);
-				}
-
-				$config = array(
-					'upload_path' => './'.$filedir,
-					'allowed_types' => 'gif|jpg|jpeg|png|image/png|image/jpeg|image/jpg',
-					'max_size' => '3000',
-				);
-				$this->load->library('upload');
-				$this->upload->initialize($config);
-				if ($this->upload->do_upload('userfile'))
-				{				
-					$uploadData = $this->upload->data();				
-					$fullpath = base_url($filedir.$uploadData['file_name']);
-					$title = $this->input->post('title');
-					$results = array(
-						'title' => $title,
-						'image' => $fullpath,
-						'element' => '<img src="'.base_url($filedir.$uploadData['file_name']).'" alt="'.$title.'" width="100%">',
-					);	
-				}else{
-					$status = false;
-					$message = $this->upload->display_errors();
-				}
-
-				$data = array(
-					'status' => $status,
-					'message' => $message,
-					'result' => $results,
-				);
-				echo json_encode($data);
-			}			
-		}
-	}
+	
 }

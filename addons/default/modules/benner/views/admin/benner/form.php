@@ -1,8 +1,8 @@
 <section class="title">
 <?php if ($this->method == 'create'): ?>
-	<h4><?php echo lang('articles:add') ?></h4>
+	<h4><?php echo lang('benner:add') ?></h4>
 <?php else: ?>
-	<h4><?php echo sprintf(lang('articles:update'), $data_->title) ?></h4>
+	<h4><?php echo sprintf(lang('benner:update'), $data_->title) ?></h4>
 <?php endif ?>
 </section>
 
@@ -19,7 +19,7 @@
 		        <ul>
                     
     				<li>
-    					<label for="title"><?php echo lang('articles:label_title') ?> <span>*</span></label>
+    					<label for="title"><?php echo lang('benner:label_title') ?> <span>*</span></label>
     					<div class="input">
     						<input type="text" id="title" name="title" size="80" value="<?php echo set_value('title', isset($data_->title) ? $data_->title : ''); ?>" />
                             <br>
@@ -34,73 +34,9 @@
     						<input type="text" id="slug" name="slug" size="80" value="<?php echo set_value('slug', isset($data_->slug) ? $data_->slug : ''); ?>"/>
     					</div>
     				</li>
-                    <li>
-                        <label for="categories_id"><?php echo lang('categories:title') ?> <span>*</span></label>
-                        <br />
-                        <div class="input">
-                            <select multiple="multiple" name="categories_id[]">
-                                <?php
-                                if(count($category) > 0 ){
-                                    foreach($category as $list_cat) {
-                                        $selected = '';
-
-                                            $data_->categories_id = trim($data_->categories_id, ",");
-                                            if(strpos($data_->categories_id, ",")){
-                                                $selected_category = explode(",", $data_->categories_id);
-                                                foreach ($selected_category as $key_category => $value_category) {
-                                                    if($value_category == $value['id']){
-                                                        $selected = 'selected="selected"';
-                                                    }
-                                                }
-                                            } else {
-                                                if($data_->categories_id == $list_cat->id) {
-                                                    $selected = 'selected="selected"';
-                                                }
-                                            }
-                                            
-                                            echo '<option value="'.$list_cat->id.'" '.$selected.'>'.$list_cat->name.'</option>';
-                                    }
-                                }
-                                ?>
-                            </select>
-                        </div>
-                    </li>
-
-                    <li>
-                        <label for="campaign">Campaign <span>*</span></label>
-                        <br />
-                        <div class="input">
-                            <select multiple="multiple" name="campaign[]">
-                                <?php
-                                if(count($campaign) > 0 ){
-                                    foreach ($campaign as $key => $value) {
-                                        $selected = '';
-
-                                            $data_->campaign = trim($data_->campaign, ",");
-                                            if(strpos($data_->campaign, ",")){
-                                                $selected_campaign = explode(",", $data_->campaign);
-                                                foreach ($selected_campaign as $campaign) {
-                                                    if($key == $campaign){
-                                                        $selected = 'selected="selected"';
-                                                    }
-                                                }
-                                            } else {
-                                                if($data_->campaign == $key) {
-                                                    $selected = 'selected="selected"';
-                                                }
-                                            }
-                                            
-                                            echo '<option value="'.$key.'" '.$selected.'>'.$value.'</option>';
-                                    }
-                                }
-                                ?>
-
-                            </select>
-                        </div>
-                    </li>
                     
                     <li class="editor" id="thumb">
-                            <label for="map_desc" class="labelf">Thumbnail</label>
+                            <label for="map_desc" class="labelf">Video File</label>
                             <div class="edit-content">
                                 <?php
                                     $prev = base_url('uploads/default/files/no-available-image.png');
@@ -108,26 +44,16 @@
                                         $prev = base_url($data_->path.'/'.$data_->filename);
                                     }
                                     echo '<input type="file" name="thumb" class="thumb" id="thumb"/><br />';
-                                    echo '<img class="preview-thumb" src="'.$prev.'" width="250" id="preview-thumb"><br />';
-                                    echo '<img class="cek-thumb" src="" style="display:none;" id="cek-thumb"><br />';
+
                                 ?>
+                                 <video width="400" controls>
+                                  <source src="<?=$prev?>" type="video/mp4">
+                                  <source src="<?=$prev?>" type="video/ogg">
+                                  Your browser does not support HTML5 video.
+                                </video>
                             </div>
                         </li>
-                    <li class="editor" id="thumb">
-                        <label for="map_desc" class="labelf">Thumbnail Mobile</label>
-                        <div class="edit-content">
-                            <?php
-                            $prev_mobile = base_url('uploads/default/files/no-available-image.png');
-
-                            if ($data_->filename_mobile != '') {
-                                $prev_mobile = base_url($data_->path.'/'.$data_->filename_mobile);
-                            }
-                            ?>
-                            <input type="file" name="thumb_mobile" class="thumb" id="thumb-mobile"/><br />
-                            <img class="preview-thumb" src="<?= $prev_mobile; ?>" width="250" id="preview-thumb-mobile"><br />
-                            <img class="cek-thumb" src="" style="display:none;" id="cek-thumb-mobile"><br />
-                        </div>
-                    </li>
+                    
                     
                     <li class="editor">
                         <label for="description"><?php echo lang('general:desc_label') ?> </label><br>
@@ -155,13 +81,6 @@
                         <div class="edit-content">
                             <?php echo form_textarea(array('id' => 'meta_desc', 'name' => 'meta_desc', 'rows' => 5, 'value' => isset($data_->meta_desc) ? $data_->meta_desc : '','class' => '')); ?>
                         </div><br />
-                    </li>
-                    <li>
-                        <label for="altr_url">altr_url <span></span></label>
-                        <div class="input">
-                            <input type="text" id="altr_url" name="altr_url" size="80" value="<?php echo set_value('altr_url', isset($data_->altr_url) ? $data_->altr_url : ''); ?>" />
-                            
-                        </div>
                     </li>
                     <li>
                         <label for="status"><?php echo lang('general:status_label') ?></label>
