@@ -2,7 +2,7 @@
 <?php if ($this->method == 'create'): ?>
 	<h4><?php echo lang($section.':add') ?></h4>
 <?php else: ?>
-	<h4><?php echo sprintf(lang($section.':update'), $data_->title) ?></h4>
+	<h4><?php echo sprintf(lang($section.':update'), $data_->full_name) ?></h4>
 <?php endif ?>
 </section>
 
@@ -19,27 +19,43 @@
 		        <ul>
                     
     				<li>
-    					<label for="title"><?php echo lang($section.':label_title') ?> <span>*</span></label>
+    					<label for="full_name">Full Name <span>*</span></label>
     					<div class="input">
-    						<input type="text" id="title" name="title" size="80" value="<?php echo set_value('title', isset($data_->title) ? $data_->title : ''); ?>" />
-                            <br>
-                            <?php if($this->method=='edit') { ?>
-                                <a href="javascript:void(0);" title="Set title as slug" class="btn green" id="set-title-slug" >Set title as slug</a>
-                            <?php } ?>
+    						<input type="text" id="full_name" name="full_name" size="80" value="<?php echo set_value('full_name', isset($data_->full_name) ? $data_->full_name : ''); ?>" />
     					</div>
     				</li>
     				<li>
-    					<label for="slug">Slug <span>*</span></label>
+    					<label for="position">Position <span>*</span></label>
     					<div class="input">
-    						<input type="text" id="slug" name="slug" size="80" value="<?php echo set_value('slug', isset($data_->slug) ? $data_->slug : ''); ?>"/>
+    						<input type="text" id="position" name="position" size="80" value="<?php echo set_value('position', isset($data_->position) ? $data_->position : ''); ?>"/>
     					</div>
     				</li>
+
+                    <li>
+                        <label for="address">Address <span>*</span></label>
+                        <div class="input">
+                            <input type="text" id="address" name="address" size="80" value="<?php echo set_value('address', isset($data_->address) ? $data_->address : ''); ?>"/>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="phone">Phone <span>*</span></label>
+                        <div class="input">
+                            <input type="text" id="phone" name="phone" size="80" value="<?php echo set_value('phone', isset($data_->phone) ? $data_->phone : ''); ?>"/>
+                        </div>
+                    </li>
+
+                    <li>
+                        <label for="email">Email <span>*</span></label>
+                        <div class="input">
+                            <input type="text" id="email" name="email" size="80" value="<?php echo set_value('email', isset($data_->email) ? $data_->email : ''); ?>"/>
+                        </div>
+                    </li>
                     
                     
                     <li class="editor">
-                        <label for="description"><?php echo lang('general:desc_label') ?> </label><br>
+                        <label for="self_desc">About You </label><br>
                         <div class="edit-content">
-                            <?php echo form_textarea(array('id' => 'description', 'name' => 'description', 'rows' => 30, 'value' => isset($data_->description) ? $data_->description : '','class' => 'wysiwyg-advanced')); ?>
+                            <?php echo form_textarea(array('id' => 'self_desc', 'name' => 'self_desc', 'rows' => 30, 'value' => isset($data_->self_desc) ? $data_->self_desc : '','class' => 'wysiwyg-advanced')); ?>
                         </div><br />
                     </li>
                     
@@ -58,26 +74,6 @@
                         </div>
                     </li>
                     
-                    
-                    
-                    <li class="editor">
-                        <label for="meta_title">Meta Title </label><br>
-                        <div class="edit-content">
-                            <?php echo form_textarea(array('id' => 'meta_title', 'name' => 'meta_title', 'rows' => 3, 'value' => isset($data_->meta_title) ? $data_->meta_title : '','class' => '')); ?>
-                        </div><br />
-                    </li>
-                    <li class="editor">
-                        <label for="meta_keyword"><?php echo lang('general:meta_keyword') ?> </label><br>
-                        <div class="edit-content">
-                            <?php echo form_textarea(array('id' => 'meta_keyword', 'name' => 'meta_keyword', 'rows' => 3, 'value' => isset($data_->meta_keyword) ? $data_->meta_keyword : '','class' => '')); ?>
-                        </div><br />
-                    </li>
-                    <li class="editor">
-                        <label for="meta_desc"><?php echo lang('general:meta_desc') ?> </label><br>
-                        <div class="edit-content">
-                            <?php echo form_textarea(array('id' => 'meta_desc', 'name' => 'meta_desc', 'rows' => 5, 'value' => isset($data_->meta_desc) ? $data_->meta_desc : '','class' => '')); ?>
-                        </div><br />
-                    </li>
                     <li>
                         <label for="status"><?php echo lang('general:status_label') ?></label>
                         <div class="input"><?php echo form_dropdown('status', array('draft' => lang('general:draft_label'), 'live' => lang('general:live_label')), $data_->status) ?></div>

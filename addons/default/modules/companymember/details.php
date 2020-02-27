@@ -57,7 +57,7 @@ class Module_companymember extends Module {
 	{
 		$companymember_fields = array(
         	'id'			=> array('type' => 'INT', 'constraint' => 11, 'auto_increment' => true, 'primary' => true),
-        	'name' 			=> array('type' => 'VARCHAR', 'constraint' => 255, 'unique' => true, 'null' => true),
+        	'full_name' 	=> array('type' => 'VARCHAR', 'constraint' => 255, 'unique' => true, 'null' => true),
         	'position'		=> array('type' => 'VARCHAR', 'constraint' => 255, 'unique' => true, 'null' => true),
         	'address'		=> array('type' => 'TEXT', 'null' => true),
         	'phone'			=> array('type' => 'VARCHAR', 'constraint' => 50, 'unique' => true, 'null' => true),

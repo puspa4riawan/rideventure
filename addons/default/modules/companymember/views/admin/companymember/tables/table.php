@@ -2,8 +2,10 @@
 		<thead>
 			<tr>
 				<th width="5%"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')) ?></th>
-				<th width="10%"><?php echo lang($section.':label_title') ?></th>
-				<th width="40%"><?php echo lang($section.':desc') ?></th>
+				<th width="10%">Name</th>
+				<th width="10%">Position</th>
+				<th width="10%">Email</th>
+				<th width="40%">Address</th>
 				<th width="10%" style="text-align: center;"><?php echo lang('general:status_label') ?></th>
 				<th width="15%" style="text-align: center;"><?php echo lang('global:actions') ?></th>
 			</tr>
@@ -13,9 +15,10 @@
 			foreach ($data_ as $value) : ?>
 				<tr>
 					<td><?php echo form_checkbox('action_to[]', $value->id) ?></td>
-					<td><?php echo $value->title; ?></td>
-
-					<td><?php echo $value->description; ?></td>
+					<td><?php echo $value->full_name; ?></td>
+					<td><?php echo $value->position; ?></td>
+					<td><?php echo $value->email; ?></td>
+					<td><?php echo $value->address; ?></td>
 					
 					
 
